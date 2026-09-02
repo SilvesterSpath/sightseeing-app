@@ -1,16 +1,23 @@
 import { attractionsData, getAttractions } from "../../data/attractions";
+import AttractionCard from "./AttractionCard";
 
 export default function AttractionsView() {
-  const count = getAttractions().length;
+  const attractions = getAttractions();
+  const total = attractionsData.meta.recordCount;
 
   return (
-    <section className="pane" aria-labelledby="attractions-heading">
-      <h1 id="attractions-heading">Attractions</h1>
-      <p>{attractionsData.meta.title}</p>
-      <p>
-        {count} attractions in the catalogue.
-      </p>
-      <p className="muted">Search and filters come next.</p>
+    <section className="pane attractions-pane" aria-labelledby="attractions-heading">
+      <header className="attractions-header">
+        <h1 id="attractions-heading">Attractions</h1>
+        <p className="muted">
+          {attractions.length} of {total}
+        </p>
+      </header>
+      <div className="attraction-list">
+        {attractions.map((attraction) => (
+          <AttractionCard key={attraction.name} attraction={attraction} />
+        ))}
+      </div>
     </section>
   );
 }

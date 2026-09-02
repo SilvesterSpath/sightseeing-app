@@ -329,3 +329,116 @@ body,
   background: #1a1a1a;
   color: #f4f1ea;
 }
+
+.attractions-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f4f1ea;
+  padding-bottom: 0.5rem;
+}
+
+.attraction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.attraction-card {
+  padding: 0.75rem 0.8rem 0.85rem;
+  border: 1px solid #d9d3c7;
+  background: #faf8f3;
+}
+
+.attraction-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.02rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+
+.attraction-meta,
+.attraction-facts {
+  margin: 0 0 0.4rem;
+  color: #5c5852;
+  font-size: 0.86rem;
+}
+
+.attraction-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 0 0.45rem;
+  padding: 0;
+  list-style: none;
+}
+
+.attraction-badges li {
+  padding: 0.12rem 0.4rem;
+  border: 1px solid #1a1a1a;
+  font-size: 0.7rem;
+  font-weight: 650;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.attraction-badges li[data-kind="Go City"] {
+  background: #1a1a1a;
+  color: #f4f1ea;
+}
+
+.attraction-badges li[data-kind="Free"] {
+  background: #d7e4d0;
+}
+
+.attraction-badges li[data-kind="Paid"] {
+  background: #ead7d0;
+}
+
+.attraction-badges li[data-kind="In itinerary"] {
+  background: #e4dcc8;
+}
+
+.attraction-notes {
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
+}
+
+.attraction-notes summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.attraction-notes p {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.attraction-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+
+.attraction-actions .maps-button {
+  min-height: 44px;
+  font-size: 0.82rem;
+}
+
+.source-button {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 0.4rem;
+  color: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  text-decoration: none;
+}

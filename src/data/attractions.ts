@@ -46,6 +46,21 @@ export function getAttractions(): Attraction[] {
   return attractionsData.attractions;
 }
 
+export type AccessLabel = "Free" | "Go City" | "Paid";
+
+export function getAccessLabel(item: Attraction): AccessLabel | null {
+  if (item.goCityAllInclusive) {
+    return "Go City";
+  }
+  if (item.accessType.startsWith("Free")) {
+    return "Free";
+  }
+  if (item.accessType === "Paid – outside Go City") {
+    return "Paid";
+  }
+  return null;
+}
+
 function uniqueSorted(values: string[]): string[] {
   return [...new Set(values)].sort((a, b) => a.localeCompare(b));
 }
