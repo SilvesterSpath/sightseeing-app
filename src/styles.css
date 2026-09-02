@@ -1,0 +1,60 @@
+:root {
+  color: #1a1a1a;
+  background: #f4f1ea;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    sans-serif;
+  line-height: 1.4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.sanity {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 2rem;
+}
+
+.phase-note {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5c5852;
+}
+
+h1,
+h2 {
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.45rem 0.35rem;
+  border-bottom: 1px solid #d9d3c7;
+}
+
+.ok {
+  color: #17643b;
+  font-weight: 650;
+}
+
+.fail {
+  color: #9b1c1c;
+  font-weight: 650;
+}

@@ -1,0 +1,2518 @@
+{
+  "meta": {
+    "title": "Stockholm 5-Day Weather-Adaptive Navigation Plan",
+    "tripStart": "2026-09-11",
+    "tripEnd": "2026-09-15",
+    "baseAddress": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+    "schemaVersion": 1,
+    "sourceWorkbook": "Stockholm_Navigation_Data.xlsx"
+  },
+  "stops": [
+    {
+      "id": "HOTEL",
+      "name": "Stora Nygatan 17",
+      "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+      "type": "Accommodation",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden",
+      "notes": "Trip start/end and luggage point.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "STORTORGET",
+      "name": "Stortorget",
+      "query": "Stortorget, 111 29 Stockholm, Sweden",
+      "type": "Square",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden",
+      "notes": "Gamla Stan main square.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "PRASTGATAN",
+      "name": "Prästgatan",
+      "query": "Prästgatan, Stockholm, Sweden",
+      "type": "Street",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Pr%C3%A4stgatan%2C+Stockholm%2C+Sweden",
+      "notes": "Chosen to make Google Maps pass through a characteristic medieval street.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "MARTEN",
+      "name": "Mårten Trotzigs gränd",
+      "query": "Mårten Trotzigs gränd, Stockholm, Sweden",
+      "type": "Street/Landmark",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A5rten+Trotzigs+gr%C3%A4nd%2C+Stockholm%2C+Sweden",
+      "notes": "Very narrow historic alley.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "JARNTORGET",
+      "name": "Järntorget",
+      "query": "Järntorget, 111 29 Stockholm, Sweden",
+      "type": "Square",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=J%C3%A4rntorget%2C+111+29+Stockholm%2C+Sweden",
+      "notes": "Southern Gamla Stan square.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "SKEPPSBRON",
+      "name": "Skeppsbron",
+      "query": "Skeppsbron, Stockholm, Sweden",
+      "type": "Waterfront street",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsbron%2C+Stockholm%2C+Sweden",
+      "notes": "Waterfront waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "PALACE",
+      "name": "The Royal Palace",
+      "query": "Kungliga slottet, Stockholm, Sweden",
+      "type": "Attraction",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden",
+      "notes": "Use exterior/courtyard on Day 1; interior on Day 4.",
+      "sourceUrl": "https://www.kungligaslotten.se/english.html"
+    },
+    {
+      "id": "RIKSDAG",
+      "name": "Riksdagshuset",
+      "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+      "type": "Landmark",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden",
+      "notes": "Parliament building.",
+      "sourceUrl": "https://www.riksdagen.se/en/"
+    },
+    {
+      "id": "NORRBRO",
+      "name": "Norrbro",
+      "query": "Norrbro, Stockholm, Sweden",
+      "type": "Bridge",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden",
+      "notes": "Scenic bridge waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "OPERA",
+      "name": "Royal Swedish Opera",
+      "query": "Kungliga Operan, Gustav Adolfs torg 2, Stockholm, Sweden",
+      "type": "Landmark",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+Operan%2C+Gustav+Adolfs+torg+2%2C+Stockholm%2C+Sweden",
+      "notes": "Exterior stop.",
+      "sourceUrl": "https://www.operan.se/en"
+    },
+    {
+      "id": "KUNGSTRAD",
+      "name": "Kungsträdgården",
+      "query": "Kungsträdgården, Stockholm, Sweden",
+      "type": "Park",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden",
+      "notes": "Central park.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "NK",
+      "name": "NK Stockholm",
+      "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden",
+      "notes": "Indoor design/homeware stop.",
+      "sourceUrl": "https://www.nk.se/"
+    },
+    {
+      "id": "SERGELS",
+      "name": "Sergels torg",
+      "query": "Sergels torg, Stockholm, Sweden",
+      "type": "Square",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Sergels+torg%2C+Stockholm%2C+Sweden",
+      "notes": "Central Stockholm square.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "DROTTNING",
+      "name": "Drottninggatan",
+      "query": "Drottninggatan, Stockholm, Sweden",
+      "type": "Street",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Drottninggatan%2C+Stockholm%2C+Sweden",
+      "notes": "Pedestrian shopping street.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "EVERT",
+      "name": "Evert Taubes Terrass",
+      "query": "Evert Taubes Terrass, Stockholm, Sweden",
+      "type": "Viewpoint",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden",
+      "notes": "Chosen as the exact waypoint for 'Riddarholmen waterfront'.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "SKEPPSHOLMSBRON",
+      "name": "Skeppsholmsbron",
+      "query": "Skeppsholmsbron, Stockholm, Sweden",
+      "type": "Bridge",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsholmsbron%2C+Stockholm%2C+Sweden",
+      "notes": "Bridge with golden crown views.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "SKEPPSHOLMEN",
+      "name": "Skeppsholmen",
+      "query": "Skeppsholmen, Stockholm, Sweden",
+      "type": "Area",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsholmen%2C+Stockholm%2C+Sweden",
+      "notes": "Island walking waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "KASTELL",
+      "name": "Kastellet Stockholm",
+      "query": "Kastellet, Kastellholmen, Stockholm, Sweden",
+      "type": "Landmark",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kastellet%2C+Kastellholmen%2C+Stockholm%2C+Sweden",
+      "notes": "Exact anchor for Kastellholmen.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "ARKDES",
+      "name": "ArkDes",
+      "query": "ArkDes, Exercisplan 4, Stockholm, Sweden",
+      "type": "Museum/Design",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ArkDes%2C+Exercisplan+4%2C+Stockholm%2C+Sweden",
+      "notes": "Optional architecture/design stop.",
+      "sourceUrl": "https://arkdes.se/en/"
+    },
+    {
+      "id": "DRAMATEN",
+      "name": "Royal Dramatic Theatre",
+      "query": "Dramaten, Nybroplan, Stockholm, Sweden",
+      "type": "Landmark",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Dramaten%2C+Nybroplan%2C+Stockholm%2C+Sweden",
+      "notes": "Exterior stop.",
+      "sourceUrl": "https://www.dramaten.se/"
+    },
+    {
+      "id": "SVENSKT",
+      "name": "Svenskt Tenn",
+      "query": "Svenskt Tenn, Strandvägen 5, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Svenskt+Tenn%2C+Strandv%C3%A4gen+5%2C+Stockholm%2C+Sweden",
+      "notes": "Swedish design store.",
+      "sourceUrl": "https://www.svenskttenn.com/"
+    },
+    {
+      "id": "STRANDVAGEN",
+      "name": "Strandvägen",
+      "query": "Strandvägen, Stockholm, Sweden",
+      "type": "Waterfront street",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Strandv%C3%A4gen%2C+Stockholm%2C+Sweden",
+      "notes": "Scenic boulevard waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "VASA",
+      "name": "Vasa Museum",
+      "query": "Vasamuseet, Galärvarvsvägen 14, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C+Gal%C3%A4rvarvsv%C3%A4gen+14%2C+Stockholm%2C+Sweden",
+      "notes": "Official visiting address.",
+      "sourceUrl": "https://www.vasamuseet.se/en/visit/before-you-visit"
+    },
+    {
+      "id": "NORDISKA",
+      "name": "Nordiska Museet",
+      "query": "Nordiska museet, Djurgårdsvägen 6-16, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+museet%2C+Djurg%C3%A5rdsv%C3%A4gen+6-16%2C+Stockholm%2C+Sweden",
+      "notes": "Official visiting address.",
+      "sourceUrl": "https://www.nordiskamuseet.se/en/visit-us/getting-here/"
+    },
+    {
+      "id": "ABBA",
+      "name": "ABBA The Museum",
+      "query": "ABBA The Museum, Djurgårdsvägen 68, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum%2C+Djurg%C3%A5rdsv%C3%A4gen+68%2C+Stockholm%2C+Sweden",
+      "notes": "Timed-ticket attraction.",
+      "sourceUrl": "https://abbathemuseum.com/en/plan-your-visit"
+    },
+    {
+      "id": "GRONA",
+      "name": "Gröna Lund",
+      "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+      "type": "Amusement park",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden",
+      "notes": "Weather/operating-hours dependent.",
+      "sourceUrl": "https://www.gronalund.com/"
+    },
+    {
+      "id": "ALLMANNA",
+      "name": "Allmänna gränd ferry stop",
+      "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+      "type": "Transit",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden",
+      "notes": "Djurgården ferry boarding point.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "SLUSSEN",
+      "name": "Slussen",
+      "query": "Slussen, Stockholm, Sweden",
+      "type": "Transit/Area",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden",
+      "notes": "Central interchange and walking waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "NOBEL",
+      "name": "Nobel Prize Museum",
+      "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden",
+      "notes": "Sunday opening attraction.",
+      "sourceUrl": "https://www.nobelprizemuseum.se/en/plan-your-visit/"
+    },
+    {
+      "id": "STROMKAJEN",
+      "name": "Strömkajen",
+      "query": "Strömkajen, Stockholm, Sweden",
+      "type": "Harbour/Transit",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Str%C3%B6mkajen%2C+Stockholm%2C+Sweden",
+      "notes": "Vaxholm boat departure area.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "VAXHOLM",
+      "name": "Vaxholm Harbour",
+      "query": "Vaxholm Gästhamn, Vaxholm, Sweden",
+      "type": "Harbour/Town",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vaxholm+G%C3%A4sthamn%2C+Vaxholm%2C+Sweden",
+      "notes": "Exact anchor for Vaxholm exploration.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "SKANSEN",
+      "name": "Skansen",
+      "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+      "type": "Museum/Open-air",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden",
+      "notes": "Main entrance destination.",
+      "sourceUrl": "https://www.skansen.se/"
+    },
+    {
+      "id": "VIKING",
+      "name": "The Viking Museum",
+      "query": "The Viking Museum, Djurgårdsstrand 15, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=The+Viking+Museum%2C+Djurg%C3%A5rdsstrand+15%2C+Stockholm%2C+Sweden",
+      "notes": "Rainy-day indoor attraction.",
+      "sourceUrl": "https://thevikingmuseum.com/"
+    },
+    {
+      "id": "FOTO",
+      "name": "Fotografiska Stockholm",
+      "query": "Fotografiska Stockholm, Stadsgårdshamnen 22, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm%2C+Stadsg%C3%A5rdshamnen+22%2C+Stockholm%2C+Sweden",
+      "notes": "Indoor rainy-day attraction.",
+      "sourceUrl": "https://stockholm.fotografiska.com/"
+    },
+    {
+      "id": "ARMOURY",
+      "name": "The Royal Armoury",
+      "query": "Livrustkammaren, Slottsbacken 3, Stockholm, Sweden",
+      "type": "Museum",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Livrustkammaren%2C+Slottsbacken+3%2C+Stockholm%2C+Sweden",
+      "notes": "Royal Palace complex.",
+      "sourceUrl": "https://livrustkammaren.se/en/"
+    },
+    {
+      "id": "STORKYRKAN",
+      "name": "Storkyrkan",
+      "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+      "type": "Church",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden",
+      "notes": "Stockholm Cathedral.",
+      "sourceUrl": "https://www.svenskakyrkan.se/stockholmsdomkyrkoforsamling/visiting"
+    },
+    {
+      "id": "FJALL",
+      "name": "Fjällgatan viewpoint",
+      "query": "Fjällgatan, Stockholm, Sweden",
+      "type": "Viewpoint",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fj%C3%A4llgatan%2C+Stockholm%2C+Sweden",
+      "notes": "Panoramic Södermalm stop.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "NYTORGET",
+      "name": "Nytorget",
+      "query": "Nytorget, Stockholm, Sweden",
+      "type": "Square/SoFo",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nytorget%2C+Stockholm%2C+Sweden",
+      "notes": "Exact anchor for 'SoFo/Nytorget'.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "MARIATORGET",
+      "name": "Mariatorget",
+      "query": "Mariatorget, Stockholm, Sweden",
+      "type": "Square",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Mariatorget%2C+Stockholm%2C+Sweden",
+      "notes": "Södermalm waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "MONTELIUS",
+      "name": "Monteliusvägen",
+      "query": "Monteliusvägen, Stockholm, Sweden",
+      "type": "Viewpoint/Walk",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen%2C+Stockholm%2C+Sweden",
+      "notes": "Panoramic walking path.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "GOTGATAN",
+      "name": "Götgatan",
+      "query": "Götgatan 31, Stockholm, Sweden",
+      "type": "Street/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=G%C3%B6tgatan+31%2C+Stockholm%2C+Sweden",
+      "notes": "Exact anchor for Götgatan/design-shopping section.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "NORD_GALL",
+      "name": "Nordiska Galleriet 1912",
+      "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden",
+      "notes": "Premium Scandinavian furniture/design.",
+      "sourceUrl": "https://www.nordiskagalleriet.se/"
+    },
+    {
+      "id": "NORRGAVEL",
+      "name": "Norrgavel Stockholm",
+      "query": "Norrgavel, Birger Jarlsgatan 27, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrgavel%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden",
+      "notes": "Interior/furniture store.",
+      "sourceUrl": "https://norrgavel.com/"
+    },
+    {
+      "id": "OSCAR",
+      "name": "Oscar & Clothilde",
+      "query": "Oscar & Clothilde, Birger Jarlsgatan 27, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Oscar+%26+Clothilde%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden",
+      "notes": "Interior/design store.",
+      "sourceUrl": "https://www.oscarclothilde.com/"
+    },
+    {
+      "id": "STUREPLAN",
+      "name": "Stureplan",
+      "query": "Stureplan, Stockholm, Sweden",
+      "type": "Square/Area",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stureplan%2C+Stockholm%2C+Sweden",
+      "notes": "Östermalm city-life waypoint.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "BIBLIO",
+      "name": "Biblioteksgatan",
+      "query": "Biblioteksgatan, Stockholm, Sweden",
+      "type": "Street/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Biblioteksgatan%2C+Stockholm%2C+Sweden",
+      "notes": "Boutique street.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "IKEA",
+      "name": "IKEA City Stockholm – Gallerian",
+      "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+      "type": "Design/Shopping",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden",
+      "notes": "Central IKEA store.",
+      "sourceUrl": "https://www.ikea.com/se/en/stores/stockholm-gallerian/"
+    },
+    {
+      "id": "GALLERIAN",
+      "name": "Gallerian",
+      "query": "Gallerian, Hamngatan 37, Stockholm, Sweden",
+      "type": "Shopping centre",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden",
+      "notes": "Indoor weather fallback.",
+      "sourceUrl": "https://www.gallerian.se/"
+    },
+    {
+      "id": "CAFE_GAMLA",
+      "name": "Gamla Stan café / indoor break",
+      "query": "Stortorget, Stockholm, Sweden",
+      "type": "Flexible break",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+Stockholm%2C+Sweden",
+      "notes": "Not a fixed café; maps to Stortorget as the central fallback anchor.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "MARSTA",
+      "name": "Märsta station",
+      "query": "Märsta station, Märsta, Sweden",
+      "type": "Transit",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden",
+      "notes": "Airport budget-route transfer.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "ARLANDA",
+      "name": "Stockholm Arlanda Airport",
+      "query": "Stockholm Arlanda Airport, Sweden",
+      "type": "Airport",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden",
+      "notes": "ARN airport.",
+      "sourceUrl": "https://www.swedavia.com/arlanda/"
+    }
+  ],
+  "days": [
+    {
+      "day": 1,
+      "date": "2026-09-11",
+      "goCity": "none",
+      "weatherPlans": [
+        {
+          "weather": "Good",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Arrival",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "Flight lands 09:05; luggage/drop before sightseeing.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Gamla Stan medieval walk",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "PRASTGATAN",
+                  "name": "Prästgatan",
+                  "query": "Prästgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Pr%C3%A4stgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "MARTEN",
+                  "name": "Mårten Trotzigs gränd",
+                  "query": "Mårten Trotzigs gränd, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A5rten+Trotzigs+gr%C3%A4nd%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "JARNTORGET",
+                  "name": "Järntorget",
+                  "query": "Järntorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=J%C3%A4rntorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "SKEPPSBRON",
+                  "name": "Skeppsbron",
+                  "query": "Skeppsbron, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsbron%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Royal centre & Norrmalm",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "NORRBRO",
+                  "name": "Norrbro",
+                  "query": "Norrbro, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "OPERA",
+                  "name": "Royal Swedish Opera",
+                  "query": "Kungliga Operan, Gustav Adolfs torg 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+Operan%2C+Gustav+Adolfs+torg+2%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "NK",
+                  "name": "NK Stockholm",
+                  "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "SERGELS",
+                  "name": "Sergels torg",
+                  "query": "Sergels torg, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Sergels+torg%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 8,
+                  "stopId": "DROTTNING",
+                  "name": "Drottninggatan",
+                  "query": "Drottninggatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Drottninggatan%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 4,
+              "name": "Riddarholmen & evening return",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "DROTTNING",
+                  "name": "Drottninggatan",
+                  "query": "Drottninggatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Drottninggatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "EVERT",
+                  "name": "Evert Taubes Terrass",
+                  "query": "Evert Taubes Terrass, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Mixed",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Arrival",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Gamla Stan & royal centre",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "PRASTGATAN",
+                  "name": "Prästgatan",
+                  "query": "Prästgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Pr%C3%A4stgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "NORRBRO",
+                  "name": "Norrbro",
+                  "query": "Norrbro, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Indoor/outdoor flexible centre",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Use NK/design stops during showers; Evert Taubes Terrass only if dry.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NK",
+                  "name": "NK Stockholm",
+                  "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SERGELS",
+                  "name": "Sergels torg",
+                  "query": "Sergels torg, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Sergels+torg%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "DROTTNING",
+                  "name": "Drottninggatan",
+                  "query": "Drottninggatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Drottninggatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "EVERT",
+                  "name": "Evert Taubes Terrass",
+                  "query": "Evert Taubes Terrass, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Heavy rain",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Arrival",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Short historic core",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "NORRBRO",
+                  "name": "Norrbro",
+                  "query": "Norrbro, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "NK",
+                  "name": "NK Stockholm",
+                  "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Indoor Norrmalm fallback",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "IKEA optional; keep for Day 5 if conditions improve.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "NK",
+                  "name": "NK Stockholm",
+                  "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "GALLERIAN",
+                  "name": "Gallerian",
+                  "query": "Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "CAFE_GAMLA",
+                  "name": "Gamla Stan café / indoor break",
+                  "query": "Stortorget, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "date": "2026-09-12",
+      "goCity": "day-1",
+      "weatherPlans": [
+        {
+          "weather": "Good",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Scenic walk to design district",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SKEPPSBRON",
+                  "name": "Skeppsbron",
+                  "query": "Skeppsbron, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsbron%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SKEPPSHOLMSBRON",
+                  "name": "Skeppsholmsbron",
+                  "query": "Skeppsholmsbron, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsholmsbron%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "SKEPPSHOLMEN",
+                  "name": "Skeppsholmen",
+                  "query": "Skeppsholmen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsholmen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "KASTELL",
+                  "name": "Kastellet Stockholm",
+                  "query": "Kastellet, Kastellholmen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kastellet%2C+Kastellholmen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "ARKDES",
+                  "name": "ArkDes",
+                  "query": "ArkDes, Exercisplan 4, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ArkDes%2C+Exercisplan+4%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "DRAMATEN",
+                  "name": "Royal Dramatic Theatre",
+                  "query": "Dramaten, Nybroplan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Dramaten%2C+Nybroplan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 8,
+                  "stopId": "SVENSKT",
+                  "name": "Svenskt Tenn",
+                  "query": "Svenskt Tenn, Strandvägen 5, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Svenskt+Tenn%2C+Strandv%C3%A4gen+5%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 9,
+                  "stopId": "STRANDVAGEN",
+                  "name": "Strandvägen",
+                  "query": "Strandvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Strandv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Djurgården museums",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STRANDVAGEN",
+                  "name": "Strandvägen",
+                  "query": "Strandvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Strandv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "VASA",
+                  "name": "Vasa Museum",
+                  "query": "Vasamuseet, Galärvarvsvägen 14, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C+Gal%C3%A4rvarvsv%C3%A4gen+14%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "NORDISKA",
+                  "name": "Nordiska Museet",
+                  "query": "Nordiska museet, Djurgårdsvägen 6-16, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+museet%2C+Djurg%C3%A5rdsv%C3%A4gen+6-16%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "ABBA",
+                  "name": "ABBA The Museum",
+                  "query": "ABBA The Museum, Djurgårdsvägen 68, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum%2C+Djurg%C3%A5rdsv%C3%A4gen+68%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Ferry home",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Mixed",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Weather-flex scenic approach",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Use outdoor legs during dry periods.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SKEPPSBRON",
+                  "name": "Skeppsbron",
+                  "query": "Skeppsbron, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsbron%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SKEPPSHOLMEN",
+                  "name": "Skeppsholmen",
+                  "query": "Skeppsholmen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsholmen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "ARKDES",
+                  "name": "ArkDes",
+                  "query": "ArkDes, Exercisplan 4, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ArkDes%2C+Exercisplan+4%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "SVENSKT",
+                  "name": "Svenskt Tenn",
+                  "query": "Svenskt Tenn, Strandvägen 5, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Svenskt+Tenn%2C+Strandv%C3%A4gen+5%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "STRANDVAGEN",
+                  "name": "Strandvägen",
+                  "query": "Strandvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Strandv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Museums & weather check",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Gröna Lund only if conditions are reasonable.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STRANDVAGEN",
+                  "name": "Strandvägen",
+                  "query": "Strandvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Strandv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "VASA",
+                  "name": "Vasa Museum",
+                  "query": "Vasamuseet, Galärvarvsvägen 14, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C+Gal%C3%A4rvarvsv%C3%A4gen+14%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "NORDISKA",
+                  "name": "Nordiska Museet",
+                  "query": "Nordiska museet, Djurgårdsvägen 6-16, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+museet%2C+Djurg%C3%A5rdsv%C3%A4gen+6-16%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "ABBA",
+                  "name": "ABBA The Museum",
+                  "query": "ABBA The Museum, Djurgårdsvägen 68, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum%2C+Djurg%C3%A5rdsv%C3%A4gen+68%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Return",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Heavy rain",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Direct to Djurgården",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "VASA",
+                  "name": "Vasa Museum",
+                  "query": "Vasamuseet, Galärvarvsvägen 14, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C+Gal%C3%A4rvarvsv%C3%A4gen+14%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Indoor Djurgården circuit",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Gröna Lund only if weather improves.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "VASA",
+                  "name": "Vasa Museum",
+                  "query": "Vasamuseet, Galärvarvsvägen 14, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vasamuseet%2C+Gal%C3%A4rvarvsv%C3%A4gen+14%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NORDISKA",
+                  "name": "Nordiska Museet",
+                  "query": "Nordiska museet, Djurgårdsvägen 6-16, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+museet%2C+Djurg%C3%A5rdsv%C3%A4gen+6-16%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ABBA",
+                  "name": "ABBA The Museum",
+                  "query": "ABBA The Museum, Djurgårdsvägen 68, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=ABBA+The+Museum%2C+Djurg%C3%A5rdsv%C3%A4gen+68%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "VIKING",
+                  "name": "The Viking Museum",
+                  "query": "The Viking Museum, Djurgårdsstrand 15, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=The+Viking+Museum%2C+Djurg%C3%A5rdsstrand+15%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Return",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "GRONA",
+                  "name": "Gröna Lund",
+                  "query": "Gröna Lund, Lilla Allmänna Gränd 9, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gr%C3%B6na+Lund%2C+Lilla+Allm%C3%A4nna+Gr%C3%A4nd+9%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 3,
+      "date": "2026-09-13",
+      "goCity": "day-2",
+      "weatherPlans": [
+        {
+          "weather": "Good",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Nobel to boat",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NOBEL",
+                  "name": "Nobel Prize Museum",
+                  "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "STROMKAJEN",
+                  "name": "Strömkajen",
+                  "query": "Strömkajen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Str%C3%B6mkajen%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Archipelago & Vaxholm",
+              "mode": "Boat/Walking",
+              "conditional": true,
+              "notes": "Return boat is timetable-dependent; optional swim is not a fixed Maps waypoint.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STROMKAJEN",
+                  "name": "Strömkajen",
+                  "query": "Strömkajen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Str%C3%B6mkajen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "VAXHOLM",
+                  "name": "Vaxholm Harbour",
+                  "query": "Vaxholm Gästhamn, Vaxholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vaxholm+G%C3%A4sthamn%2C+Vaxholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Evening waterfront return",
+              "mode": "Boat/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "VAXHOLM",
+                  "name": "Vaxholm Harbour",
+                  "query": "Vaxholm Gästhamn, Vaxholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Vaxholm+G%C3%A4sthamn%2C+Vaxholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "STROMKAJEN",
+                  "name": "Strömkajen",
+                  "query": "Strömkajen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Str%C3%B6mkajen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "STORTORGET",
+                  "name": "Stortorget",
+                  "query": "Stortorget, 111 29 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Mixed",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Nobel",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NOBEL",
+                  "name": "Nobel Prize Museum",
+                  "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Skansen day",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "NOBEL",
+                  "name": "Nobel Prize Museum",
+                  "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Ferry home",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Heavy rain",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Nobel",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NOBEL",
+                  "name": "Nobel Prize Museum",
+                  "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Indoor Go City circuit",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "NOBEL",
+                  "name": "Nobel Prize Museum",
+                  "query": "Nobel Prize Museum, Stortorget 2, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nobel+Prize+Museum%2C+Stortorget+2%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "VIKING",
+                  "name": "The Viking Museum",
+                  "query": "The Viking Museum, Djurgårdsstrand 15, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=The+Viking+Museum%2C+Djurg%C3%A5rdsstrand+15%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "FOTO",
+                  "name": "Fotografiska Stockholm",
+                  "query": "Fotografiska Stockholm, Stadsgårdshamnen 22, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm%2C+Stadsg%C3%A5rdshamnen+22%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Return",
+              "mode": "Walking/Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "FOTO",
+                  "name": "Fotografiska Stockholm",
+                  "query": "Fotografiska Stockholm, Stadsgårdshamnen 22, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm%2C+Stadsg%C3%A5rdshamnen+22%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-09-14",
+      "goCity": "day-3",
+      "weatherPlans": [
+        {
+          "weather": "Good",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Royal cluster",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARMOURY",
+                  "name": "The Royal Armoury",
+                  "query": "Livrustkammaren, Slottsbacken 3, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Livrustkammaren%2C+Slottsbacken+3%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Skansen",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Södermalm evening walk",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "FJALL",
+                  "name": "Fjällgatan viewpoint",
+                  "query": "Fjällgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fj%C3%A4llgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "NYTORGET",
+                  "name": "Nytorget",
+                  "query": "Nytorget, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nytorget%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "MARIATORGET",
+                  "name": "Mariatorget",
+                  "query": "Mariatorget, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Mariatorget%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "MONTELIUS",
+                  "name": "Monteliusvägen",
+                  "query": "Monteliusvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 8,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Mixed",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Royal cluster",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARMOURY",
+                  "name": "The Royal Armoury",
+                  "query": "Livrustkammaren, Slottsbacken 3, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Livrustkammaren%2C+Slottsbacken+3%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Skansen",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Viewpoints if clear",
+              "mode": "Transit/Walking",
+              "conditional": true,
+              "notes": "Fjällgatan/Monteliusvägen conditional on visibility/weather.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "SKANSEN",
+                  "name": "Skansen",
+                  "query": "Skansen, Djurgårdsslätten 49-51, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skansen%2C+Djurg%C3%A5rdssl%C3%A4tten+49-51%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "ALLMANNA",
+                  "name": "Allmänna gränd ferry stop",
+                  "query": "Allmänna gränd ferry terminal, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Allm%C3%A4nna+gr%C3%A4nd+ferry+terminal%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "FJALL",
+                  "name": "Fjällgatan viewpoint",
+                  "query": "Fjällgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fj%C3%A4llgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "MONTELIUS",
+                  "name": "Monteliusvägen",
+                  "query": "Monteliusvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Heavy rain",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Royal cluster",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "PALACE",
+                  "name": "The Royal Palace",
+                  "query": "Kungliga slottet, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARMOURY",
+                  "name": "The Royal Armoury",
+                  "query": "Livrustkammaren, Slottsbacken 3, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Livrustkammaren%2C+Slottsbacken+3%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Fotografiska & Götgatan",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "STORKYRKAN",
+                  "name": "Storkyrkan",
+                  "query": "Storkyrkan, Trångsund 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Storkyrkan%2C+Tr%C3%A5ngsund+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "FOTO",
+                  "name": "Fotografiska Stockholm",
+                  "query": "Fotografiska Stockholm, Stadsgårdshamnen 22, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fotografiska+Stockholm%2C+Stadsg%C3%A5rdshamnen+22%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "GOTGATAN",
+                  "name": "Götgatan",
+                  "query": "Götgatan 31, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=G%C3%B6tgatan+31%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Conditional viewpoint & home",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Monteliusvägen only if weather improves.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "GOTGATAN",
+                  "name": "Götgatan",
+                  "query": "Götgatan 31, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=G%C3%B6tgatan+31%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MONTELIUS",
+                  "name": "Monteliusvägen",
+                  "query": "Monteliusvägen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "day": 5,
+      "date": "2026-09-15",
+      "goCity": "none",
+      "weatherPlans": [
+        {
+          "weather": "Good",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Morning historic-to-Östermalm walk",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "EVERT",
+                  "name": "Evert Taubes Terrass",
+                  "query": "Evert Taubes Terrass, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "NORD_GALL",
+                  "name": "Nordiska Galleriet 1912",
+                  "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Design & boutiques",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "NORD_GALL",
+                  "name": "Nordiska Galleriet 1912",
+                  "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NORRGAVEL",
+                  "name": "Norrgavel Stockholm",
+                  "query": "Norrgavel, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrgavel%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "OSCAR",
+                  "name": "Oscar & Clothilde",
+                  "query": "Oscar & Clothilde, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Oscar+%26+Clothilde%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "STUREPLAN",
+                  "name": "Stureplan",
+                  "query": "Stureplan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stureplan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "BIBLIO",
+                  "name": "Biblioteksgatan",
+                  "query": "Biblioteksgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Biblioteksgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Final waterfront & luggage",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "EVERT",
+                  "name": "Evert Taubes Terrass",
+                  "query": "Evert Taubes Terrass, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 4,
+              "name": "Airport",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "Leave central Stockholm around 16:15.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Mixed",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Design district",
+              "mode": "Walking/Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NORD_GALL",
+                  "name": "Nordiska Galleriet 1912",
+                  "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "NORRGAVEL",
+                  "name": "Norrgavel Stockholm",
+                  "query": "Norrgavel, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrgavel%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "OSCAR",
+                  "name": "Oscar & Clothilde",
+                  "query": "Oscar & Clothilde, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Oscar+%26+Clothilde%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "STUREPLAN",
+                  "name": "Stureplan",
+                  "query": "Stureplan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stureplan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "BIBLIO",
+                  "name": "Biblioteksgatan",
+                  "query": "Biblioteksgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Biblioteksgatan%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "IKEA & conditional final walk",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Outdoor section only when weather improves.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BIBLIO",
+                  "name": "Biblioteksgatan",
+                  "query": "Biblioteksgatan, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Biblioteksgatan%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "KUNGSTRAD",
+                  "name": "Kungsträdgården",
+                  "query": "Kungsträdgården, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "RIKSDAG",
+                  "name": "Riksdagshuset",
+                  "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "EVERT",
+                  "name": "Evert Taubes Terrass",
+                  "query": "Evert Taubes Terrass, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Evert+Taubes+Terrass%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Airport",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "Leave around 16:15.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "weather": "Heavy rain",
+          "segments": [
+            {
+              "segmentNumber": 1,
+              "name": "Indoor design route",
+              "mode": "Transit/Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "NORD_GALL",
+                  "name": "Nordiska Galleriet 1912",
+                  "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "NORRGAVEL",
+                  "name": "Norrgavel Stockholm",
+                  "query": "Norrgavel, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrgavel%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "OSCAR",
+                  "name": "Oscar & Clothilde",
+                  "query": "Oscar & Clothilde, Birger Jarlsgatan 27, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Oscar+%26+Clothilde%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 5,
+                  "stopId": "NK",
+                  "name": "NK Stockholm",
+                  "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 6,
+                  "stopId": "GALLERIAN",
+                  "name": "Gallerian",
+                  "query": "Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 7,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Café & luggage",
+              "mode": "Walking/Transit",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "IKEA",
+                  "name": "IKEA City Stockholm – Gallerian",
+                  "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=IKEA+Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "CAFE_GAMLA",
+                  "name": "Gamla Stan café / indoor break",
+                  "query": "Stortorget, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 3,
+              "name": "Airport",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "Leave around 16:15.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "HOTEL",
+                  "name": "Stora Nygatan 17",
+                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "MARSTA",
+                  "name": "Märsta station",
+                  "query": "Märsta station, Märsta, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
+                },
+                {
+                  "order": 3,
+                  "stopId": "ARLANDA",
+                  "name": "Stockholm Arlanda Airport",
+                  "query": "Stockholm Arlanda Airport, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
