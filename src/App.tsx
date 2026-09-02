@@ -9,6 +9,11 @@ import {
   type AttractionFilters,
 } from "./attractionFilters";
 import { getPlan } from "./data/navigation";
+import { isoDateForTripDay } from "./date";
+import {
+  defaultEventFilters,
+  type EventFilters,
+} from "./eventFilters";
 import {
   clearPlanProgress,
   firstIncompleteSegment,
@@ -36,6 +41,10 @@ export default function App() {
   const [attractionFilters, setAttractionFilters] = useState<AttractionFilters>(
     DEFAULT_ATTRACTION_FILTERS,
   );
+  const [eventFilters, setEventFilters] = useState<EventFilters>(() =>
+    defaultEventFilters(isoDateForTripDay(boot.day)),
+  );
+  const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
 
   const progressRef = useRef({ completed, currentByPlan });
   progressRef.current = { completed, currentByPlan };
@@ -182,7 +191,13 @@ export default function App() {
             onChange={setAttractionFilters}
           />
         ) : (
-          <EventsView itineraryDay={day} />
+          <EventsView
+            itineraryDay={day}
+            filters={eventFilters}
+            filtersOpen={eventFiltersOpen}
+            onChange={setEventFilters}
+            onToggleFilters={() => setEventFiltersOpen((open) => !open)}
+          />
         )}
       </main>
       {tab === "itinerary" && currentSegment && currentPlan ? (

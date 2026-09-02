@@ -53,6 +53,10 @@ export function getEventAreas(): string[] {
   return uniqueSorted(eventsData.events.map((item) => item.area));
 }
 
+export function getEventDates(): string[] {
+  return uniqueSorted(eventsData.events.map((item) => item.date));
+}
+
 export function getEventCategories(): string[] {
   return uniqueSorted(eventsData.events.map((item) => item.category));
 }

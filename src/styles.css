@@ -662,12 +662,18 @@ body {
   font-size: 0.88rem;
 }
 
-.empty-attractions {
+.empty-attractions,
+.empty-events {
   padding: 1.5rem 0.25rem;
   text-align: center;
 }
 
-.empty-attractions p {
+.empty-events {
+  padding-bottom: 2.5rem;
+}
+
+.empty-attractions p,
+.empty-events p {
   margin-bottom: 0.75rem;
 }
 
@@ -750,6 +756,22 @@ body {
   background: #eeeae1;
   color: #3f3c38;
   font-size: 0.82rem;
+}
+
+.event-date-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
+}
+
+.event-date-chips .access-chip {
+  flex: 1 1 calc(33.33% - 0.35rem);
+  min-width: 4.4rem;
+}
+
+.events-filters .filters-toolbar {
+  grid-template-columns: 1fr;
 }
 
 .event-list {

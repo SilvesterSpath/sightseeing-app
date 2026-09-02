@@ -28,6 +28,12 @@ export function formatChipDate(isoDate: string): string {
   });
 }
 
+export function formatEventDateChip(isoDate: string): string {
+  const date = dateFromIso(isoDate);
+  const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
+  return `${weekday} ${date.getDate()}`;
+}
+
 export function formatEventDayHeading(isoDate: string): string {
   const date = dateFromIso(isoDate);
   const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
