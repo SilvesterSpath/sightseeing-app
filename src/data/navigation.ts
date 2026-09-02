@@ -7,7 +7,7 @@ import type {
   WeatherPlan,
 } from "../types/navigation";
 
-const WEATHERS = ["Good", "Mixed", "Heavy rain"] as const;
+export const WEATHERS = ["Good", "Mixed", "Heavy rain"] as const;
 const MODES = [
   "Walking",
   "Transit",
