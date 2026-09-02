@@ -15,14 +15,36 @@ export function defaultTripDay(): number {
   return match?.day ?? navigationData.days[0]?.day ?? 1;
 }
 
-export function formatChipDate(isoDate: string): string {
+function dateFromIso(isoDate: string): Date {
   const [year, month, day] = isoDate.split("-").map(Number);
-  const date = new Date(year, month - 1, day);
-  return date.toLocaleDateString("en-GB", {
+  return new Date(year, month - 1, day);
+}
+
+export function formatChipDate(isoDate: string): string {
+  return dateFromIso(isoDate).toLocaleDateString("en-GB", {
     weekday: "short",
     day: "numeric",
     month: "short",
   });
+}
+
+export function formatEventDayHeading(isoDate: string): string {
+  const date = dateFromIso(isoDate);
+  const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
+  const month = date.toLocaleDateString("en-US", { month: "short" });
+  return `${weekday} ${month} ${date.getDate()}`;
+}
+
+export function formatResearchedDate(isoDate: string): string {
+  return dateFromIso(isoDate).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+export function isoDateForTripDay(day: number): string {
+  return getDay(day)?.date ?? navigationData.days[0]?.date ?? "";
 }
 
 export function isValidDay(day: number): boolean {

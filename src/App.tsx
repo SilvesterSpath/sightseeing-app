@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import AppTabs from "./components/AppTabs";
 import AttractionsView from "./components/attractions/AttractionsView";
+import EventsView from "./components/events/EventsView";
 import CurrentSegmentBar from "./components/itinerary/CurrentSegmentBar";
 import ItineraryView from "./components/itinerary/ItineraryView";
 import {
@@ -175,11 +176,13 @@ export default function App() {
             onToggleComplete={handleToggleComplete}
             onResetPlan={handleResetPlan}
           />
-        ) : (
+        ) : tab === "attractions" ? (
           <AttractionsView
             filters={attractionFilters}
             onChange={setAttractionFilters}
           />
+        ) : (
+          <EventsView itineraryDay={day} />
         )}
       </main>
       {tab === "itinerary" && currentSegment && currentPlan ? (

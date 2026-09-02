@@ -2,7 +2,7 @@ import { WEATHERS } from "./data/navigation";
 import { defaultTripDay, isValidDay } from "./date";
 import type { Weather } from "./types/navigation";
 
-export type AppTab = "itinerary" | "attractions";
+export type AppTab = "itinerary" | "attractions" | "events";
 
 export interface AppUrlState {
   tab: AppTab;
@@ -15,7 +15,10 @@ const DAY_PARAM = "day";
 const WEATHER_PARAM = "weather";
 
 export function parseTabParam(value: string | null): AppTab {
-  return value === "attractions" ? "attractions" : "itinerary";
+  if (value === "attractions" || value === "events") {
+    return value;
+  }
+  return "itinerary";
 }
 
 export function parseDayParam(value: string | null): number {

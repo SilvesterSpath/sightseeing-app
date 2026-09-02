@@ -82,7 +82,9 @@ export function resolveCurrentSegment(
 }
 
 function isAppTab(value: unknown): value is AppTab {
-  return value === "itinerary" || value === "attractions";
+  return (
+    value === "itinerary" || value === "attractions" || value === "events"
+  );
 }
 
 function isWeather(value: unknown): value is Weather {

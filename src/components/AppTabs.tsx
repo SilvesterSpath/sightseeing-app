@@ -3,6 +3,7 @@ import type { AppTab } from "../urlState";
 const TABS: { id: AppTab; label: string }[] = [
   { id: "itinerary", label: "Itinerary" },
   { id: "attractions", label: "Attractions" },
+  { id: "events", label: "Events" },
 ];
 
 interface AppTabsProps {

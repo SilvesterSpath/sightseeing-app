@@ -19,7 +19,8 @@
     "resolveJsonModule": true,
     "paths": {
       "@navigation-data": ["./stockholm_navigation_data.json"],
-      "@attractions-data": ["./stockholm_attractions.json"]
+      "@attractions-data": ["./stockholm_attractions.json"],
+      "@events-data": ["./stockholm_events.json"]
     }
   },
   "include": ["src"]
