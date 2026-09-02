@@ -8,8 +8,8 @@ import {
 import {
   formatEventDateChip,
   formatEventDayHeading,
-  formatResearchedDate,
   isoDateForTripDay,
+  tripDayForIsoDate,
 } from "../../date";
 import {
   countPanelFilters,
@@ -50,7 +50,7 @@ export default function EventsView({
   );
   const itineraryDate = isoDateForTripDay(itineraryDay);
   const panelCount = countPanelFilters(filters);
-  const { researchedAt, importantNote, recordCount } = eventsData.meta;
+  const { recordCount } = eventsData.meta;
 
   function resetFilters() {
     onChange(defaultEventFilters(itineraryDate));
@@ -66,10 +66,6 @@ export default function EventsView({
           </p>
           <AppMenu />
         </div>
-        <p className="stale-notice" role="note">
-          Event information researched {formatResearchedDate(researchedAt)}.{" "}
-          {importantNote}
-        </p>
         <label className="attractions-search">
           <span className="visually-hidden">Search events</span>
           <input
@@ -85,15 +81,26 @@ export default function EventsView({
         <div className="event-date-chips" role="group" aria-label="Event date">
           {(["All", ...dates] as EventDateFilter[]).map((date) => {
             const selected = filters.date === date;
+            const dayNumber =
+              date === "All" ? undefined : tripDayForIsoDate(date);
             return (
               <button
                 key={date}
                 type="button"
-                className={selected ? "access-chip is-selected" : "access-chip"}
+                className={selected ? "day-chip is-selected" : "day-chip"}
                 aria-pressed={selected}
                 onClick={() => onChange({ ...filters, date })}
               >
-                {date === "All" ? "All" : formatEventDateChip(date)}
+                <span className="day-chip-label">
+                  {date === "All"
+                    ? "All"
+                    : dayNumber !== undefined
+                      ? `Day ${dayNumber}`
+                      : formatEventDateChip(date)}
+                </span>
+                <span className="day-chip-date">
+                  {date === "All" ? "days" : formatEventDateChip(date)}
+                </span>
               </button>
             );
           })}

@@ -749,25 +749,24 @@ body {
   margin-top: 0.45rem;
 }
 
-.stale-notice {
-  margin: 0.55rem 0 0;
-  padding: 0.45rem 0.55rem;
-  border: 1px solid #d9d3c7;
-  background: #eeeae1;
-  color: #3f3c38;
-  font-size: 0.82rem;
-}
-
 .event-date-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.3rem;
   margin: 0 0 0.5rem;
 }
 
-.event-date-chips .access-chip {
-  flex: 1 1 calc(33.33% - 0.35rem);
-  min-width: 4.4rem;
+.event-date-chips .day-chip {
+  min-width: 0;
+  padding: 0.25rem 0.1rem;
+}
+
+.event-date-chips .day-chip-label {
+  font-size: 0.7rem;
+}
+
+.event-date-chips .day-chip-date {
+  font-size: 0.62rem;
 }
 
 .events-filters .filters-toolbar {

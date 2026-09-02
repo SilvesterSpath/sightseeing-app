@@ -41,16 +41,12 @@ export function formatEventDayHeading(isoDate: string): string {
   return `${weekday} ${month} ${date.getDate()}`;
 }
 
-export function formatResearchedDate(isoDate: string): string {
-  return dateFromIso(isoDate).toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric",
-  });
-}
-
 export function isoDateForTripDay(day: number): string {
   return getDay(day)?.date ?? navigationData.days[0]?.date ?? "";
+}
+
+export function tripDayForIsoDate(isoDate: string): number | undefined {
+  return navigationData.days.find((day) => day.date === isoDate)?.day;
 }
 
 export function isValidDay(day: number): boolean {
