@@ -3,6 +3,10 @@ import AppTabs from "./components/AppTabs";
 import AttractionsView from "./components/attractions/AttractionsView";
 import CurrentSegmentBar from "./components/itinerary/CurrentSegmentBar";
 import ItineraryView from "./components/itinerary/ItineraryView";
+import {
+  DEFAULT_ATTRACTION_FILTERS,
+  type AttractionFilters,
+} from "./attractionFilters";
 import { getPlan } from "./data/navigation";
 import type { Weather } from "./types/navigation";
 import { readAppUrl, writeAppUrl, type AppTab } from "./urlState";
@@ -13,6 +17,9 @@ export default function App() {
   const [day, setDay] = useState(initial.day);
   const [weather, setWeather] = useState<Weather>(initial.weather);
   const [currentSegmentNumber, setCurrentSegmentNumber] = useState(1);
+  const [attractionFilters, setAttractionFilters] = useState<AttractionFilters>(
+    DEFAULT_ATTRACTION_FILTERS,
+  );
 
   const currentPlan = useMemo(
     () => getPlan(day, weather),
@@ -62,7 +69,10 @@ export default function App() {
             onSelectSegment={setCurrentSegmentNumber}
           />
         ) : (
-          <AttractionsView />
+          <AttractionsView
+            filters={attractionFilters}
+            onChange={setAttractionFilters}
+          />
         )}
       </main>
       {tab === "itinerary" && currentSegment && currentPlan ? (
