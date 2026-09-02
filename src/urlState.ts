@@ -40,6 +40,23 @@ export function readAppUrl(): AppUrlState {
   };
 }
 
+export function readUrlOverrides(): Partial<AppUrlState> {
+  const params = new URLSearchParams(window.location.search);
+  const overrides: Partial<AppUrlState> = {};
+
+  if (params.has(TAB_PARAM)) {
+    overrides.tab = parseTabParam(params.get(TAB_PARAM));
+  }
+  if (params.has(DAY_PARAM)) {
+    overrides.day = parseDayParam(params.get(DAY_PARAM));
+  }
+  if (params.has(WEATHER_PARAM)) {
+    overrides.weather = parseWeatherParam(params.get(WEATHER_PARAM));
+  }
+
+  return overrides;
+}
+
 export function writeAppUrl(state: AppUrlState): void {
   const url = new URL(window.location.href);
   const next = new URLSearchParams(url.search);

@@ -1,16 +1,25 @@
-import type { Segment } from "../../types/navigation";
+import { isSegmentComplete } from "../../progress";
+import type { Segment, Weather } from "../../types/navigation";
 import SegmentCard from "./SegmentCard";
 
 interface SegmentListProps {
   segments: Segment[];
   currentSegmentNumber: number;
+  completed: ReadonlySet<string>;
+  day: number;
+  weather: Weather;
   onSelectSegment: (segmentNumber: number) => void;
+  onToggleComplete: (segmentNumber: number) => void;
 }
 
 export default function SegmentList({
   segments,
   currentSegmentNumber,
+  completed,
+  day,
+  weather,
   onSelectSegment,
+  onToggleComplete,
 }: SegmentListProps) {
   return (
     <div className="segment-list">
@@ -19,7 +28,14 @@ export default function SegmentList({
           key={segment.segmentNumber}
           segment={segment}
           isCurrent={segment.segmentNumber === currentSegmentNumber}
+          isComplete={isSegmentComplete(
+            completed,
+            day,
+            weather,
+            segment.segmentNumber,
+          )}
           onSelect={() => onSelectSegment(segment.segmentNumber)}
+          onToggleComplete={() => onToggleComplete(segment.segmentNumber)}
         />
       ))}
     </div>

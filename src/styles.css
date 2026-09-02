@@ -8,7 +8,7 @@
     sans-serif;
   line-height: 1.4;
   --tab-bar-height: calc(4.25rem + env(safe-area-inset-bottom, 0px));
-  --current-bar-height: 7.25rem;
+  --current-bar-height: 7.75rem;
 }
 
 * {
@@ -192,13 +192,82 @@ body,
   font-size: 0.88rem;
 }
 
-.optional-chip {
+.optional-chip,
+.done-chip {
   display: inline-block;
   margin: 0.45rem 0 0;
   padding: 0.1rem 0.4rem;
   border: 1px solid #1a1a1a;
   font-size: 0.72rem;
   font-weight: 650;
+}
+
+.done-chip {
+  margin-left: 0.35rem;
+  background: #d7e4d0;
+}
+
+.segment-card.is-complete {
+  background: #eeeae1;
+}
+
+.reset-plan {
+  display: block;
+  margin: 0.55rem 0 0;
+  min-height: 44px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.reset-plan:disabled {
+  opacity: 0.45;
+}
+
+.done-button {
+  width: 100%;
+  margin-top: 0.45rem;
+  min-height: 44px;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #1a1a1a;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 650;
+}
+
+.done-button.is-complete {
+  background: #d7e4d0;
+}
+
+.current-segment-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.4rem;
+  align-items: stretch;
+}
+
+.current-segment-actions .maps-actions {
+  margin-top: 0;
+  min-width: 0;
+}
+
+.done-button.is-compact {
+  width: auto;
+  min-width: 4.75rem;
+  margin-top: 0;
+  background: #f4f1ea;
+  color: #1a1a1a;
+}
+
+.done-button.is-compact.is-complete {
+  background: #d7e4d0;
 }
 
 .segment-notes {

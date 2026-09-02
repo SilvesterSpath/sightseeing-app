@@ -5,20 +5,29 @@ import StopRow from "./StopRow";
 interface SegmentCardProps {
   segment: Segment;
   isCurrent: boolean;
+  isComplete: boolean;
   onSelect: () => void;
+  onToggleComplete: () => void;
 }
 
 export default function SegmentCard({
   segment,
   isCurrent,
+  isComplete,
   onSelect,
+  onToggleComplete,
 }: SegmentCardProps) {
   const notes = segment.notes.trim();
+  const classes = [
+    "segment-card",
+    isCurrent ? "is-current" : "",
+    isComplete ? "is-complete" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
-    <article
-      className={isCurrent ? "segment-card is-current" : "segment-card"}
-    >
+    <article className={classes}>
       <header className="segment-card-header">
         <button
           type="button"
@@ -32,6 +41,7 @@ export default function SegmentCard({
         {segment.conditional ? (
           <p className="optional-chip">Optional</p>
         ) : null}
+        {isComplete ? <p className="done-chip">Done</p> : null}
       </header>
       {notes ? <p className="segment-notes">{notes}</p> : null}
       <ol className="stop-list">
@@ -40,6 +50,14 @@ export default function SegmentCard({
         ))}
       </ol>
       <MapsActions segment={segment} />
+      <button
+        type="button"
+        className={isComplete ? "done-button is-complete" : "done-button"}
+        onClick={onToggleComplete}
+        aria-pressed={isComplete}
+      >
+        {isComplete ? "Undo done" : "Mark done"}
+      </button>
     </article>
   );
 }

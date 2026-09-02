@@ -8,9 +8,13 @@ interface ItineraryViewProps {
   day: number;
   weather: Weather;
   currentSegmentNumber: number;
+  completed: ReadonlySet<string>;
+  canReset: boolean;
   onDayChange: (day: number) => void;
   onWeatherChange: (weather: Weather) => void;
   onSelectSegment: (segmentNumber: number) => void;
+  onToggleComplete: (segmentNumber: number) => void;
+  onResetPlan: () => void;
 }
 
 function goCityLabel(goCity: string): string | null {
@@ -24,9 +28,13 @@ export default function ItineraryView({
   day,
   weather,
   currentSegmentNumber,
+  completed,
+  canReset,
   onDayChange,
   onWeatherChange,
   onSelectSegment,
+  onToggleComplete,
+  onResetPlan,
 }: ItineraryViewProps) {
   const { meta, days } = navigationData;
   const selectedDay = days.find((entry) => entry.day === day) ?? days[0];
@@ -56,12 +64,24 @@ export default function ItineraryView({
           onChange={onWeatherChange}
         />
         {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
+        <button
+          type="button"
+          className="reset-plan"
+          onClick={onResetPlan}
+          disabled={!canReset}
+        >
+          Reset this plan
+        </button>
       </header>
 
       <SegmentList
         segments={segments}
         currentSegmentNumber={currentSegmentNumber}
+        completed={completed}
+        day={selectedDay.day}
+        weather={weather}
         onSelectSegment={onSelectSegment}
+        onToggleComplete={onToggleComplete}
       />
     </section>
   );
