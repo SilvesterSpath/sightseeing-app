@@ -18,6 +18,10 @@ function formatWhen(event: TripEvent): string {
   return `${date} · ${event.startTime}`;
 }
 
+export function eventPriceLabel(priceSek: number | null): string | null {
+  return typeof priceSek === "number" ? `${priceSek} SEK` : null;
+}
+
 function displayLanguage(language: string): string | null {
   return language === "Music-led" ? null : language;
 }
@@ -31,8 +35,7 @@ function isTripFitWarning(tripFit: string): boolean {
 export default function EventCard({ event }: EventCardProps) {
   const tripFitRef = useRef<HTMLParagraphElement>(null);
   const [tripFitClamped, setTripFitClamped] = useState(false);
-  const price =
-    typeof event.priceSek === "number" ? `${event.priceSek} SEK` : null;
+  const price = eventPriceLabel(event.priceSek);
   const language = displayLanguage(event.language);
   const notes = event.notes.trim();
   const warning = isTripFitWarning(event.tripFit);

@@ -13,7 +13,7 @@ export default defineConfig({
         name: "Stockholm Trip",
         short_name: "Stockholm",
         description:
-          "11–15 Sep 2026 itinerary and backup attractions, usable offline after the first visit.",
+          "11–15 Sep 2026 itinerary, attractions and events, usable offline after the first visit.",
         theme_color: "#f4f1ea",
         background_color: "#f4f1ea",
         display: "standalone",
