@@ -1,5 +1,6 @@
 import { getPlan, navigationData } from "../../data/navigation";
 import type { Weather } from "../../types/navigation";
+import AppMenu from "../AppMenu";
 import DaySelector from "./DaySelector";
 import SegmentList from "./SegmentList";
 import WeatherSelector from "./WeatherSelector";
@@ -50,10 +51,15 @@ export default function ItineraryView({
   return (
     <section className="pane itinerary-pane" aria-labelledby="itinerary-heading">
       <header className="itinerary-controls">
-        <h1 id="itinerary-heading">Stockholm Trip</h1>
-        <p className="trip-range">
-          {meta.tripStart} – {meta.tripEnd}
-        </p>
+        <div className="pane-heading-row">
+          <div>
+            <h1 id="itinerary-heading">Stockholm Trip</h1>
+            <p className="trip-range">
+              {meta.tripStart} – {meta.tripEnd}
+            </p>
+          </div>
+          <AppMenu />
+        </div>
         <DaySelector
           days={days}
           selectedDay={selectedDay.day}

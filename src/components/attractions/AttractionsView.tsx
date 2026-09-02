@@ -7,6 +7,7 @@ import {
   type AttractionFilters,
 } from "../../attractionFilters";
 import { attractionsData, getAttractions } from "../../data/attractions";
+import AppMenu from "../AppMenu";
 import AttractionCard from "./AttractionCard";
 import AttractionsFilters from "./AttractionsFilters";
 import AttractionsSearch from "./AttractionsSearch";
@@ -44,6 +45,7 @@ export default function AttractionsView({
           <p className="muted result-count">
             {visible.length} of {total}
           </p>
+          <AppMenu />
         </div>
         <AttractionsSearch
           value={filters.search}
