@@ -1,6 +1,6 @@
 import { getPlan, navigationData } from "../../data/navigation";
 import type { Weather } from "../../types/navigation";
-import AppMenu from "../AppMenu";
+import PaneTools from "../PaneTools";
 import DaySelector from "./DaySelector";
 import SegmentList from "./SegmentList";
 import WeatherSelector from "./WeatherSelector";
@@ -58,7 +58,7 @@ export default function ItineraryView({
               {meta.tripStart} – {meta.tripEnd}
             </p>
           </div>
-          <AppMenu />
+          <PaneTools />
         </div>
         <DaySelector
           days={days}

@@ -1,6 +1,7 @@
 :root {
-  color: #1a1a1a;
-  background: #f4f1ea;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
   font-family:
     system-ui,
     -apple-system,
@@ -9,6 +10,60 @@
   line-height: 1.4;
   --tab-bar-height: calc(4.25rem + env(safe-area-inset-bottom, 0px));
   --current-bar-height: 7.75rem;
+  --bg: #f4f1ea;
+  --text: #1a1a1a;
+  --muted: #3f3c38;
+  --card: #faf8f3;
+  --card-complete: #eeeae1;
+  --border: #1a1a1a;
+  --border-soft: #d9d3c7;
+  --border-muted: #c4bfb3;
+  --inverse-bg: #1a1a1a;
+  --inverse-text: #f4f1ea;
+  --inverse-muted: #d9d3c7;
+  --done: #d7e4d0;
+  --paid: #ead7d0;
+  --itinerary-chip: #e4dcc8;
+  --warning: #6b2a1f;
+  --shadow: rgba(26, 26, 26, 0.12);
+  --bar-bg: #1a1a1a;
+  --bar-text: #f4f1ea;
+  --bar-muted: #d9d3c7;
+  --bar-button-bg: #f4f1ea;
+  --bar-button-text: #1a1a1a;
+  --weather-good: #c4a35a;
+  --weather-good-border: #8a6d2e;
+  --weather-mixed: #d18a3a;
+  --weather-mixed-border: #8a5418;
+  --weather-rain: #4a6580;
+  --weather-rain-border: #2d4256;
+  --weather-rain-text: #f4f1ea;
+  --on-weather: #1a1a1a;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #161512;
+  --text: #f4f1ea;
+  --muted: #c4bfb3;
+  --card: #24221e;
+  --card-complete: #1c1b18;
+  --border: #c4bfb3;
+  --border-soft: #3f3c38;
+  --border-muted: #5a564e;
+  --inverse-bg: #f4f1ea;
+  --inverse-text: #1a1a1a;
+  --inverse-muted: #3f3c38;
+  --done: #2d3d28;
+  --paid: #4a302c;
+  --itinerary-chip: #3d3828;
+  --warning: #e8b4a8;
+  --shadow: rgba(0, 0, 0, 0.45);
+  --bar-bg: #24221e;
+  --bar-text: #f4f1ea;
+  --bar-muted: #c4bfb3;
+  --bar-button-bg: #f4f1ea;
+  --bar-button-text: #1a1a1a;
 }
 
 * {
@@ -27,7 +82,7 @@ body,
 }
 
 body {
-  background: #f4f1ea;
+  background: var(--bg);
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: none;
   touch-action: manipulation;
@@ -65,7 +120,7 @@ body {
 
 .trip-range,
 .muted {
-  color: #3f3c38;
+  color: var(--muted);
 }
 
 .pane-heading-row {
@@ -83,7 +138,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #f4f1ea;
+  background: var(--bg);
   padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
   padding-bottom: 0.65rem;
 }
@@ -108,7 +163,7 @@ body {
   min-width: 0;
   min-height: 44px;
   padding: 0.3rem 0.2rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   background: transparent;
 }
 
@@ -125,16 +180,16 @@ body {
 
 .day-chip-date {
   font-size: 0.68rem;
-  color: #3f3c38;
+  color: var(--muted);
 }
 
 .day-chip.is-selected {
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .day-chip.is-selected .day-chip-date {
-  color: #d9d3c7;
+  color: var(--inverse-muted);
 }
 
 .weather-selector {
@@ -149,28 +204,28 @@ body {
 }
 
 .weather-chip[data-weather="Good"].is-selected {
-  background: #c4a35a;
-  border-color: #8a6d2e;
-  color: #1a1a1a;
+  background: var(--weather-good);
+  border-color: var(--weather-good-border);
+  color: var(--on-weather);
 }
 
 .weather-chip[data-weather="Mixed"].is-selected {
-  background: #d18a3a;
-  border-color: #8a5418;
-  color: #1a1a1a;
+  background: var(--weather-mixed);
+  border-color: var(--weather-mixed-border);
+  color: var(--on-weather);
 }
 
 .weather-chip[data-weather="Heavy rain"].is-selected {
-  background: #4a6580;
-  border-color: #2d4256;
-  color: #f4f1ea;
+  background: var(--weather-rain);
+  border-color: var(--weather-rain-border);
+  color: var(--weather-rain-text);
 }
 
 .go-city-badge {
   display: inline-block;
   margin: 0.65rem 0 0;
   padding: 0.15rem 0.45rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   font-size: 0.78rem;
   font-weight: 650;
 }
@@ -183,12 +238,12 @@ body {
 
 .segment-card {
   padding: 0.75rem 0.8rem 0.85rem;
-  border: 1px solid #d9d3c7;
-  background: #faf8f3;
+  border: 1px solid var(--border-soft);
+  background: var(--card);
 }
 
 .segment-card.is-current {
-  border-color: #1a1a1a;
+  border-color: var(--border);
 }
 
 .segment-card-heading {
@@ -214,8 +269,8 @@ body {
   flex-shrink: 0;
   margin: 0;
   padding: 0.1rem 0.4rem;
-  border: 1px solid #c4bfb3;
-  color: #3f3c38;
+  border: 1px solid var(--border-muted);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 650;
   letter-spacing: 0.02em;
@@ -231,7 +286,7 @@ body {
 
 .segment-mode {
   margin: 0;
-  color: #3f3c38;
+  color: var(--muted);
   font-size: 0.88rem;
 }
 
@@ -240,18 +295,18 @@ body {
   display: inline-block;
   margin: 0.45rem 0 0;
   padding: 0.1rem 0.4rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   font-size: 0.72rem;
   font-weight: 650;
 }
 
 .done-chip {
   margin-left: 0.35rem;
-  background: #d7e4d0;
+  background: var(--done);
 }
 
 .segment-card.is-complete {
-  background: #eeeae1;
+  background: var(--card-complete);
 }
 
 .reset-plan {
@@ -259,7 +314,7 @@ body {
   margin: 0.55rem 0 0;
   min-height: 44px;
   padding: 0.35rem 0.6rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
   background: transparent;
   color: inherit;
@@ -277,7 +332,7 @@ body {
   margin-top: 0.45rem;
   min-height: 44px;
   padding: 0.4rem 0.6rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
   background: transparent;
   color: inherit;
@@ -286,7 +341,7 @@ body {
 }
 
 .done-button.is-complete {
-  background: #d7e4d0;
+  background: var(--done);
 }
 
 .current-segment-actions {
@@ -305,12 +360,12 @@ body {
   width: auto;
   min-width: 4.75rem;
   margin-top: 0;
-  background: #f4f1ea;
-  color: #1a1a1a;
+  background: var(--bar-button-bg);
+  color: var(--bar-button-text);
 }
 
 .done-button.is-compact.is-complete {
-  background: #d7e4d0;
+  background: var(--done);
 }
 
 .segment-notes {
@@ -339,7 +394,7 @@ body {
 
 .stop-order {
   flex: 0 0 1.5rem;
-  color: #3f3c38;
+  color: var(--muted);
 }
 
 .stop-name {
@@ -355,8 +410,8 @@ body {
   max-width: 30rem;
   z-index: 4;
   padding: 0.45rem 0.85rem;
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--bar-bg);
+  color: var(--bar-text);
 }
 
 .current-segment-meta {
@@ -364,7 +419,7 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #d9d3c7;
+  color: var(--bar-muted);
 }
 
 .current-segment-name {
@@ -391,8 +446,8 @@ body {
   justify-content: center;
   padding: 0.7rem 0.75rem;
   border-radius: 0.4rem;
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
   font-weight: 650;
   text-align: center;
   text-decoration: none;
@@ -400,8 +455,8 @@ body {
 
 .is-compact .maps-button {
   min-height: 44px;
-  background: #f4f1ea;
-  color: #1a1a1a;
+  background: var(--bar-button-bg);
+  color: var(--bar-button-text);
 }
 
 .maps-part-link {
@@ -425,14 +480,14 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 0.5rem;
   padding: 0.5rem 0.85rem calc(0.5rem + env(safe-area-inset-bottom, 0px));
-  background: #f4f1ea;
-  border-top: 1px solid #d9d3c7;
+  background: var(--bg);
+  border-top: 1px solid var(--border-soft);
 }
 
 .app-tab {
   min-height: 52px;
   padding: 0.35rem 0.25rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   background: transparent;
   font-weight: 600;
   font-size: 0.78rem;
@@ -441,15 +496,15 @@ body {
 }
 
 .app-tab.is-selected {
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .attractions-header {
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #f4f1ea;
+  background: var(--bg);
   padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
   padding-bottom: 0.5rem;
 }
@@ -462,8 +517,8 @@ body {
 
 .attraction-card {
   padding: 0.75rem 0.8rem 0.85rem;
-  border: 1px solid #d9d3c7;
-  background: #faf8f3;
+  border: 1px solid var(--border-soft);
+  background: var(--card);
 }
 
 .attraction-name {
@@ -476,7 +531,7 @@ body {
 .attraction-meta,
 .attraction-facts {
   margin: 0 0 0.4rem;
-  color: #3f3c38;
+  color: var(--muted);
   font-size: 0.86rem;
 }
 
@@ -491,7 +546,7 @@ body {
 
 .attraction-badges li {
   padding: 0.12rem 0.4rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   font-size: 0.7rem;
   font-weight: 650;
   max-width: 100%;
@@ -501,20 +556,20 @@ body {
 }
 
 .attraction-badges li[data-kind="Go City"] {
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .attraction-badges li[data-kind="Free"] {
-  background: #d7e4d0;
+  background: var(--done);
 }
 
 .attraction-badges li[data-kind="Paid"] {
-  background: #ead7d0;
+  background: var(--paid);
 }
 
 .attraction-badges li[data-kind="In itinerary"] {
-  background: #e4dcc8;
+  background: var(--itinerary-chip);
 }
 
 .attraction-notes {
@@ -579,9 +634,10 @@ body {
   width: 100%;
   min-height: 44px;
   padding: 0.55rem 0.7rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
-  background: #faf8f3;
+  background: var(--card);
+  color: inherit;
   font: inherit;
 }
 
@@ -600,7 +656,7 @@ body {
   color: inherit;
   min-height: 44px;
   padding: 0.3rem 0.35rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
   background: transparent;
   font-weight: 650;
@@ -612,8 +668,8 @@ body {
 
 .access-chip.is-selected,
 .filter-chip.is-selected {
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .filters-toolbar {
@@ -634,9 +690,9 @@ body {
 .sort-label select,
 .filter-select select {
   padding: 0.4rem 0.5rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
-  background: #faf8f3;
+  background: var(--card);
 }
 
 .filters-panel {
@@ -708,12 +764,40 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
   color: inherit;
   font-size: 0.82rem;
   font-weight: 650;
   text-decoration: none;
+}
+
+.pane-tools {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.theme-toggle {
+  display: flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.theme-toggle[aria-pressed="true"] {
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .app-menu {
@@ -728,7 +812,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0.3rem 0.55rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
   background: transparent;
   font: inherit;
@@ -743,8 +827,8 @@ body {
 }
 
 .app-menu[open] .app-menu-summary {
-  background: #1a1a1a;
-  color: #f4f1ea;
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
 }
 
 .app-menu-panel {
@@ -754,10 +838,10 @@ body {
   z-index: 6;
   width: min(18.5rem, calc(100vw - 2rem));
   padding: 0.75rem 0.8rem;
-  border: 1px solid #1a1a1a;
+  border: 1px solid var(--border);
   border-radius: 0.4rem;
-  background: #faf8f3;
-  box-shadow: 0 0.4rem 1rem rgba(26, 26, 26, 0.12);
+  background: var(--card);
+  box-shadow: 0 0.4rem 1rem var(--shadow);
 }
 
 .app-menu-panel p {
@@ -820,8 +904,8 @@ body {
   font-size: 0.72rem;
   font-weight: 650;
   padding: 0.1rem 0.4rem;
-  border: 1px solid #1a1a1a;
-  background: #e4dcc8;
+  border: 1px solid var(--border);
+  background: var(--itinerary-chip);
 }
 
 .event-tripfit {
@@ -831,27 +915,27 @@ body {
   line-clamp: 2;
   overflow: hidden;
   margin: 0 0 0.45rem;
-  color: #3f3c38;
+  color: var(--muted);
   font-size: 0.86rem;
 }
 
 .event-tripfit.is-warning {
-  color: #6b2a1f;
+  color: var(--warning);
   font-weight: 650;
 }
 
 .attraction-badges li[data-kind="On sale"] {
-  background: #d7e4d0;
+  background: var(--done);
 }
 
 .attraction-badges li[data-kind="Sold out"] {
-  background: #ead7d0;
+  background: var(--paid);
 }
 
 .attraction-badges li[data-kind="Scheduled"] {
-  background: #e4dcc8;
+  background: var(--itinerary-chip);
 }
 
 .attraction-badges li[data-kind="Verify time"] {
-  background: #ead7d0;
+  background: var(--paid);
 }

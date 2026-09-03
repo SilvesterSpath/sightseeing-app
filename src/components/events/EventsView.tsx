@@ -18,7 +18,7 @@ import {
   type EventDateFilter,
   type EventFilters,
 } from "../../eventFilters";
-import AppMenu from "../AppMenu";
+import PaneTools from "../PaneTools";
 import EmptyEventsState from "./EmptyEventsState";
 import EventCard from "./EventCard";
 import EventsFilters from "./EventsFilters";
@@ -64,7 +64,7 @@ export default function EventsView({
           <p className="muted result-count">
             {visibleCount} of {recordCount}
           </p>
-          <AppMenu />
+          <PaneTools />
         </div>
         <label className="attractions-search">
           <span className="visually-hidden">Search events</span>
