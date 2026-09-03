@@ -31,6 +31,12 @@ import {
 import type { Weather } from "./types/navigation";
 import { readAppUrl, writeAppUrl } from "./urlState";
 
+type DevMapsPanel = ComponentType<{ onClose: () => void }>;
+
+const devMapsLoaders = import.meta.glob<{ default: DevMapsPanel }>(
+  "./dev/DevMapsTest.tsx",
+);
+
 export default function App() {
   const [boot] = useState(hydrateProgress);
   const [tab, setTab] = useState(boot.tab);
@@ -46,9 +52,7 @@ export default function App() {
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
   const [barCollapsed, setBarCollapsed] = useState(readCurrentBarCollapsed);
   const [devMapsOpen, setDevMapsOpen] = useState(false);
-  const [DevMapsPanel, setDevMapsPanel] = useState<ComponentType<{
-    onClose: () => void;
-  }> | null>(null);
+  const [DevMapsPanel, setDevMapsPanel] = useState<DevMapsPanel | null>(null);
 
   const currentPlan = useMemo(
     () => getPlan(day, weather),
@@ -111,7 +115,7 @@ export default function App() {
 
   useEffect(() => {
     const loadPanel = import.meta.env.DEV
-      ? () => import("./dev/DevMapsTest")
+      ? devMapsLoaders["./dev/DevMapsTest.tsx"]
       : undefined;
 
     if (!loadPanel || !devMapsOpen || DevMapsPanel) {
