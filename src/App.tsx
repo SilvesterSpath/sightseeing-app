@@ -8,6 +8,10 @@ import {
   DEFAULT_ATTRACTION_FILTERS,
   type AttractionFilters,
 } from "./attractionFilters";
+import {
+  readCurrentBarCollapsed,
+  writeCurrentBarCollapsed,
+} from "./currentBar";
 import { getPlan } from "./data/navigation";
 import { isoDateForTripDay } from "./date";
 import {
@@ -46,6 +50,7 @@ export default function App() {
     defaultEventFilters(isoDateForTripDay(boot.day)),
   );
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
+  const [barCollapsed, setBarCollapsed] = useState(readCurrentBarCollapsed);
 
   const progressRef = useRef({ completed, currentByPlan });
   progressRef.current = { completed, currentByPlan };
@@ -171,6 +176,14 @@ export default function App() {
     }
   }
 
+  function handleToggleBarCollapsed() {
+    setBarCollapsed((collapsed) => {
+      const next = !collapsed;
+      writeCurrentBarCollapsed(next);
+      return next;
+    });
+  }
+
   function handleResetPlan() {
     const next = clearPlanProgress(completed, currentByPlan, day, weather);
     setCompleted(next.completed);
@@ -181,7 +194,15 @@ export default function App() {
   }
 
   return (
-    <div className={tab === "itinerary" ? "app is-itinerary" : "app"}>
+    <div
+      className={
+        tab === "itinerary"
+          ? barCollapsed
+            ? "app is-itinerary is-bar-collapsed"
+            : "app is-itinerary"
+          : "app"
+      }
+    >
       <main className="app-body">
         {tab === "itinerary" ? (
           <ItineraryView
@@ -199,15 +220,19 @@ export default function App() {
         ) : tab === "attractions" ? (
           <AttractionsView
             filters={attractionFilters}
+            canReset={canReset}
             onChange={setAttractionFilters}
+            onResetPlan={handleResetPlan}
           />
         ) : (
           <EventsView
             itineraryDay={day}
             filters={eventFilters}
             filtersOpen={eventFiltersOpen}
+            canReset={canReset}
             onChange={setEventFilters}
             onToggleFilters={() => setEventFiltersOpen((open) => !open)}
+            onResetPlan={handleResetPlan}
           />
         )}
       </main>
@@ -217,6 +242,8 @@ export default function App() {
           index={currentSegment.segmentNumber}
           total={currentPlan.segments.length}
           isComplete={currentComplete}
+          collapsed={barCollapsed}
+          onToggleCollapsed={handleToggleBarCollapsed}
           onToggleComplete={() =>
             handleToggleComplete(currentSegment.segmentNumber)
           }

@@ -1,11 +1,16 @@
 import AppMenu from "./AppMenu";
 import ThemeToggle from "./ThemeToggle";
 
-export default function PaneTools() {
+interface PaneToolsProps {
+  canReset: boolean;
+  onResetPlan: () => void;
+}
+
+export default function PaneTools({ canReset, onResetPlan }: PaneToolsProps) {
   return (
     <div className="pane-tools">
       <ThemeToggle />
-      <AppMenu />
+      <AppMenu canReset={canReset} onResetPlan={onResetPlan} />
     </div>
   );
 }

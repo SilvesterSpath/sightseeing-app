@@ -1,4 +1,9 @@
-export default function AppMenu() {
+interface AppMenuProps {
+  canReset: boolean;
+  onResetPlan: () => void;
+}
+
+export default function AppMenu({ canReset, onResetPlan }: AppMenuProps) {
   return (
     <details className="app-menu">
       <summary className="app-menu-summary" aria-label="Offline and Maps info">
@@ -14,6 +19,20 @@ export default function AppMenu() {
           booking.
         </p>
         <p>Google Maps and ticket or source links need a connection.</p>
+        <button
+          type="button"
+          className="reset-plan"
+          disabled={!canReset}
+          onClick={(event) => {
+            onResetPlan();
+            event.currentTarget.closest("details")?.removeAttribute("open");
+          }}
+        >
+          Reset this plan
+        </button>
+        <p>
+          Clears done marks and current for this day and weather.
+        </p>
       </div>
     </details>
   );

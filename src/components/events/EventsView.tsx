@@ -27,16 +27,20 @@ interface EventsViewProps {
   itineraryDay: number;
   filters: EventFilters;
   filtersOpen: boolean;
+  canReset: boolean;
   onChange: (next: EventFilters) => void;
   onToggleFilters: () => void;
+  onResetPlan: () => void;
 }
 
 export default function EventsView({
   itineraryDay,
   filters,
   filtersOpen,
+  canReset,
   onChange,
   onToggleFilters,
+  onResetPlan,
 }: EventsViewProps) {
   const events = getEvents();
   const dates = getEventDates();
@@ -64,7 +68,7 @@ export default function EventsView({
           <p className="muted result-count">
             {visibleCount} of {recordCount}
           </p>
-          <PaneTools />
+          <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
         <label className="attractions-search">
           <span className="visually-hidden">Search events</span>

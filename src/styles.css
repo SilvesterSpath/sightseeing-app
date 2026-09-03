@@ -9,7 +9,8 @@
     sans-serif;
   line-height: 1.4;
   --tab-bar-height: calc(4.25rem + env(safe-area-inset-bottom, 0px));
-  --current-bar-height: 7.75rem;
+  --current-bar-height: 9rem;
+  --current-bar-collapsed-height: 2rem;
   --bg: #f4f1ea;
   --text: #1a1a1a;
   --muted: #3f3c38;
@@ -39,6 +40,8 @@
   --weather-rain-border: #2d4256;
   --weather-rain-text: #f4f1ea;
   --on-weather: #1a1a1a;
+  --current-accent: #1a1a1a;
+  --current-wash: #efe8d4;
 }
 
 html[data-theme="dark"] {
@@ -64,6 +67,8 @@ html[data-theme="dark"] {
   --bar-muted: #c4bfb3;
   --bar-button-bg: #f4f1ea;
   --bar-button-text: #1a1a1a;
+  --current-accent: #f4f1ea;
+  --current-wash: #3a362c;
 }
 
 * {
@@ -100,11 +105,17 @@ body {
   flex: 1;
   min-height: 0;
   overflow: auto;
-  padding: 0 0.85rem var(--tab-bar-height);
+  padding: 0 1rem var(--tab-bar-height);
 }
 
 .app.is-itinerary .app-body {
   padding-bottom: calc(var(--tab-bar-height) + var(--current-bar-height));
+}
+
+.app.is-itinerary.is-bar-collapsed .app-body {
+  padding-bottom: calc(
+    var(--tab-bar-height) + var(--current-bar-collapsed-height)
+  );
 }
 
 .pane h1 {
@@ -140,14 +151,14 @@ body {
   z-index: 2;
   background: var(--bg);
   padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
-  padding-bottom: 0.65rem;
+  padding-bottom: 0.85rem;
 }
 
 .day-selector {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.35rem;
-  margin: 0.65rem 0 0.5rem;
+  gap: 0.4rem;
+  margin: 0.75rem 0 0.55rem;
 }
 
 .day-chip,
@@ -233,17 +244,20 @@ body {
 .segment-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
 }
 
 .segment-card {
-  padding: 0.75rem 0.8rem 0.85rem;
+  padding: 0.85rem 0.9rem 0.95rem;
   border: 1px solid var(--border-soft);
   background: var(--card);
 }
 
 .segment-card.is-current {
-  border-color: var(--border);
+  border-color: var(--current-accent);
+  background: var(--current-wash);
+  box-shadow: inset 4px 0 0 var(--current-accent);
 }
 
 .segment-card-heading {
@@ -257,12 +271,18 @@ body {
   flex: 1;
   min-width: 0;
   display: block;
-  padding: 0;
+  min-height: 44px;
+  padding: 0.15rem 0;
   border: 0;
   background: transparent;
   color: inherit;
   font: inherit;
   text-align: left;
+}
+
+.segment-card.is-current .segment-index {
+  border-color: var(--current-accent);
+  color: var(--text);
 }
 
 .segment-index {
@@ -290,28 +310,59 @@ body {
   font-size: 0.88rem;
 }
 
+.segment-card-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.45rem;
+}
+
 .optional-chip,
-.done-chip {
-  display: inline-block;
-  margin: 0.45rem 0 0;
-  padding: 0.1rem 0.4rem;
+.done-chip,
+.current-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin: 0;
+  padding: 0.15rem 0.45rem;
   border: 1px solid var(--border);
   font-size: 0.72rem;
   font-weight: 650;
 }
 
 .done-chip {
-  margin-left: 0.35rem;
   background: var(--done);
 }
 
-.segment-card.is-complete {
+.current-chip {
+  background: var(--inverse-bg);
+  color: var(--inverse-text);
+}
+
+.set-current {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.segment-card.is-complete:not(.is-current) {
   background: var(--card-complete);
 }
 
 .reset-plan {
   display: block;
-  margin: 0.55rem 0 0;
+  width: 100%;
+  margin: 0.7rem 0 0;
   min-height: 44px;
   padding: 0.35rem 0.6rem;
   border: 1px solid var(--border);
@@ -329,7 +380,7 @@ body {
 
 .done-button {
   width: 100%;
-  margin-top: 0.45rem;
+  margin-top: 0.6rem;
   min-height: 44px;
   padding: 0.4rem 0.6rem;
   border: 1px solid var(--border);
@@ -374,7 +425,7 @@ body {
 }
 
 .stop-list {
-  margin: 0.65rem 0 0;
+  margin: 0.75rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -412,6 +463,46 @@ body {
   padding: 0.45rem 0.85rem;
   background: var(--bar-bg);
   color: var(--bar-text);
+}
+
+.current-segment-bar.is-collapsed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+}
+
+.current-segment-handle {
+  display: block;
+  width: 2.75rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: var(--bar-muted);
+}
+
+.current-segment-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.current-segment-hide {
+  flex-shrink: 0;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.2rem 0.6rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: var(--bar-button-bg);
+  color: var(--bar-button-text);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 650;
 }
 
 .current-segment-meta {
@@ -463,6 +554,7 @@ body {
   min-height: 44px;
   display: flex;
   align-items: center;
+  padding: 0 0.15rem;
   color: inherit;
   font-size: 0.9rem;
   font-weight: 650;
@@ -512,7 +604,8 @@ body {
 .attraction-list {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .attraction-card {
@@ -849,7 +942,8 @@ body {
   font-size: 0.88rem;
 }
 
-.app-menu-panel p + p {
+.app-menu-panel p + p,
+.app-menu-panel .reset-plan + p {
   margin-top: 0.45rem;
 }
 

@@ -58,7 +58,7 @@ export default function ItineraryView({
               {meta.tripStart} – {meta.tripEnd}
             </p>
           </div>
-          <PaneTools />
+          <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
         <DaySelector
           days={days}
@@ -70,14 +70,6 @@ export default function ItineraryView({
           onChange={onWeatherChange}
         />
         {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
-        <button
-          type="button"
-          className="reset-plan"
-          onClick={onResetPlan}
-          disabled={!canReset}
-        >
-          Reset this plan
-        </button>
       </header>
 
       <SegmentList

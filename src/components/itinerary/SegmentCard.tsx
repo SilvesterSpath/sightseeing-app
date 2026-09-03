@@ -35,6 +35,11 @@ export default function SegmentCard({
             className="segment-select"
             onClick={onSelect}
             aria-pressed={isCurrent}
+            aria-label={
+              isCurrent
+                ? `${segment.name}, current segment`
+                : `Set ${segment.name} as current segment`
+            }
           >
             <h2 className="segment-name">{segment.name}</h2>
             <p className="segment-mode">{segment.mode}</p>
@@ -46,10 +51,22 @@ export default function SegmentCard({
             Segm {segment.segmentNumber}
           </p>
         </div>
-        {segment.conditional ? (
-          <p className="optional-chip">Optional</p>
-        ) : null}
-        {isComplete ? <p className="done-chip">Done</p> : null}
+        <div className="segment-card-chips">
+          {isCurrent ? <p className="current-chip">Current</p> : null}
+          {segment.conditional ? (
+            <p className="optional-chip">Optional</p>
+          ) : null}
+          {isComplete ? <p className="done-chip">Done</p> : null}
+          {isCurrent ? null : (
+            <button
+              type="button"
+              className="set-current"
+              onClick={onSelect}
+            >
+              Set current
+            </button>
+          )}
+        </div>
       </header>
       {notes ? <p className="segment-notes">{notes}</p> : null}
       <ol className="stop-list">

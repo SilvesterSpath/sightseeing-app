@@ -17,12 +17,16 @@ const ACCESS_CHIPS: AccessFilter[] = ["All", "Free", "Go City", "Paid"];
 
 interface AttractionsViewProps {
   filters: AttractionFilters;
+  canReset: boolean;
   onChange: (next: AttractionFilters) => void;
+  onResetPlan: () => void;
 }
 
 export default function AttractionsView({
   filters,
+  canReset,
   onChange,
+  onResetPlan,
 }: AttractionsViewProps) {
   const [filtersOpen, setFiltersOpen] = useState(false);
   const attractions = getAttractions();
@@ -45,7 +49,7 @@ export default function AttractionsView({
           <p className="muted result-count">
             {visible.length} of {total}
           </p>
-          <PaneTools />
+          <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
         <AttractionsSearch
           value={filters.search}
