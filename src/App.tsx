@@ -24,6 +24,7 @@ import {
   resolveCurrentSegment,
   saveProgress,
   segmentProgressKey,
+  uncompleteFromThrough,
 } from "./progress";
 import type { Weather } from "./types/navigation";
 import { readAppUrl, writeAppUrl } from "./urlState";
@@ -141,16 +142,26 @@ export default function App() {
 
   function handleToggleComplete(segmentNumber: number) {
     const key = segmentProgressKey(day, weather, segmentNumber);
-    const nextCompleted = new Set(completed);
-    const wasComplete = nextCompleted.has(key);
-    if (wasComplete) {
-      nextCompleted.delete(key);
-    } else {
-      nextCompleted.add(key);
-    }
-    setCompleted(nextCompleted);
+    const wasComplete = completed.has(key);
 
-    if (!wasComplete && segmentNumber === currentSegmentNumber) {
+    if (wasComplete) {
+      const nextCompleted = uncompleteFromThrough(
+        completed,
+        currentPlan,
+        day,
+        weather,
+        segmentNumber,
+        currentSegmentNumber,
+      );
+      setCompleted(nextCompleted);
+      rememberCurrent(day, weather, segmentNumber);
+      return;
+    }
+
+    const nextCompleted = new Set(completed);
+    nextCompleted.add(key);
+    setCompleted(nextCompleted);
+    if (segmentNumber === currentSegmentNumber) {
       rememberCurrent(
         day,
         weather,

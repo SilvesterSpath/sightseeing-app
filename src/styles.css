@@ -191,15 +191,35 @@ body {
   border-color: #1a1a1a;
 }
 
+.segment-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
 .segment-select {
+  flex: 1;
+  min-width: 0;
   display: block;
-  width: 100%;
   padding: 0;
   border: 0;
   background: transparent;
   color: inherit;
   font: inherit;
   text-align: left;
+}
+
+.segment-index {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.1rem 0.4rem;
+  border: 1px solid #c4bfb3;
+  color: #3f3c38;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .segment-name {

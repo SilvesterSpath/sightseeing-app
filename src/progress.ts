@@ -48,6 +48,25 @@ export function isSegmentComplete(
   return completed.has(segmentProgressKey(day, weather, segmentNumber));
 }
 
+export function uncompleteFromThrough(
+  completed: ReadonlySet<string>,
+  plan: WeatherPlan | undefined,
+  day: number,
+  weather: Weather,
+  fromSegment: number,
+  throughSegment: number,
+): Set<string> {
+  const next = new Set(completed);
+  const last = Math.max(fromSegment, throughSegment);
+  for (const segment of plan?.segments ?? []) {
+    const number = segment.segmentNumber;
+    if (number >= fromSegment && number <= last) {
+      next.delete(segmentProgressKey(day, weather, number));
+    }
+  }
+  return next;
+}
+
 export function firstIncompleteSegment(
   plan: WeatherPlan | undefined,
   completed: ReadonlySet<string>,

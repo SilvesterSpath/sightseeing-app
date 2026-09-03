@@ -29,15 +29,23 @@ export default function SegmentCard({
   return (
     <article className={classes}>
       <header className="segment-card-header">
-        <button
-          type="button"
-          className="segment-select"
-          onClick={onSelect}
-          aria-pressed={isCurrent}
-        >
-          <h2 className="segment-name">{segment.name}</h2>
-          <p className="segment-mode">{segment.mode}</p>
-        </button>
+        <div className="segment-card-heading">
+          <button
+            type="button"
+            className="segment-select"
+            onClick={onSelect}
+            aria-pressed={isCurrent}
+          >
+            <h2 className="segment-name">{segment.name}</h2>
+            <p className="segment-mode">{segment.mode}</p>
+          </button>
+          <p
+            className="segment-index"
+            aria-label={`Segment ${segment.segmentNumber}`}
+          >
+            Segm {segment.segmentNumber}
+          </p>
+        </div>
         {segment.conditional ? (
           <p className="optional-chip">Optional</p>
         ) : null}
