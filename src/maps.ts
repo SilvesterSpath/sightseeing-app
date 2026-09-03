@@ -1,6 +1,7 @@
 import type { SegmentStop, TransportMode } from "./types/navigation";
 
 export const MAX_STOPS_PER_DIRECTIONS = 5;
+export const MAX_STOPS_PER_TRANSIT = 2;
 export const MAPS_URL_MAX_LENGTH = 2048;
 
 export type MapsTravelMode = "walking" | "transit";
@@ -20,12 +21,27 @@ export function travelModeFor(
   }
 }
 
-export function needsOpenInParts(stops: SegmentStop[]): boolean {
-  return stops.length > MAX_STOPS_PER_DIRECTIONS;
+export function isTransitFamily(mode: TransportMode): boolean {
+  return travelModeFor(mode) === "transit";
 }
 
-export function chunkStops(stops: SegmentStop[]): SegmentStop[][] {
-  if (stops.length <= MAX_STOPS_PER_DIRECTIONS) {
+export function maxStopsPerDirections(mode: TransportMode): number {
+  return isTransitFamily(mode) ? MAX_STOPS_PER_TRANSIT : MAX_STOPS_PER_DIRECTIONS;
+}
+
+export function needsOpenInParts(
+  stops: SegmentStop[],
+  mode: TransportMode,
+): boolean {
+  return stops.length > maxStopsPerDirections(mode);
+}
+
+export function chunkStops(
+  stops: SegmentStop[],
+  mode: TransportMode,
+): SegmentStop[][] {
+  const max = maxStopsPerDirections(mode);
+  if (stops.length <= max) {
     return [stops];
   }
 
@@ -33,7 +49,7 @@ export function chunkStops(stops: SegmentStop[]): SegmentStop[][] {
   let start = 0;
 
   while (start < stops.length - 1) {
-    const end = Math.min(start + MAX_STOPS_PER_DIRECTIONS, stops.length);
+    const end = Math.min(start + max, stops.length);
     chunks.push(stops.slice(start, end));
     if (end === stops.length) {
       break;
@@ -52,9 +68,17 @@ export function buildDirectionsUrl(
     return null;
   }
 
+  const travelmode = travelModeFor(mode);
+  if (travelmode === "transit" && stops.length > MAX_STOPS_PER_TRANSIT) {
+    return null;
+  }
+
   const origin = stops[0].query;
   const destination = stops[stops.length - 1].query;
-  const waypoints = stops.slice(1, -1).map((stop) => stop.query);
+  const waypoints =
+    travelmode === "transit"
+      ? []
+      : stops.slice(1, -1).map((stop) => stop.query);
 
   const url = new URL("https://www.google.com/maps/dir/");
   url.searchParams.set("api", "1");
@@ -65,7 +89,6 @@ export function buildDirectionsUrl(
     url.searchParams.set("waypoints", waypoints.join("|"));
   }
 
-  const travelmode = travelModeFor(mode);
   if (travelmode) {
     url.searchParams.set("travelmode", travelmode);
   }

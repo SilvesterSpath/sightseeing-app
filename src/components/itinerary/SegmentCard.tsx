@@ -25,7 +25,7 @@ export default function SegmentCard({
     .join(" ");
 
   return (
-    <article className={classes}>
+    <article className={classes} aria-current={isCurrent || undefined}>
       <header className="segment-card-header">
         <div className="segment-card-heading">
           <div className="segment-heading">
@@ -39,12 +39,9 @@ export default function SegmentCard({
             Segm {segment.segmentNumber}
           </p>
         </div>
-        {isCurrent || segment.conditional ? (
+        {segment.conditional ? (
           <div className="segment-card-chips">
-            {isCurrent ? <p className="current-chip">Current</p> : null}
-            {segment.conditional ? (
-              <p className="optional-chip">Optional</p>
-            ) : null}
+            <p className="optional-chip">Optional</p>
           </div>
         ) : null}
       </header>

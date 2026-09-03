@@ -310,8 +310,7 @@ body {
   margin-top: 0.45rem;
 }
 
-.optional-chip,
-.current-chip {
+.optional-chip {
   display: inline-flex;
   align-items: center;
   min-height: 28px;
@@ -320,11 +319,6 @@ body {
   border: 1px solid var(--border);
   font-size: 0.72rem;
   font-weight: 650;
-}
-
-.current-chip {
-  background: var(--inverse-bg);
-  color: var(--inverse-text);
 }
 
 .segment-card.is-complete {
@@ -371,7 +365,7 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.4rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .current-segment-actions .maps-actions {
@@ -502,6 +496,17 @@ body {
   margin-top: 0;
 }
 
+.maps-legs-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.is-compact .maps-legs-label {
+  color: var(--bar-muted);
+}
+
 .maps-button {
   display: flex;
   min-height: 52px;
@@ -518,6 +523,8 @@ body {
 
 .is-compact .maps-button {
   min-height: 44px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.82rem;
   background: var(--bar-button-bg);
   color: var(--bar-button-text);
 }
