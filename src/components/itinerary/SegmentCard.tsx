@@ -39,13 +39,14 @@ export default function SegmentCard({
             Segm {segment.segmentNumber}
           </p>
         </div>
-        <div className="segment-card-chips">
-          {isCurrent ? <p className="current-chip">Current</p> : null}
-          {segment.conditional ? (
-            <p className="optional-chip">Optional</p>
-          ) : null}
-          {isComplete ? <p className="done-chip">Done</p> : null}
-        </div>
+        {isCurrent || segment.conditional ? (
+          <div className="segment-card-chips">
+            {isCurrent ? <p className="current-chip">Current</p> : null}
+            {segment.conditional ? (
+              <p className="optional-chip">Optional</p>
+            ) : null}
+          </div>
+        ) : null}
       </header>
       {notes ? <p className="segment-notes">{notes}</p> : null}
       <ol className="stop-list">

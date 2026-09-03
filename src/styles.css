@@ -15,7 +15,7 @@
   --text: #1a1a1a;
   --muted: #3f3c38;
   --card: #faf8f3;
-  --card-complete: #eeeae1;
+  --card-complete: #e6ece0;
   --border: #1a1a1a;
   --border-soft: #d9d3c7;
   --border-muted: #c4bfb3;
@@ -50,7 +50,7 @@ html[data-theme="dark"] {
   --text: #f4f1ea;
   --muted: #c4bfb3;
   --card: #24221e;
-  --card-complete: #1c1b18;
+  --card-complete: #2a3228;
   --border: #c4bfb3;
   --border-soft: #3f3c38;
   --border-muted: #5a564e;
@@ -311,7 +311,6 @@ body {
 }
 
 .optional-chip,
-.done-chip,
 .current-chip {
   display: inline-flex;
   align-items: center;
@@ -323,16 +322,12 @@ body {
   font-weight: 650;
 }
 
-.done-chip {
-  background: var(--done);
-}
-
 .current-chip {
   background: var(--inverse-bg);
   color: var(--inverse-text);
 }
 
-.segment-card.is-complete:not(.is-current) {
+.segment-card.is-complete {
   background: var(--card-complete);
 }
 
