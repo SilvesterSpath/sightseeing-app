@@ -60,37 +60,39 @@ export default function MapsActions({ segment, compact }: MapsActionsProps) {
           Open in Google Maps
         </a>
       ) : null}
-          {showParts ? (
+      {showParts ? (
         <>
           <p className="maps-legs-label">{partsHeading}</p>
-          {parts.map((chunk, index) => {
-            const partUrl = buildDirectionsUrl(chunk, segment.mode);
-            if (!partUrl) {
-              return null;
-            }
-            const label = partLabel(
-              chunk,
-              index,
-              parts.length,
-              Boolean(compact),
-            );
-            return (
-              <a
-                key={`${chunk[0].stopId}-${index}`}
-                className={
-                  compact || !fullUrl ? "maps-button" : "maps-part-link"
-                }
-                href={partUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={label}
-              >
-                {compact
-                  ? `Part ${index + 1} of ${parts.length}`
-                  : label}
-              </a>
-            );
-          })}
+          <div className={compact ? "maps-parts-row" : undefined}>
+            {parts.map((chunk, index) => {
+              const partUrl = buildDirectionsUrl(chunk, segment.mode);
+              if (!partUrl) {
+                return null;
+              }
+              const label = partLabel(
+                chunk,
+                index,
+                parts.length,
+                Boolean(compact),
+              );
+              return (
+                <a
+                  key={`${chunk[0].stopId}-${index}`}
+                  className={
+                    compact || !fullUrl ? "maps-button" : "maps-part-link"
+                  }
+                  href={partUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={label}
+                >
+                  {compact
+                    ? `Part ${index + 1} of ${parts.length}`
+                    : label}
+                </a>
+              );
+            })}
+          </div>
         </>
       ) : null}
     </div>
