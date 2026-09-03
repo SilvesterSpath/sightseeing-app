@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ComponentType } from "react";
 import AppTabs from "./components/AppTabs";
 import AttractionsView from "./components/attractions/AttractionsView";
 import EventsView from "./components/events/EventsView";
@@ -45,6 +45,10 @@ export default function App() {
   );
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
   const [barCollapsed, setBarCollapsed] = useState(readCurrentBarCollapsed);
+  const [devMapsOpen, setDevMapsOpen] = useState(false);
+  const [DevMapsPanel, setDevMapsPanel] = useState<ComponentType<{
+    onClose: () => void;
+  }> | null>(null);
 
   const currentPlan = useMemo(
     () => getPlan(day, weather),
@@ -89,6 +93,41 @@ export default function App() {
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
+
+  useEffect(() => {
+    if (!import.meta.env.DEV) {
+      return;
+    }
+
+    function openDevMaps() {
+      setDevMapsOpen(true);
+    }
+
+    window.addEventListener("sightseeng:dev-maps-test", openDevMaps);
+    return () => {
+      window.removeEventListener("sightseeng:dev-maps-test", openDevMaps);
+    };
+  }, []);
+
+  useEffect(() => {
+    const loadPanel = import.meta.env.DEV
+      ? () => import("./dev/DevMapsTest")
+      : undefined;
+
+    if (!loadPanel || !devMapsOpen || DevMapsPanel) {
+      return;
+    }
+
+    let cancelled = false;
+    void loadPanel().then((module) => {
+      if (!cancelled) {
+        setDevMapsPanel(() => module.default);
+      }
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [devMapsOpen, DevMapsPanel]);
 
   function handleToggleComplete(segmentNumber: number) {
     const key = segmentProgressKey(day, weather, segmentNumber);
@@ -181,6 +220,9 @@ export default function App() {
         />
       ) : null}
       <AppTabs activeTab={tab} onChange={setTab} />
+      {import.meta.env.DEV && devMapsOpen && DevMapsPanel ? (
+        <DevMapsPanel onClose={() => setDevMapsOpen(false)} />
+      ) : null}
     </div>
   );
 }

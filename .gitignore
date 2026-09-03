@@ -1,8 +1,12 @@
 node_modules
 dist
 .DS_Store
+.env
+.env.*
+!.env.example
 *.local
 .vite
+src/dev/
 .store  
 *.json
 !data/*.json

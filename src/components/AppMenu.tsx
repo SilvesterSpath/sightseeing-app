@@ -33,6 +33,18 @@ export default function AppMenu({ canReset, onResetPlan }: AppMenuProps) {
         <p>
           Clears done marks for this day and weather.
         </p>
+        {import.meta.env.DEV ? (
+          <button
+            type="button"
+            className="reset-plan"
+            onClick={(event) => {
+              window.dispatchEvent(new Event("sightseeng:dev-maps-test"));
+              event.currentTarget.closest("details")?.removeAttribute("open");
+            }}
+          >
+            DEV: local Maps test
+          </button>
+        ) : null}
       </div>
     </details>
   );
