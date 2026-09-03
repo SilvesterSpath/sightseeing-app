@@ -267,17 +267,9 @@ body {
   gap: 0.5rem;
 }
 
-.segment-select {
+.segment-heading {
   flex: 1;
   min-width: 0;
-  display: block;
-  min-height: 44px;
-  padding: 0.15rem 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  text-align: left;
 }
 
 .segment-card.is-current .segment-index {
@@ -338,21 +330,6 @@ body {
 .current-chip {
   background: var(--inverse-bg);
   color: var(--inverse-text);
-}
-
-.set-current {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 0.3rem 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 0.4rem;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  font-size: 0.82rem;
-  font-weight: 650;
 }
 
 .segment-card.is-complete:not(.is-current) {

@@ -31,7 +31,7 @@ export default function AppMenu({ canReset, onResetPlan }: AppMenuProps) {
           Reset this plan
         </button>
         <p>
-          Clears done marks and current for this day and weather.
+          Clears done marks for this day and weather.
         </p>
       </div>
     </details>

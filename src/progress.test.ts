@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { WeatherPlan } from "./types/navigation";
 import {
   isSegmentComplete,
+  resolveCurrentSegment,
   segmentProgressKey,
   uncompleteFromThrough,
 } from "./progress";
@@ -21,6 +22,20 @@ const plan: WeatherPlan = {
 function completedSet(...numbers: number[]): Set<string> {
   return new Set(numbers.map((number) => segmentProgressKey(1, "Good", number)));
 }
+
+describe("resolveCurrentSegment", () => {
+  it("is the first incomplete segment", () => {
+    expect(resolveCurrentSegment(plan, completedSet(), 1, "Good")).toBe(1);
+    expect(resolveCurrentSegment(plan, completedSet(1), 1, "Good")).toBe(2);
+    expect(resolveCurrentSegment(plan, completedSet(1, 3), 1, "Good")).toBe(2);
+  });
+
+  it("stays on the last segment when the plan is finished", () => {
+    expect(
+      resolveCurrentSegment(plan, completedSet(1, 2, 3, 4), 1, "Good"),
+    ).toBe(4);
+  });
+});
 
 describe("uncompleteFromThrough", () => {
   it("unmarks the undone segment and every completed segment up to the current bar", () => {

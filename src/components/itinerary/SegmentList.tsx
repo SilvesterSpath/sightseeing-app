@@ -8,7 +8,6 @@ interface SegmentListProps {
   completed: ReadonlySet<string>;
   day: number;
   weather: Weather;
-  onSelectSegment: (segmentNumber: number) => void;
   onToggleComplete: (segmentNumber: number) => void;
 }
 
@@ -18,7 +17,6 @@ export default function SegmentList({
   completed,
   day,
   weather,
-  onSelectSegment,
   onToggleComplete,
 }: SegmentListProps) {
   return (
@@ -34,7 +32,6 @@ export default function SegmentList({
             weather,
             segment.segmentNumber,
           )}
-          onSelect={() => onSelectSegment(segment.segmentNumber)}
           onToggleComplete={() => onToggleComplete(segment.segmentNumber)}
         />
       ))}

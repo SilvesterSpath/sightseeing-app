@@ -6,7 +6,6 @@ interface SegmentCardProps {
   segment: Segment;
   isCurrent: boolean;
   isComplete: boolean;
-  onSelect: () => void;
   onToggleComplete: () => void;
 }
 
@@ -14,7 +13,6 @@ export default function SegmentCard({
   segment,
   isCurrent,
   isComplete,
-  onSelect,
   onToggleComplete,
 }: SegmentCardProps) {
   const notes = segment.notes.trim();
@@ -30,20 +28,10 @@ export default function SegmentCard({
     <article className={classes}>
       <header className="segment-card-header">
         <div className="segment-card-heading">
-          <button
-            type="button"
-            className="segment-select"
-            onClick={onSelect}
-            aria-pressed={isCurrent}
-            aria-label={
-              isCurrent
-                ? `${segment.name}, current segment`
-                : `Set ${segment.name} as current segment`
-            }
-          >
+          <div className="segment-heading">
             <h2 className="segment-name">{segment.name}</h2>
             <p className="segment-mode">{segment.mode}</p>
-          </button>
+          </div>
           <p
             className="segment-index"
             aria-label={`Segment ${segment.segmentNumber}`}
@@ -57,15 +45,6 @@ export default function SegmentCard({
             <p className="optional-chip">Optional</p>
           ) : null}
           {isComplete ? <p className="done-chip">Done</p> : null}
-          {isCurrent ? null : (
-            <button
-              type="button"
-              className="set-current"
-              onClick={onSelect}
-            >
-              Set current
-            </button>
-          )}
         </div>
       </header>
       {notes ? <p className="segment-notes">{notes}</p> : null}

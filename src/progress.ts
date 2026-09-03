@@ -14,17 +14,11 @@ export interface StoredProgress {
   day: number;
   weather: Weather;
   completed: string[];
-  currentByPlan: Record<string, number>;
 }
 
 export interface HydratedProgress extends AppUrlState {
   completed: Set<string>;
-  currentByPlan: Record<string, number>;
   currentSegmentNumber: number;
-}
-
-export function planProgressKey(day: number, weather: Weather): string {
-  return `${day}|${weather}`;
 }
 
 export function segmentKeyPrefix(day: number, weather: Weather): string {
@@ -84,18 +78,10 @@ export function resolveCurrentSegment(
   completed: ReadonlySet<string>,
   day: number,
   weather: Weather,
-  preferred?: number,
 ): number {
-  if (
-    preferred !== undefined &&
-    plan?.segments.some((segment) => segment.segmentNumber === preferred)
-  ) {
-    return preferred;
-  }
-
   return (
     firstIncompleteSegment(plan, completed, day, weather) ??
-    plan?.segments[0]?.segmentNumber ??
+    plan?.segments.at(-1)?.segmentNumber ??
     1
   );
 }
@@ -111,20 +97,6 @@ function isWeather(value: unknown): value is Weather {
     typeof value === "string" &&
     (WEATHERS as readonly string[]).includes(value)
   );
-}
-
-function parseCurrentByPlan(value: unknown): Record<string, number> {
-  if (!value || typeof value !== "object") {
-    return {};
-  }
-
-  const result: Record<string, number> = {};
-  for (const [key, raw] of Object.entries(value)) {
-    if (typeof raw === "number" && Number.isInteger(raw) && raw > 0) {
-      result[key] = raw;
-    }
-  }
-  return result;
 }
 
 function parseCompleted(value: unknown): string[] {
@@ -155,7 +127,6 @@ export function parseStoredProgress(raw: string): StoredProgress | null {
       day,
       weather: record.weather,
       completed: parseCompleted(record.completed),
-      currentByPlan: parseCurrentByPlan(record.currentByPlan),
     };
   } catch {
     return null;
@@ -168,7 +139,6 @@ function emptyProgress(): StoredProgress {
     day: defaultTripDay(),
     weather: "Good",
     completed: [],
-    currentByPlan: {},
   };
 }
 
@@ -208,7 +178,6 @@ export function hydrateProgress(): HydratedProgress {
     completed,
     day,
     weather,
-    stored.currentByPlan[planProgressKey(day, weather)],
   );
 
   return {
@@ -216,39 +185,24 @@ export function hydrateProgress(): HydratedProgress {
     day,
     weather,
     completed,
-    currentByPlan: stored.currentByPlan,
     currentSegmentNumber,
   };
 }
 
 export function clearPlanProgress(
   completed: ReadonlySet<string>,
-  currentByPlan: Record<string, number>,
   day: number,
   weather: Weather,
-): { completed: Set<string>; currentByPlan: Record<string, number> } {
+): Set<string> {
   const prefix = segmentKeyPrefix(day, weather);
-  const nextCompleted = new Set(
-    [...completed].filter((key) => !key.startsWith(prefix)),
-  );
-  const nextCurrent = { ...currentByPlan };
-  delete nextCurrent[planProgressKey(day, weather)];
-  return { completed: nextCompleted, currentByPlan: nextCurrent };
+  return new Set([...completed].filter((key) => !key.startsWith(prefix)));
 }
 
 export function planHasProgress(
   completed: ReadonlySet<string>,
-  currentByPlan: Record<string, number>,
   day: number,
   weather: Weather,
-  currentSegmentNumber: number,
 ): boolean {
   const prefix = segmentKeyPrefix(day, weather);
-  if ([...completed].some((key) => key.startsWith(prefix))) {
-    return true;
-  }
-  if (planProgressKey(day, weather) in currentByPlan) {
-    return currentSegmentNumber !== 1;
-  }
-  return false;
+  return [...completed].some((key) => key.startsWith(prefix));
 }

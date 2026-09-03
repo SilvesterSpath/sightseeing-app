@@ -13,7 +13,6 @@ interface ItineraryViewProps {
   canReset: boolean;
   onDayChange: (day: number) => void;
   onWeatherChange: (weather: Weather) => void;
-  onSelectSegment: (segmentNumber: number) => void;
   onToggleComplete: (segmentNumber: number) => void;
   onResetPlan: () => void;
 }
@@ -33,7 +32,6 @@ export default function ItineraryView({
   canReset,
   onDayChange,
   onWeatherChange,
-  onSelectSegment,
   onToggleComplete,
   onResetPlan,
 }: ItineraryViewProps) {
@@ -78,7 +76,6 @@ export default function ItineraryView({
         completed={completed}
         day={selectedDay.day}
         weather={weather}
-        onSelectSegment={onSelectSegment}
         onToggleComplete={onToggleComplete}
       />
     </section>

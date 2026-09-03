@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import AppTabs from "./components/AppTabs";
 import AttractionsView from "./components/attractions/AttractionsView";
 import EventsView from "./components/events/EventsView";
@@ -20,11 +20,9 @@ import {
 } from "./eventFilters";
 import {
   clearPlanProgress,
-  firstIncompleteSegment,
   hydrateProgress,
   isSegmentComplete,
   planHasProgress,
-  planProgressKey,
   resolveCurrentSegment,
   saveProgress,
   segmentProgressKey,
@@ -38,11 +36,7 @@ export default function App() {
   const [tab, setTab] = useState(boot.tab);
   const [day, setDay] = useState(boot.day);
   const [weather, setWeather] = useState<Weather>(boot.weather);
-  const [currentSegmentNumber, setCurrentSegmentNumber] = useState(
-    boot.currentSegmentNumber,
-  );
   const [completed, setCompleted] = useState(boot.completed);
-  const [currentByPlan, setCurrentByPlan] = useState(boot.currentByPlan);
   const [attractionFilters, setAttractionFilters] = useState<AttractionFilters>(
     DEFAULT_ATTRACTION_FILTERS,
   );
@@ -52,12 +46,13 @@ export default function App() {
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
   const [barCollapsed, setBarCollapsed] = useState(readCurrentBarCollapsed);
 
-  const progressRef = useRef({ completed, currentByPlan });
-  progressRef.current = { completed, currentByPlan };
-
   const currentPlan = useMemo(
     () => getPlan(day, weather),
     [day, weather],
+  );
+  const currentSegmentNumber = useMemo(
+    () => resolveCurrentSegment(currentPlan, completed, day, weather),
+    [currentPlan, completed, day, weather],
   );
   const currentSegment = currentPlan?.segments.find(
     (segment) => segment.segmentNumber === currentSegmentNumber,
@@ -68,13 +63,7 @@ export default function App() {
     weather,
     currentSegmentNumber,
   );
-  const canReset = planHasProgress(
-    completed,
-    currentByPlan,
-    day,
-    weather,
-    currentSegmentNumber,
-  );
+  const canReset = planHasProgress(completed, day, weather);
 
   useEffect(() => {
     writeAppUrl({ tab, day, weather });
@@ -86,94 +75,42 @@ export default function App() {
       day,
       weather,
       completed: [...completed],
-      currentByPlan,
     });
-  }, [tab, day, weather, completed, currentByPlan]);
+  }, [tab, day, weather, completed]);
 
   useEffect(() => {
     function onPopState() {
       const next = readAppUrl();
-      const { completed: storedCompleted, currentByPlan: storedCurrent } =
-        progressRef.current;
       setTab(next.tab);
       setDay(next.day);
       setWeather(next.weather);
-      setCurrentSegmentNumber(
-        resolveCurrentSegment(
-          getPlan(next.day, next.weather),
-          storedCompleted,
-          next.day,
-          next.weather,
-          storedCurrent[planProgressKey(next.day, next.weather)],
-        ),
-      );
     }
 
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
-  function rememberCurrent(nextDay: number, nextWeather: Weather, segmentNumber: number) {
-    setCurrentSegmentNumber(segmentNumber);
-    setCurrentByPlan((prev) => ({
-      ...prev,
-      [planProgressKey(nextDay, nextWeather)]: segmentNumber,
-    }));
-  }
-
-  function currentForPlan(nextDay: number, nextWeather: Weather): number {
-    return resolveCurrentSegment(
-      getPlan(nextDay, nextWeather),
-      completed,
-      nextDay,
-      nextWeather,
-      currentByPlan[planProgressKey(nextDay, nextWeather)],
-    );
-  }
-
-  function handleDayChange(nextDay: number) {
-    setDay(nextDay);
-    setCurrentSegmentNumber(currentForPlan(nextDay, weather));
-  }
-
-  function handleWeatherChange(nextWeather: Weather) {
-    setWeather(nextWeather);
-    setCurrentSegmentNumber(currentForPlan(day, nextWeather));
-  }
-
-  function handleSelectSegment(segmentNumber: number) {
-    rememberCurrent(day, weather, segmentNumber);
-  }
-
   function handleToggleComplete(segmentNumber: number) {
     const key = segmentProgressKey(day, weather, segmentNumber);
     const wasComplete = completed.has(key);
 
     if (wasComplete) {
-      const nextCompleted = uncompleteFromThrough(
-        completed,
-        currentPlan,
-        day,
-        weather,
-        segmentNumber,
-        currentSegmentNumber,
+      setCompleted(
+        uncompleteFromThrough(
+          completed,
+          currentPlan,
+          day,
+          weather,
+          segmentNumber,
+          currentSegmentNumber,
+        ),
       );
-      setCompleted(nextCompleted);
-      rememberCurrent(day, weather, segmentNumber);
       return;
     }
 
     const nextCompleted = new Set(completed);
     nextCompleted.add(key);
     setCompleted(nextCompleted);
-    if (segmentNumber === currentSegmentNumber) {
-      rememberCurrent(
-        day,
-        weather,
-        firstIncompleteSegment(currentPlan, nextCompleted, day, weather) ??
-          segmentNumber,
-      );
-    }
   }
 
   function handleToggleBarCollapsed() {
@@ -185,12 +122,7 @@ export default function App() {
   }
 
   function handleResetPlan() {
-    const next = clearPlanProgress(completed, currentByPlan, day, weather);
-    setCompleted(next.completed);
-    setCurrentByPlan(next.currentByPlan);
-    setCurrentSegmentNumber(
-      currentPlan?.segments[0]?.segmentNumber ?? 1,
-    );
+    setCompleted(clearPlanProgress(completed, day, weather));
   }
 
   return (
@@ -211,9 +143,8 @@ export default function App() {
             currentSegmentNumber={currentSegmentNumber}
             completed={completed}
             canReset={canReset}
-            onDayChange={handleDayChange}
-            onWeatherChange={handleWeatherChange}
-            onSelectSegment={handleSelectSegment}
+            onDayChange={setDay}
+            onWeatherChange={setWeather}
             onToggleComplete={handleToggleComplete}
             onResetPlan={handleResetPlan}
           />
