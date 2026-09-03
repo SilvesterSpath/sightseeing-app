@@ -5,4 +5,5 @@ dist
 .vite
 .store  
 *.json
+!data/*.json
 *.txt

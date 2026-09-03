@@ -53,13 +53,13 @@ export default defineConfig({
   resolve: {
     alias: {
       "@navigation-data": fileURLToPath(
-        new URL("./stockholm_navigation_data.json", import.meta.url),
+        new URL("./data/stockholm_navigation_data.json", import.meta.url),
       ),
       "@attractions-data": fileURLToPath(
-        new URL("./stockholm_attractions.json", import.meta.url),
+        new URL("./data/stockholm_attractions.json", import.meta.url),
       ),
       "@events-data": fileURLToPath(
-        new URL("./stockholm_events.json", import.meta.url),
+        new URL("./data/stockholm_events.json", import.meta.url),
       ),
     },
   },

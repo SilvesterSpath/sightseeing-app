@@ -18,9 +18,9 @@
     "noUncheckedSideEffectImports": true,
     "resolveJsonModule": true,
     "paths": {
-      "@navigation-data": ["./stockholm_navigation_data.json"],
-      "@attractions-data": ["./stockholm_attractions.json"],
-      "@events-data": ["./stockholm_events.json"]
+      "@navigation-data": ["./data/stockholm_navigation_data.json"],
+      "@attractions-data": ["./data/stockholm_attractions.json"],
+      "@events-data": ["./data/stockholm_events.json"]
     }
   },
   "include": ["src"]
