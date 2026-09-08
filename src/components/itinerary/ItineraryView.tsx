@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { getPlan, navigationData } from "../../data/navigation";
 import type { Weather } from "../../types/navigation";
 import PaneTools from "../PaneTools";
+import DaySelector from "./DaySelector";
 import SegmentList from "./SegmentList";
+import WeatherSelector from "./WeatherSelector";
 
 interface ItineraryViewProps {
   day: number;
@@ -9,6 +12,8 @@ interface ItineraryViewProps {
   currentSegmentNumber: number;
   completed: ReadonlySet<string>;
   canReset: boolean;
+  onDayChange: (day: number) => void;
+  onWeatherChange: (weather: Weather) => void;
   onToggleComplete: (segmentNumber: number) => void;
   onResetPlan: () => void;
 }
@@ -26,9 +31,12 @@ export default function ItineraryView({
   currentSegmentNumber,
   completed,
   canReset,
+  onDayChange,
+  onWeatherChange,
   onToggleComplete,
   onResetPlan,
 }: ItineraryViewProps) {
+  const [toolsOpen, setToolsOpen] = useState(false);
   const { meta, days } = navigationData;
   const selectedDay = days.find((entry) => entry.day === day) ?? days[0];
 
@@ -52,6 +60,28 @@ export default function ItineraryView({
           </div>
           <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
+        <DaySelector
+          days={days}
+          selectedDay={selectedDay.day}
+          onChange={onDayChange}
+        />
+        <button
+          type="button"
+          className="attractions-tools-toggle"
+          aria-expanded={toolsOpen}
+          aria-controls="itinerary-tools-panel"
+          onClick={() => setToolsOpen((open) => !open)}
+        >
+          Weather · {weather}
+        </button>
+        {toolsOpen ? (
+          <div id="itinerary-tools-panel" className="attractions-tools-panel">
+            <WeatherSelector
+              selectedWeather={weather}
+              onChange={onWeatherChange}
+            />
+          </div>
+        ) : null}
         {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
       </header>
 

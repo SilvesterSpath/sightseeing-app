@@ -1,10 +1,11 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   eventsData,
   eventKey,
   getEventDates,
   getEvents,
 } from "../../data/events";
+import { navigationData } from "../../data/navigation";
 import {
   formatEventDateChip,
   formatEventDayHeading,
@@ -19,29 +20,33 @@ import {
   type EventFilters,
 } from "../../eventFilters";
 import PaneTools from "../PaneTools";
+import DaySelector from "../itinerary/DaySelector";
 import EmptyEventsState from "./EmptyEventsState";
 import EventCard from "./EventCard";
 import EventsFilters from "./EventsFilters";
 
 interface EventsViewProps {
-  itineraryDay: number;
+  day: number;
   filters: EventFilters;
   filtersOpen: boolean;
   canReset: boolean;
+  onDayChange: (day: number) => void;
   onChange: (next: EventFilters) => void;
   onToggleFilters: () => void;
   onResetPlan: () => void;
 }
 
 export default function EventsView({
-  itineraryDay,
+  day,
   filters,
   filtersOpen,
   canReset,
+  onDayChange,
   onChange,
   onToggleFilters,
   onResetPlan,
 }: EventsViewProps) {
+  const [toolsOpen, setToolsOpen] = useState(false);
   const events = getEvents();
   const dates = getEventDates();
   const groups = useMemo(
@@ -52,9 +57,13 @@ export default function EventsView({
     (total, group) => total + group.events.length,
     0,
   );
-  const itineraryDate = isoDateForTripDay(itineraryDay);
+  const itineraryDate = isoDateForTripDay(day);
   const panelCount = countPanelFilters(filters);
   const { recordCount } = eventsData.meta;
+  const toolsActive =
+    panelCount +
+    (filters.search.trim() ? 1 : 0) +
+    (filters.date !== itineraryDate ? 1 : 0);
 
   function resetFilters() {
     onChange(defaultEventFilters(itineraryDate));
@@ -70,53 +79,71 @@ export default function EventsView({
           </p>
           <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
-        <label className="attractions-search">
-          <span className="visually-hidden">Search events</span>
-          <input
-            type="search"
-            value={filters.search}
-            onChange={(event) =>
-              onChange({ ...filters, search: event.target.value })
-            }
-            placeholder="Search name, venue, area"
-            autoComplete="off"
-          />
-        </label>
-        <div className="event-date-chips" role="group" aria-label="Event date">
-          {(["All", ...dates] as EventDateFilter[]).map((date) => {
-            const selected = filters.date === date;
-            const dayNumber =
-              date === "All" ? undefined : tripDayForIsoDate(date);
-            return (
-              <button
-                key={date}
-                type="button"
-                className={selected ? "day-chip is-selected" : "day-chip"}
-                aria-pressed={selected}
-                onClick={() => onChange({ ...filters, date })}
-              >
-                <span className="day-chip-label">
-                  {date === "All"
-                    ? "All"
-                    : dayNumber !== undefined
-                      ? `Day ${dayNumber}`
-                      : formatEventDateChip(date)}
-                </span>
-                <span className="day-chip-date">
-                  {date === "All" ? "days" : formatEventDateChip(date)}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-        <EventsFilters
-          filters={filters}
-          open={filtersOpen}
-          activeCount={panelCount}
-          onToggle={onToggleFilters}
-          onChange={onChange}
-          onReset={resetFilters}
+        <DaySelector
+          days={navigationData.days}
+          selectedDay={day}
+          onChange={onDayChange}
         />
+        <button
+          type="button"
+          className="attractions-tools-toggle"
+          aria-expanded={toolsOpen}
+          aria-controls="events-tools-panel"
+          onClick={() => setToolsOpen((open) => !open)}
+        >
+          Search & filters{toolsActive > 0 ? ` (${toolsActive})` : ""}
+        </button>
+        {toolsOpen ? (
+          <div id="events-tools-panel" className="attractions-tools-panel">
+            <label className="attractions-search">
+              <span className="visually-hidden">Search events</span>
+              <input
+                type="search"
+                value={filters.search}
+                onChange={(event) =>
+                  onChange({ ...filters, search: event.target.value })
+                }
+                placeholder="Search name, venue, area"
+                autoComplete="off"
+              />
+            </label>
+            <div className="event-date-chips" role="group" aria-label="Event date">
+              {(["All", ...dates] as EventDateFilter[]).map((date) => {
+                const selected = filters.date === date;
+                const dayNumber =
+                  date === "All" ? undefined : tripDayForIsoDate(date);
+                return (
+                  <button
+                    key={date}
+                    type="button"
+                    className={selected ? "day-chip is-selected" : "day-chip"}
+                    aria-pressed={selected}
+                    onClick={() => onChange({ ...filters, date })}
+                  >
+                    <span className="day-chip-label">
+                      {date === "All"
+                        ? "All"
+                        : dayNumber !== undefined
+                          ? `Day ${dayNumber}`
+                          : formatEventDateChip(date)}
+                    </span>
+                    <span className="day-chip-date">
+                      {date === "All" ? "days" : formatEventDateChip(date)}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+            <EventsFilters
+              filters={filters}
+              open={filtersOpen}
+              activeCount={panelCount}
+              onToggle={onToggleFilters}
+              onChange={onChange}
+              onReset={resetFilters}
+            />
+          </div>
+        ) : null}
       </header>
       {visibleCount === 0 ? (
         <EmptyEventsState onReset={resetFilters} />

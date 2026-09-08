@@ -164,6 +164,8 @@ export default function App() {
             currentSegmentNumber={currentSegmentNumber}
             completed={completed}
             canReset={canReset}
+            onDayChange={setDay}
+            onWeatherChange={setWeather}
             onToggleComplete={handleToggleComplete}
             onResetPlan={handleResetPlan}
           />
@@ -178,10 +180,11 @@ export default function App() {
           />
         ) : (
           <EventsView
-            itineraryDay={day}
+            day={day}
             filters={eventFilters}
             filtersOpen={eventFiltersOpen}
             canReset={canReset}
+            onDayChange={setDay}
             onChange={setEventFilters}
             onToggleFilters={() => setEventFiltersOpen((open) => !open)}
             onResetPlan={handleResetPlan}
@@ -190,11 +193,9 @@ export default function App() {
       </main>
       <AppChrome
         open={chromeOpen}
-        day={day}
         weather={weather}
         tab={tab}
         onToggle={handleToggleChrome}
-        onDayChange={setDay}
         onWeatherChange={setWeather}
         onTabChange={handleTabChange}
       />
