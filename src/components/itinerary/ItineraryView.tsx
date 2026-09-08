@@ -1,9 +1,7 @@
 import { getPlan, navigationData } from "../../data/navigation";
 import type { Weather } from "../../types/navigation";
 import PaneTools from "../PaneTools";
-import DaySelector from "./DaySelector";
 import SegmentList from "./SegmentList";
-import WeatherSelector from "./WeatherSelector";
 
 interface ItineraryViewProps {
   day: number;
@@ -11,8 +9,6 @@ interface ItineraryViewProps {
   currentSegmentNumber: number;
   completed: ReadonlySet<string>;
   canReset: boolean;
-  onDayChange: (day: number) => void;
-  onWeatherChange: (weather: Weather) => void;
   onToggleComplete: (segmentNumber: number) => void;
   onResetPlan: () => void;
 }
@@ -30,8 +26,6 @@ export default function ItineraryView({
   currentSegmentNumber,
   completed,
   canReset,
-  onDayChange,
-  onWeatherChange,
   onToggleComplete,
   onResetPlan,
 }: ItineraryViewProps) {
@@ -58,15 +52,6 @@ export default function ItineraryView({
           </div>
           <PaneTools canReset={canReset} onResetPlan={onResetPlan} />
         </div>
-        <DaySelector
-          days={days}
-          selectedDay={selectedDay.day}
-          onChange={onDayChange}
-        />
-        <WeatherSelector
-          selectedWeather={weather}
-          onChange={onWeatherChange}
-        />
         {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
       </header>
 

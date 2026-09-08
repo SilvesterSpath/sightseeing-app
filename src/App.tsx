@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ComponentType } from "react";
-import AppTabs from "./components/AppTabs";
+import AppChrome from "./components/AppChrome";
 import AttractionsView from "./components/attractions/AttractionsView";
 import EventsView from "./components/events/EventsView";
 import ItineraryView from "./components/itinerary/ItineraryView";
@@ -44,6 +44,7 @@ export default function App() {
     defaultEventFilters(isoDateForTripDay(boot.day)),
   );
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
+  const [chromeOpen, setChromeOpen] = useState(false);
   const [devMapsOpen, setDevMapsOpen] = useState(false);
   const [DevMapsPanel, setDevMapsPanel] = useState<DevMapsPanel | null>(null);
 
@@ -144,6 +145,15 @@ export default function App() {
     setCompleted(clearPlanProgress(completed, day, weather));
   }
 
+  function handleToggleChrome() {
+    setChromeOpen((open) => !open);
+  }
+
+  function handleTabChange(next: typeof tab) {
+    setTab(next);
+    setChromeOpen(false);
+  }
+
   return (
     <div className="app">
       <main className="app-body">
@@ -154,15 +164,15 @@ export default function App() {
             currentSegmentNumber={currentSegmentNumber}
             completed={completed}
             canReset={canReset}
-            onDayChange={setDay}
-            onWeatherChange={setWeather}
             onToggleComplete={handleToggleComplete}
             onResetPlan={handleResetPlan}
           />
         ) : tab === "attractions" ? (
           <AttractionsView
+            day={day}
             filters={attractionFilters}
             canReset={canReset}
+            onDayChange={setDay}
             onChange={setAttractionFilters}
             onResetPlan={handleResetPlan}
           />
@@ -178,7 +188,16 @@ export default function App() {
           />
         )}
       </main>
-      <AppTabs activeTab={tab} onChange={setTab} />
+      <AppChrome
+        open={chromeOpen}
+        day={day}
+        weather={weather}
+        tab={tab}
+        onToggle={handleToggleChrome}
+        onDayChange={setDay}
+        onWeatherChange={setWeather}
+        onTabChange={handleTabChange}
+      />
       {import.meta.env.DEV && devMapsOpen && DevMapsPanel ? (
         <DevMapsPanel onClose={() => setDevMapsOpen(false)} />
       ) : null}
