@@ -1,4 +1,3 @@
-import { navigationData } from "../data/navigation";
 import type { Weather } from "../types/navigation";
 import type { AppTab } from "../urlState";
 import AppTabs from "./AppTabs";
