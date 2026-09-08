@@ -2,16 +2,11 @@ import { useEffect, useMemo, useState, type ComponentType } from "react";
 import AppTabs from "./components/AppTabs";
 import AttractionsView from "./components/attractions/AttractionsView";
 import EventsView from "./components/events/EventsView";
-import CurrentSegmentBar from "./components/itinerary/CurrentSegmentBar";
 import ItineraryView from "./components/itinerary/ItineraryView";
 import {
   DEFAULT_ATTRACTION_FILTERS,
   type AttractionFilters,
 } from "./attractionFilters";
-import {
-  readCurrentBarCollapsed,
-  writeCurrentBarCollapsed,
-} from "./currentBar";
 import { getPlan } from "./data/navigation";
 import { isoDateForTripDay } from "./date";
 import {
@@ -21,7 +16,6 @@ import {
 import {
   clearPlanProgress,
   hydrateProgress,
-  isSegmentComplete,
   planHasProgress,
   resolveCurrentSegment,
   saveProgress,
@@ -50,7 +44,6 @@ export default function App() {
     defaultEventFilters(isoDateForTripDay(boot.day)),
   );
   const [eventFiltersOpen, setEventFiltersOpen] = useState(false);
-  const [barCollapsed, setBarCollapsed] = useState(readCurrentBarCollapsed);
   const [devMapsOpen, setDevMapsOpen] = useState(false);
   const [DevMapsPanel, setDevMapsPanel] = useState<DevMapsPanel | null>(null);
 
@@ -61,15 +54,6 @@ export default function App() {
   const currentSegmentNumber = useMemo(
     () => resolveCurrentSegment(currentPlan, completed, day, weather),
     [currentPlan, completed, day, weather],
-  );
-  const currentSegment = currentPlan?.segments.find(
-    (segment) => segment.segmentNumber === currentSegmentNumber,
-  );
-  const currentComplete = isSegmentComplete(
-    completed,
-    day,
-    weather,
-    currentSegmentNumber,
   );
   const canReset = planHasProgress(completed, day, weather);
 
@@ -156,28 +140,12 @@ export default function App() {
     setCompleted(nextCompleted);
   }
 
-  function handleToggleBarCollapsed() {
-    setBarCollapsed((collapsed) => {
-      const next = !collapsed;
-      writeCurrentBarCollapsed(next);
-      return next;
-    });
-  }
-
   function handleResetPlan() {
     setCompleted(clearPlanProgress(completed, day, weather));
   }
 
   return (
-    <div
-      className={
-        tab === "itinerary"
-          ? barCollapsed
-            ? "app is-itinerary is-bar-collapsed"
-            : "app is-itinerary"
-          : "app"
-      }
-    >
+    <div className="app">
       <main className="app-body">
         {tab === "itinerary" ? (
           <ItineraryView
@@ -210,19 +178,6 @@ export default function App() {
           />
         )}
       </main>
-      {tab === "itinerary" && currentSegment && currentPlan ? (
-        <CurrentSegmentBar
-          segment={currentSegment}
-          index={currentSegment.segmentNumber}
-          total={currentPlan.segments.length}
-          isComplete={currentComplete}
-          collapsed={barCollapsed}
-          onToggleCollapsed={handleToggleBarCollapsed}
-          onToggleComplete={() =>
-            handleToggleComplete(currentSegment.segmentNumber)
-          }
-        />
-      ) : null}
       <AppTabs activeTab={tab} onChange={setTab} />
       {import.meta.env.DEV && devMapsOpen && DevMapsPanel ? (
         <DevMapsPanel onClose={() => setDevMapsOpen(false)} />

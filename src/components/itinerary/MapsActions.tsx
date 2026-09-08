@@ -8,18 +8,14 @@ import type { Segment, SegmentStop } from "../../types/navigation";
 
 interface MapsActionsProps {
   segment: Segment;
-  compact?: boolean;
 }
 
 function partLabel(
   chunk: SegmentStop[],
   index: number,
   total: number,
-  compact: boolean,
 ): string {
-  const heading = compact
-    ? `Part ${index + 1} of ${total}`
-    : `Open part ${index + 1} of ${total}`;
+  const heading = `Open part ${index + 1} of ${total}`;
   const from = chunk[0]?.name;
   const to = chunk[chunk.length - 1]?.name;
   if (!from || !to) {
@@ -28,7 +24,7 @@ function partLabel(
   return `${heading}: ${from} → ${to}`;
 }
 
-export default function MapsActions({ segment, compact }: MapsActionsProps) {
+export default function MapsActions({ segment }: MapsActionsProps) {
   const transitFamily = isTransitFamily(segment.mode);
   const partsNeeded = needsOpenInParts(segment.stops, segment.mode);
   const parts = partsNeeded
@@ -36,7 +32,7 @@ export default function MapsActions({ segment, compact }: MapsActionsProps) {
     : [];
   const showParts = parts.length > 1;
   const fullUrl =
-    (compact && showParts) || (transitFamily && partsNeeded)
+    transitFamily && partsNeeded
       ? null
       : buildDirectionsUrl(segment.stops, segment.mode);
 
@@ -49,7 +45,7 @@ export default function MapsActions({ segment, compact }: MapsActionsProps) {
     : "Route in parts";
 
   return (
-    <div className={compact ? "maps-actions is-compact" : "maps-actions"}>
+    <div className="maps-actions">
       {fullUrl ? (
         <a
           className="maps-button"
@@ -63,36 +59,25 @@ export default function MapsActions({ segment, compact }: MapsActionsProps) {
       {showParts ? (
         <>
           <p className="maps-legs-label">{partsHeading}</p>
-          <div className={compact ? "maps-parts-row" : undefined}>
-            {parts.map((chunk, index) => {
-              const partUrl = buildDirectionsUrl(chunk, segment.mode);
-              if (!partUrl) {
-                return null;
-              }
-              const label = partLabel(
-                chunk,
-                index,
-                parts.length,
-                Boolean(compact),
-              );
-              return (
-                <a
-                  key={`${chunk[0].stopId}-${index}`}
-                  className={
-                    compact || !fullUrl ? "maps-button" : "maps-part-link"
-                  }
-                  href={partUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={label}
-                >
-                  {compact
-                    ? `Part ${index + 1} of ${parts.length}`
-                    : label}
-                </a>
-              );
-            })}
-          </div>
+          {parts.map((chunk, index) => {
+            const partUrl = buildDirectionsUrl(chunk, segment.mode);
+            if (!partUrl) {
+              return null;
+            }
+            const label = partLabel(chunk, index, parts.length);
+            return (
+              <a
+                key={`${chunk[0].stopId}-${index}`}
+                className={fullUrl ? "maps-part-link" : "maps-button"}
+                href={partUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+              >
+                {label}
+              </a>
+            );
+          })}
         </>
       ) : null}
     </div>
