@@ -369,12 +369,20 @@ body {
   list-style: none;
 }
 
+.stop-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .stop-row + .stop-row {
   margin-top: 0.2rem;
 }
 
 .stop-link {
   display: flex;
+  flex: 1;
+  min-width: 0;
   gap: 0.45rem;
   min-height: 44px;
   align-items: center;
@@ -388,7 +396,27 @@ body {
 }
 
 .stop-name {
+  flex: 1;
+  min-width: 0;
   font-size: 0.98rem;
+}
+
+.stop-kind {
+  flex-shrink: 0;
+  max-width: 7.5rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.stop-site {
+  flex-shrink: 0;
+  min-height: 44px;
+  min-width: 4.6rem;
+  padding: 0.3rem 0.45rem;
+  font-size: 0.72rem;
 }
 
 .maps-actions {

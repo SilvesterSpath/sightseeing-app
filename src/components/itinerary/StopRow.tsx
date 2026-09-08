@@ -1,3 +1,4 @@
+import { getMasterStop } from "../../data/navigation";
 import type { SegmentStop } from "../../types/navigation";
 
 interface StopRowProps {
@@ -5,6 +6,10 @@ interface StopRowProps {
 }
 
 export default function StopRow({ stop }: StopRowProps) {
+  const master = getMasterStop(stop.stopId);
+  const kind = master?.type.trim() ?? "";
+  const website = master?.sourceUrl.trim() ?? "";
+
   return (
     <li className="stop-row">
       <a
@@ -15,7 +20,19 @@ export default function StopRow({ stop }: StopRowProps) {
       >
         <span className="stop-order">{stop.order}.</span>
         <span className="stop-name">{stop.name}</span>
+        {kind ? <span className="stop-kind">{kind}</span> : null}
       </a>
+      {website ? (
+        <a
+          className="stop-site source-button"
+          href={website}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Website for ${stop.name}`}
+        >
+          Website
+        </a>
+      ) : null}
     </li>
   );
 }
