@@ -65,15 +65,18 @@ export default function ItineraryView({
           selectedDay={selectedDay.day}
           onChange={onDayChange}
         />
-        <button
-          type="button"
-          className="attractions-tools-toggle"
-          aria-expanded={toolsOpen}
-          aria-controls="itinerary-tools-panel"
-          onClick={() => setToolsOpen((open) => !open)}
-        >
-          Weather · {weather}
-        </button>
+        <div className="itinerary-tools-row">
+          <button
+            type="button"
+            className="attractions-tools-toggle"
+            aria-expanded={toolsOpen}
+            aria-controls="itinerary-tools-panel"
+            onClick={() => setToolsOpen((open) => !open)}
+          >
+            Weather · {weather}
+          </button>
+          {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
+        </div>
         {toolsOpen ? (
           <div id="itinerary-tools-panel" className="attractions-tools-panel">
             <WeatherSelector
@@ -82,7 +85,6 @@ export default function ItineraryView({
             />
           </div>
         ) : null}
-        {cityPass ? <p className="go-city-badge">{cityPass}</p> : null}
       </header>
 
       <SegmentList

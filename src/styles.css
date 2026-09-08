@@ -9,9 +9,6 @@
     sans-serif;
   line-height: 1.4;
   --chrome-handle-size: 2rem;
-  --chrome-handle-top: calc(
-    var(--chrome-handle-size) + env(safe-area-inset-top, 0px)
-  );
   --chrome-handle-bottom: calc(
     var(--chrome-handle-size) + env(safe-area-inset-bottom, 0px)
   );
@@ -145,7 +142,7 @@ body {
   z-index: 5;
   flex-shrink: 0;
   background: var(--bg);
-  padding: calc(var(--chrome-handle-top) + 0.85rem) 1rem 0.85rem;
+  padding: calc(0.85rem + env(safe-area-inset-top, 0px)) 1rem 0.85rem;
   box-shadow: 0 1px 0 var(--border-soft);
 }
 
@@ -234,6 +231,39 @@ body {
   border: 1px solid var(--border);
   font-size: 0.78rem;
   font-weight: 650;
+}
+
+.itinerary-tools-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 0.4rem;
+  align-items: stretch;
+}
+
+.itinerary-tools-row:not(:has(.go-city-badge)) {
+  grid-template-columns: 1fr;
+}
+
+.itinerary-tools-row .attractions-tools-toggle,
+.itinerary-tools-row .go-city-badge {
+  box-sizing: border-box;
+  width: 100%;
+  height: 22px;
+  min-height: 22px;
+  margin: 0;
+  padding: 0 0.45rem;
+  border-radius: 0.4rem;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.itinerary-tools-row .go-city-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.3rem;
+  font-size: 0.7rem;
+  white-space: nowrap;
 }
 
 .segment-list {
@@ -465,7 +495,6 @@ body {
   background: var(--bg);
 }
 
-.chrome-top,
 .chrome-bottom {
   position: fixed;
   left: 50%;
@@ -476,14 +505,6 @@ body {
   flex-direction: column;
   background: var(--bg);
   transform: translateX(-50%);
-}
-
-.chrome-top {
-  top: 0;
-  border-bottom: 1px solid var(--border-soft);
-}
-
-.chrome-bottom {
   bottom: 0;
   border-top: 1px solid var(--border-soft);
 }
@@ -499,11 +520,6 @@ body {
   background: transparent;
   color: inherit;
   cursor: pointer;
-}
-
-.chrome-top > .chrome-handle {
-  min-height: var(--chrome-handle-top);
-  padding-top: env(safe-area-inset-top, 0px);
 }
 
 .chrome-bottom > .chrome-handle {
@@ -525,13 +541,8 @@ body {
   transition: max-height 0.22s ease;
 }
 
-.chrome-top.is-open .chrome-collapsible,
 .chrome-bottom.is-open .chrome-collapsible {
   max-height: 16rem;
-}
-
-.chrome-top-body {
-  padding: 0 1rem 0.75rem;
 }
 
 .chrome-scrim {
@@ -567,7 +578,7 @@ body {
   z-index: 5;
   flex-shrink: 0;
   background: var(--bg);
-  padding: calc(var(--chrome-handle-top) + 0.85rem) 1rem 0.5rem;
+  padding: calc(0.85rem + env(safe-area-inset-top, 0px)) 1rem 0.5rem;
   box-shadow: 0 1px 0 var(--border-soft);
 }
 

@@ -193,10 +193,8 @@ export default function App() {
       </main>
       <AppChrome
         open={chromeOpen}
-        weather={weather}
         tab={tab}
         onToggle={handleToggleChrome}
-        onWeatherChange={setWeather}
         onTabChange={handleTabChange}
       />
       {import.meta.env.DEV && devMapsOpen && DevMapsPanel ? (
