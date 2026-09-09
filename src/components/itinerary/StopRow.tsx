@@ -30,7 +30,7 @@ export default function StopRow({ stop }: StopRowProps) {
           rel="noreferrer"
           aria-label={`Website for ${stop.name}`}
         >
-          Website
+          Web
         </a>
       ) : null}
     </li>
