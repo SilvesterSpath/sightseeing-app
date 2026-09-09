@@ -19,6 +19,10 @@ export default function AppMenu({ canReset, onResetPlan }: AppMenuProps) {
           booking.
         </p>
         <p>Google Maps and ticket or source links need a connection.</p>
+        <p>
+          Travel times are typical walking or transit estimates, not live
+          departures.
+        </p>
         <button
           type="button"
           className="reset-plan"

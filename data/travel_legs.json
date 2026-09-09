@@ -1,0 +1,846 @@
+{
+  "schemaVersion": 1,
+  "mixedSequences": [
+    {
+      "stopIds": [
+        "STROMKAJEN",
+        "VAXHOLM"
+      ],
+      "modes": [
+        "boat"
+      ]
+    },
+    {
+      "stopIds": [
+        "VAXHOLM",
+        "STROMKAJEN",
+        "KUNGSTRAD",
+        "RIKSDAG",
+        "STORTORGET",
+        "HOTEL"
+      ],
+      "modes": [
+        "boat",
+        "walking",
+        "walking",
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "NOBEL",
+        "SLUSSEN",
+        "ALLMANNA",
+        "SKANSEN"
+      ],
+      "modes": [
+        "walking",
+        "transit",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "NOBEL",
+        "VIKING",
+        "FOTO"
+      ],
+      "modes": [
+        "transit",
+        "transit"
+      ]
+    },
+    {
+      "stopIds": [
+        "FOTO",
+        "SLUSSEN",
+        "HOTEL"
+      ],
+      "modes": [
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "STORKYRKAN",
+        "SLUSSEN",
+        "ALLMANNA",
+        "SKANSEN"
+      ],
+      "modes": [
+        "walking",
+        "transit",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "SKANSEN",
+        "ALLMANNA",
+        "SLUSSEN",
+        "FJALL",
+        "NYTORGET",
+        "MARIATORGET",
+        "MONTELIUS",
+        "HOTEL"
+      ],
+      "modes": [
+        "walking",
+        "transit",
+        "walking",
+        "walking",
+        "walking",
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "SKANSEN",
+        "ALLMANNA",
+        "SLUSSEN",
+        "FJALL",
+        "MONTELIUS",
+        "HOTEL"
+      ],
+      "modes": [
+        "walking",
+        "transit",
+        "walking",
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "STORKYRKAN",
+        "FOTO",
+        "GOTGATAN"
+      ],
+      "modes": [
+        "transit",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "HOTEL",
+        "NORD_GALL",
+        "NORRGAVEL",
+        "OSCAR",
+        "STUREPLAN",
+        "BIBLIO"
+      ],
+      "modes": [
+        "walking",
+        "walking",
+        "walking",
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "HOTEL",
+        "NORD_GALL",
+        "NORRGAVEL",
+        "OSCAR",
+        "NK",
+        "GALLERIAN",
+        "IKEA"
+      ],
+      "modes": [
+        "transit",
+        "walking",
+        "walking",
+        "walking",
+        "walking",
+        "walking"
+      ]
+    },
+    {
+      "stopIds": [
+        "IKEA",
+        "CAFE_GAMLA",
+        "HOTEL"
+      ],
+      "modes": [
+        "transit",
+        "walking"
+      ]
+    }
+  ],
+  "legs": [
+    {
+      "fromStopId": "ABBA",
+      "toStopId": "GRONA",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "ABBA",
+      "toStopId": "VIKING",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "ALLMANNA",
+      "toStopId": "SKANSEN",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "ALLMANNA",
+      "toStopId": "SLUSSEN",
+      "mode": "transit",
+      "durationMinutes": 15,
+      "source": "manual",
+      "notes": "Djurgårdsfärjan, typical wait included"
+    },
+    {
+      "fromStopId": "ALLMANNA",
+      "toStopId": "VASA",
+      "mode": "transit",
+      "durationMinutes": 8,
+      "source": "manual",
+      "notes": "Short hop from ferry stop"
+    },
+    {
+      "fromStopId": "ARKDES",
+      "toStopId": "DRAMATEN",
+      "mode": "walking",
+      "durationMinutes": 12,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "ARKDES",
+      "toStopId": "SVENSKT",
+      "mode": "walking",
+      "durationMinutes": 12,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "ARLANDA",
+      "toStopId": "MARSTA",
+      "mode": "transit",
+      "durationMinutes": 25,
+      "source": "manual",
+      "notes": "Pendeltåg, typical wait included"
+    },
+    {
+      "fromStopId": "ARMOURY",
+      "toStopId": "STORKYRKAN",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "BIBLIO",
+      "toStopId": "IKEA",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "CAFE_GAMLA",
+      "toStopId": "HOTEL",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "DRAMATEN",
+      "toStopId": "SVENSKT",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "DROTTNING",
+      "toStopId": "EVERT",
+      "mode": "walking",
+      "durationMinutes": 14,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "EVERT",
+      "toStopId": "HOTEL",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "EVERT",
+      "toStopId": "RIKSDAG",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "EVERT",
+      "toStopId": "STORTORGET",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "FJALL",
+      "toStopId": "MONTELIUS",
+      "mode": "walking",
+      "durationMinutes": 22,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "FJALL",
+      "toStopId": "NYTORGET",
+      "mode": "walking",
+      "durationMinutes": 18,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "FOTO",
+      "toStopId": "GOTGATAN",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "FOTO",
+      "toStopId": "SLUSSEN",
+      "mode": "walking",
+      "durationMinutes": 12,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "GALLERIAN",
+      "toStopId": "IKEA",
+      "mode": "walking",
+      "durationMinutes": 2,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "GOTGATAN",
+      "toStopId": "MONTELIUS",
+      "mode": "walking",
+      "durationMinutes": 15,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "GRONA",
+      "toStopId": "ALLMANNA",
+      "mode": "transit",
+      "durationMinutes": 6,
+      "source": "manual",
+      "notes": "Short walk to ferry stop"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "EVERT",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "MARSTA",
+      "mode": "transit",
+      "durationMinutes": 50,
+      "source": "manual",
+      "notes": "Walk to Stockholm C plus pendeltåg"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "NOBEL",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "NORD_GALL",
+      "mode": "transit",
+      "durationMinutes": 18,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "NORD_GALL",
+      "mode": "walking",
+      "durationMinutes": 22,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "PALACE",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "SKEPPSBRON",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "SLUSSEN",
+      "mode": "transit",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "HOTEL",
+      "toStopId": "STORTORGET",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "IKEA",
+      "toStopId": "CAFE_GAMLA",
+      "mode": "transit",
+      "durationMinutes": 15,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "IKEA",
+      "toStopId": "CAFE_GAMLA",
+      "mode": "walking",
+      "durationMinutes": 18,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "IKEA",
+      "toStopId": "KUNGSTRAD",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "JARNTORGET",
+      "toStopId": "SKEPPSBRON",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "KASTELL",
+      "toStopId": "ARKDES",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "KUNGSTRAD",
+      "toStopId": "NK",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "KUNGSTRAD",
+      "toStopId": "NORD_GALL",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "KUNGSTRAD",
+      "toStopId": "RIKSDAG",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "MARIATORGET",
+      "toStopId": "MONTELIUS",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "MARSTA",
+      "toStopId": "ARLANDA",
+      "mode": "transit",
+      "durationMinutes": 25,
+      "source": "manual",
+      "notes": "Pendeltåg, typical wait included"
+    },
+    {
+      "fromStopId": "MARSTA",
+      "toStopId": "HOTEL",
+      "mode": "transit",
+      "durationMinutes": 50,
+      "source": "manual",
+      "notes": "Pendeltåg to Stockholm C plus walk to Gamla Stan"
+    },
+    {
+      "fromStopId": "MARTEN",
+      "toStopId": "JARNTORGET",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "MONTELIUS",
+      "toStopId": "HOTEL",
+      "mode": "walking",
+      "durationMinutes": 18,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NK",
+      "toStopId": "GALLERIAN",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NK",
+      "toStopId": "SERGELS",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NOBEL",
+      "toStopId": "SLUSSEN",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NOBEL",
+      "toStopId": "STROMKAJEN",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NOBEL",
+      "toStopId": "VIKING",
+      "mode": "transit",
+      "durationMinutes": 25,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NORD_GALL",
+      "toStopId": "NORRGAVEL",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NORDISKA",
+      "toStopId": "ABBA",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NORRBRO",
+      "toStopId": "KUNGSTRAD",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NORRBRO",
+      "toStopId": "OPERA",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NORRGAVEL",
+      "toStopId": "OSCAR",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "NYTORGET",
+      "toStopId": "MARIATORGET",
+      "mode": "walking",
+      "durationMinutes": 14,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "OPERA",
+      "toStopId": "KUNGSTRAD",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "OSCAR",
+      "toStopId": "NK",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "OSCAR",
+      "toStopId": "STUREPLAN",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "PALACE",
+      "toStopId": "ARMOURY",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "PALACE",
+      "toStopId": "RIKSDAG",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "PRASTGATAN",
+      "toStopId": "MARTEN",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "PRASTGATAN",
+      "toStopId": "PALACE",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "RIKSDAG",
+      "toStopId": "EVERT",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "RIKSDAG",
+      "toStopId": "KUNGSTRAD",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "RIKSDAG",
+      "toStopId": "NORRBRO",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "RIKSDAG",
+      "toStopId": "STORTORGET",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SERGELS",
+      "toStopId": "DROTTNING",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKANSEN",
+      "toStopId": "ALLMANNA",
+      "mode": "transit",
+      "durationMinutes": 10,
+      "source": "manual",
+      "notes": "Walk to ferry stop"
+    },
+    {
+      "fromStopId": "SKANSEN",
+      "toStopId": "ALLMANNA",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSBRON",
+      "toStopId": "PALACE",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSBRON",
+      "toStopId": "SKEPPSHOLMEN",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSBRON",
+      "toStopId": "SKEPPSHOLMSBRON",
+      "mode": "walking",
+      "durationMinutes": 6,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSHOLMEN",
+      "toStopId": "ARKDES",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSHOLMEN",
+      "toStopId": "KASTELL",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SKEPPSHOLMSBRON",
+      "toStopId": "SKEPPSHOLMEN",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SLUSSEN",
+      "toStopId": "ALLMANNA",
+      "mode": "transit",
+      "durationMinutes": 15,
+      "source": "manual",
+      "notes": "Djurgårdsfärjan, typical wait included"
+    },
+    {
+      "fromStopId": "SLUSSEN",
+      "toStopId": "FJALL",
+      "mode": "walking",
+      "durationMinutes": 12,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SLUSSEN",
+      "toStopId": "HOTEL",
+      "mode": "transit",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SLUSSEN",
+      "toStopId": "HOTEL",
+      "mode": "walking",
+      "durationMinutes": 10,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STORKYRKAN",
+      "toStopId": "FOTO",
+      "mode": "transit",
+      "durationMinutes": 18,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STORKYRKAN",
+      "toStopId": "SLUSSEN",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STORTORGET",
+      "toStopId": "HOTEL",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STORTORGET",
+      "toStopId": "PALACE",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STORTORGET",
+      "toStopId": "PRASTGATAN",
+      "mode": "walking",
+      "durationMinutes": 2,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STRANDVAGEN",
+      "toStopId": "VASA",
+      "mode": "walking",
+      "durationMinutes": 14,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STROMKAJEN",
+      "toStopId": "KUNGSTRAD",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "STROMKAJEN",
+      "toStopId": "VAXHOLM",
+      "mode": "boat",
+      "durationMinutes": 75,
+      "source": "manual",
+      "notes": "Waxholmsbolaget typical daytime crossing, timetable-dependent"
+    },
+    {
+      "fromStopId": "STUREPLAN",
+      "toStopId": "BIBLIO",
+      "mode": "walking",
+      "durationMinutes": 4,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "SVENSKT",
+      "toStopId": "STRANDVAGEN",
+      "mode": "walking",
+      "durationMinutes": 3,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "VASA",
+      "toStopId": "NORDISKA",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "VAXHOLM",
+      "toStopId": "STROMKAJEN",
+      "mode": "boat",
+      "durationMinutes": 75,
+      "source": "manual",
+      "notes": "Waxholmsbolaget typical daytime crossing, timetable-dependent"
+    },
+    {
+      "fromStopId": "VIKING",
+      "toStopId": "FOTO",
+      "mode": "transit",
+      "durationMinutes": 20,
+      "source": "manual"
+    },
+    {
+      "fromStopId": "VIKING",
+      "toStopId": "GRONA",
+      "mode": "walking",
+      "durationMinutes": 8,
+      "source": "manual"
+    }
+  ]
+}

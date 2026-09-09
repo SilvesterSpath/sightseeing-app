@@ -64,6 +64,9 @@ export default defineConfig({
       "@events-data": fileURLToPath(
         new URL("./data/stockholm_events.json", import.meta.url),
       ),
+      "@travel-data": fileURLToPath(
+        new URL("./data/travel_legs.json", import.meta.url),
+      ),
     },
   },
   test: {

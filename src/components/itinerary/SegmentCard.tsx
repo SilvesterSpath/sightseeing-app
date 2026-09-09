@@ -1,3 +1,9 @@
+import {
+  formatMinutesEstimate,
+  resolveLegMode,
+  segmentLegMinutes,
+  segmentTravelMinutes,
+} from "../../data/travel";
 import type { Segment } from "../../types/navigation";
 import MapsActions from "./MapsActions";
 import StopRow from "./StopRow";
@@ -16,6 +22,15 @@ export default function SegmentCard({
   onToggleComplete,
 }: SegmentCardProps) {
   const notes = segment.notes.trim();
+  const totalMinutes = segmentTravelMinutes(segment);
+  const modeLabel =
+    totalMinutes == null
+      ? segment.mode
+      : `${segment.mode} · ${formatMinutesEstimate(totalMinutes)}`;
+  const modeAria =
+    totalMinutes == null
+      ? segment.mode
+      : `${segment.mode}, about ${totalMinutes} minutes travel`;
   const classes = [
     "segment-card",
     isCurrent ? "is-current" : "",
@@ -30,7 +45,9 @@ export default function SegmentCard({
         <div className="segment-card-heading">
           <div className="segment-heading">
             <h2 className="segment-name">{segment.name}</h2>
-            <p className="segment-mode">{segment.mode}</p>
+            <p className="segment-mode" aria-label={modeAria}>
+              {modeLabel}
+            </p>
           </div>
           <p
             className="segment-index"
@@ -47,9 +64,24 @@ export default function SegmentCard({
       </header>
       {notes ? <p className="segment-notes">{notes}</p> : null}
       <ol className="stop-list">
-        {segment.stops.map((stop) => (
-          <StopRow key={`${stop.order}-${stop.stopId}`} stop={stop} />
-        ))}
+        {segment.stops.map((stop, index) => {
+          const nextStop = segment.stops[index + 1];
+          const durationMinutes = nextStop
+            ? segmentLegMinutes(segment, index)
+            : undefined;
+          const legMode = nextStop
+            ? resolveLegMode(segment, index)
+            : undefined;
+          return (
+            <StopRow
+              key={`${stop.order}-${stop.stopId}`}
+              stop={stop}
+              nextStop={nextStop}
+              durationMinutes={durationMinutes}
+              legMode={legMode}
+            />
+          );
+        })}
       </ol>
       <MapsActions segment={segment} />
       <button

@@ -410,6 +410,8 @@ body {
 }
 
 .stop-link {
+  container-type: inline-size;
+  container-name: stop-link;
   display: flex;
   flex: 1;
   min-width: 0;
@@ -426,19 +428,53 @@ body {
 }
 
 .stop-name {
-  flex: 1;
+  flex: 1 0 auto;
   min-width: 0;
   font-size: 0.98rem;
+  white-space: nowrap;
+}
+
+.stop-duration {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .stop-kind {
-  flex-shrink: 0;
+  flex: 0 1 7.5rem;
+  min-width: 2.25rem;
   max-width: 7.5rem;
+  overflow: hidden;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 650;
   line-height: 1.2;
   text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@container stop-link (max-width: 18rem) {
+  .stop-name {
+    flex: 1 1 6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@container stop-link (max-width: 12.5rem) {
+  .stop-kind {
+    display: none;
+  }
+}
+
+@container stop-link (max-width: 10.5rem) {
+  .stop-duration-arrow {
+    display: none;
+  }
 }
 
 .stop-site.source-button {

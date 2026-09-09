@@ -1,4 +1,8 @@
 import {
+  formatMinutesEstimate,
+  partTravelMinutes,
+} from "../../data/travel";
+import {
   buildDirectionsUrl,
   chunkStops,
   isTransitFamily,
@@ -10,18 +14,33 @@ interface MapsActionsProps {
   segment: Segment;
 }
 
-function partLabel(
+function partVisibleLabel(
+  index: number,
+  total: number,
+  minutes: number | undefined,
+): string {
+  const heading = `Open part ${index + 1} of ${total}`;
+  if (minutes == null) {
+    return heading;
+  }
+  return `${heading} · ${formatMinutesEstimate(minutes)}`;
+}
+
+function partAriaLabel(
   chunk: SegmentStop[],
   index: number,
   total: number,
+  minutes: number | undefined,
 ): string {
   const heading = `Open part ${index + 1} of ${total}`;
   const from = chunk[0]?.name;
   const to = chunk[chunk.length - 1]?.name;
+  const time =
+    minutes == null ? "" : `, about ${minutes} minutes`;
   if (!from || !to) {
-    return heading;
+    return `${heading}${time}`;
   }
-  return `${heading}: ${from} → ${to}`;
+  return `${heading}${time}: ${from} to ${to}`;
 }
 
 export default function MapsActions({ segment }: MapsActionsProps) {
@@ -64,7 +83,9 @@ export default function MapsActions({ segment }: MapsActionsProps) {
             if (!partUrl) {
               return null;
             }
-            const label = partLabel(chunk, index, parts.length);
+            const minutes = partTravelMinutes(chunk, segment);
+            const visible = partVisibleLabel(index, parts.length, minutes);
+            const aria = partAriaLabel(chunk, index, parts.length, minutes);
             return (
               <a
                 key={`${chunk[0].stopId}-${index}`}
@@ -72,9 +93,9 @@ export default function MapsActions({ segment }: MapsActionsProps) {
                 href={partUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={label}
+                aria-label={aria}
               >
-                {label}
+                {visible}
               </a>
             );
           })}
