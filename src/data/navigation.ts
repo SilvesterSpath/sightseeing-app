@@ -3,6 +3,7 @@ import type {
   DayPlan,
   MasterStop,
   NavigationData,
+  StayInfo,
   Weather,
   WeatherPlan,
 } from "../types/navigation";
@@ -24,9 +25,31 @@ function isOneOf<T extends string>(
   return (allowed as readonly string[]).includes(value);
 }
 
+const STAY_FIELDS = [
+  "accessLabel",
+  "entrance",
+  "location",
+  "checkIn",
+  "checkOut",
+  "nearestMetro",
+] as const satisfies readonly (keyof StayInfo)[];
+const CLOCK_TIME = /^\d{2}:\d{2}$/;
+
+function validateStay(stay: StayInfo): void {
+  for (const field of STAY_FIELDS) {
+    if (!stay[field].trim()) {
+      throw new Error(`Invalid stay.${field}`);
+    }
+  }
+  if (!CLOCK_TIME.test(stay.checkIn) || !CLOCK_TIME.test(stay.checkOut)) {
+    throw new Error("Invalid stay check-in or check-out time");
+  }
+}
+
 function validateNavigation(
   data: typeof rawNavigation,
 ): NavigationData {
+  validateStay(data.meta.stay);
   for (const day of data.days) {
     if (!isOneOf(day.goCity, GO_CITY)) {
       throw new Error(`Unexpected goCity value: ${day.goCity}`);

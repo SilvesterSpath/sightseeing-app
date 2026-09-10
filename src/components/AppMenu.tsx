@@ -1,3 +1,5 @@
+import StayInfo from "./StayInfo";
+
 interface AppMenuProps {
   canReset: boolean;
   onResetPlan: () => void;
@@ -10,6 +12,10 @@ export default function AppMenu({ canReset, onResetPlan }: AppMenuProps) {
         Info
       </summary>
       <div className="app-menu-panel">
+        <section className="stay-menu-block" aria-labelledby="stay-heading">
+          <h2 id="stay-heading">Apartment</h2>
+          <StayInfo />
+        </section>
         <p>
           After the first visit, itinerary, attractions and events work without
           a signal.

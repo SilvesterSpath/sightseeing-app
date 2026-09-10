@@ -2,6 +2,18 @@ import { describe, expect, it } from "vitest";
 import { getMasterStop, navigationData } from "./data/navigation";
 
 describe("itinerary stop meta", () => {
+  it("keeps apartment access details on the trip stay record", () => {
+    const stay = navigationData.meta.stay;
+    expect(stay.accessLabel).toBe("Hotel access");
+    expect(stay.entrance).toBe("Entrance is on Didrik Ficks Gränd.");
+    expect(stay.location).toBe(
+      "Apartment is on the first floor, door on the right.",
+    );
+    expect(stay.checkIn).toBe("16:00");
+    expect(stay.checkOut).toBe("10:00");
+    expect(stay.nearestMetro).toBe("Gamla stan");
+  });
+
   it("gives every listed stop a short type from the master list", () => {
     const stopIds = new Set(
       navigationData.days.flatMap((day) =>

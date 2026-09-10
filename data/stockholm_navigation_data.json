@@ -4,6 +4,14 @@
     "tripStart": "2026-09-11",
     "tripEnd": "2026-09-15",
     "baseAddress": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
+    "stay": {
+      "accessLabel": "Hotel access",
+      "entrance": "Entrance is on Didrik Ficks Gränd.",
+      "location": "Apartment is on the first floor, door on the right.",
+      "checkIn": "16:00",
+      "checkOut": "10:00",
+      "nearestMetro": "Gamla stan"
+    },
     "schemaVersion": 1,
     "sourceWorkbook": "Stockholm_Navigation_Data.xlsx"
   },

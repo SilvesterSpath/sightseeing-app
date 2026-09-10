@@ -9,11 +9,21 @@ export type TransportMode =
 
 export type GoCityMarker = "none" | "day-1" | "day-2" | "day-3";
 
+export interface StayInfo {
+  accessLabel: string;
+  entrance: string;
+  location: string;
+  checkIn: string;
+  checkOut: string;
+  nearestMetro: string;
+}
+
 export interface NavigationMeta {
   title: string;
   tripStart: string;
   tripEnd: string;
   baseAddress: string;
+  stay: StayInfo;
   schemaVersion: number;
   sourceWorkbook: string;
 }

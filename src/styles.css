@@ -137,6 +137,18 @@ body {
   margin: 0;
 }
 
+.stay-info p {
+  margin: 0;
+}
+
+.stay-info p + p {
+  margin-top: 0.2rem;
+}
+
+.stay-kicker {
+  font-weight: 650;
+}
+
 .itinerary-controls {
   position: relative;
   z-index: 5;
@@ -1006,6 +1018,22 @@ body {
 .app-menu-panel p + p,
 .app-menu-panel .reset-plan + p {
   margin-top: 0.45rem;
+}
+
+.app-menu-panel .stay-menu-block {
+  margin: 0 0 0.65rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.app-menu-panel .stay-menu-block h2 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.app-menu-panel .stay-info p + p {
+  margin-top: 0.2rem;
 }
 
 .event-date-chips {
