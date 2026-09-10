@@ -14,7 +14,7 @@
       "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
       "type": "Accommodation",
       "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden",
-      "notes": "Trip start/end and luggage point.",
+      "notes": "Trip start/end. Luggage handoff is at O'Learys Stockholm Central.",
       "sourceUrl": ""
     },
     {
@@ -466,6 +466,24 @@
       "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden",
       "notes": "ARN airport.",
       "sourceUrl": "https://www.swedavia.com/arlanda/"
+    },
+    {
+      "id": "STOCKHOLM_C",
+      "name": "Stockholm Central",
+      "query": "Stockholm Central Station, Stockholm, Sweden",
+      "type": "Transit",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden",
+      "notes": "Pendeltåg arrival/departure station for the Arlanda budget route.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "OLEARYS",
+      "name": "O'Learys Stockholm Central",
+      "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+      "type": "Luggage handoff",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden",
+      "notes": "Meeting point: parking area outside O'Learys. Day 5 exact location pending Patrik confirmation.",
+      "sourceUrl": ""
     }
   ],
   "days": [
@@ -482,7 +500,7 @@
               "name": "Arrival",
               "mode": "Transit",
               "conditional": false,
-              "notes": "Flight lands 09:05; luggage/drop before sightseeing.",
+              "notes": "Flight lands 09:05; luggage handoff at O'Learys before sightseeing.",
               "stops": [
                 {
                   "order": 1,
@@ -500,10 +518,10 @@
                 },
                 {
                   "order": 3,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -512,52 +530,66 @@
               "name": "Gamla Stan medieval walk",
               "mode": "Walking",
               "conditional": false,
-              "notes": "",
+              "notes": "Luggage pickup by Jamal. Meeting point: parking area outside O'Learys. Expected handoff around 11:00–11:30.",
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
                   "stopId": "HOTEL",
                   "name": "Stora Nygatan 17",
                   "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 4,
                   "stopId": "STORTORGET",
                   "name": "Stortorget",
                   "query": "Stortorget, 111 29 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 5,
                   "stopId": "PRASTGATAN",
                   "name": "Prästgatan",
                   "query": "Prästgatan, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Pr%C3%A4stgatan%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 6,
                   "stopId": "MARTEN",
                   "name": "Mårten Trotzigs gränd",
                   "query": "Mårten Trotzigs gränd, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A5rten+Trotzigs+gr%C3%A4nd%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 5,
+                  "order": 7,
                   "stopId": "JARNTORGET",
                   "name": "Järntorget",
                   "query": "Järntorget, 111 29 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=J%C3%A4rntorget%2C+111+29+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 6,
+                  "order": 8,
                   "stopId": "SKEPPSBRON",
                   "name": "Skeppsbron",
                   "query": "Skeppsbron, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Skeppsbron%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 7,
+                  "order": 9,
                   "stopId": "PALACE",
                   "name": "The Royal Palace",
                   "query": "Kungliga slottet, Stockholm, Sweden",
@@ -695,10 +727,10 @@
                 },
                 {
                   "order": 3,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -707,52 +739,66 @@
               "name": "Gamla Stan & royal centre",
               "mode": "Walking",
               "conditional": false,
-              "notes": "",
+              "notes": "Luggage pickup by Jamal. Meeting point: parking area outside O'Learys. Expected handoff around 11:00–11:30.",
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
                   "stopId": "HOTEL",
                   "name": "Stora Nygatan 17",
                   "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 4,
                   "stopId": "STORTORGET",
                   "name": "Stortorget",
                   "query": "Stortorget, 111 29 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 5,
                   "stopId": "PRASTGATAN",
                   "name": "Prästgatan",
                   "query": "Prästgatan, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Pr%C3%A4stgatan%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 6,
                   "stopId": "PALACE",
                   "name": "The Royal Palace",
                   "query": "Kungliga slottet, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 5,
+                  "order": 7,
                   "stopId": "RIKSDAG",
                   "name": "Riksdagshuset",
                   "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 6,
+                  "order": 8,
                   "stopId": "NORRBRO",
                   "name": "Norrbro",
                   "query": "Norrbro, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 7,
+                  "order": 9,
                   "stopId": "KUNGSTRAD",
                   "name": "Kungsträdgården",
                   "query": "Kungsträdgården, Stockholm, Sweden",
@@ -846,10 +892,10 @@
                 },
                 {
                   "order": 3,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -858,52 +904,66 @@
               "name": "Short historic core",
               "mode": "Walking",
               "conditional": false,
-              "notes": "",
+              "notes": "Luggage pickup by Jamal. Meeting point: parking area outside O'Learys. Expected handoff around 11:00–11:30.",
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "STOCKHOLM_C",
+                  "name": "Stockholm Central",
+                  "query": "Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 2,
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
+                },
+                {
+                  "order": 3,
                   "stopId": "HOTEL",
                   "name": "Stora Nygatan 17",
                   "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 4,
                   "stopId": "STORTORGET",
                   "name": "Stortorget",
                   "query": "Stortorget, 111 29 Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stortorget%2C+111+29+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 5,
                   "stopId": "PALACE",
                   "name": "The Royal Palace",
                   "query": "Kungliga slottet, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungliga+slottet%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 6,
                   "stopId": "RIKSDAG",
                   "name": "Riksdagshuset",
                   "query": "Riksdagshuset, Riksgatan 1, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Riksdagshuset%2C+Riksgatan+1%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 5,
+                  "order": 7,
                   "stopId": "NORRBRO",
                   "name": "Norrbro",
                   "query": "Norrbro, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrbro%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 6,
+                  "order": 8,
                   "stopId": "KUNGSTRAD",
                   "name": "Kungsträdgården",
                   "query": "Kungsträdgården, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Kungstr%C3%A4dg%C3%A5rden%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 7,
+                  "order": 9,
                   "stopId": "NK",
                   "name": "NK Stockholm",
                   "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
@@ -2213,10 +2273,10 @@
                 },
                 {
                   "order": 5,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -2225,14 +2285,14 @@
               "name": "Airport",
               "mode": "Transit",
               "conditional": false,
-              "notes": "Leave central Stockholm around 16:15.",
+              "notes": "Departure luggage service booked (295 SEK). Handoff around 16:00 at O'Learys. Exact meeting point pending Patrik confirmation. Then leave for Arlanda.",
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 },
                 {
                   "order": 2,
@@ -2350,10 +2410,10 @@
                 },
                 {
                   "order": 6,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -2362,14 +2422,14 @@
               "name": "Airport",
               "mode": "Transit",
               "conditional": false,
-              "notes": "Leave around 16:15.",
+              "notes": "Departure luggage service booked (295 SEK). Handoff around 16:00 at O'Learys. Exact meeting point pending Patrik confirmation. Then leave for Arlanda.",
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 },
                 {
                   "order": 2,
@@ -2473,10 +2533,10 @@
                 },
                 {
                   "order": 3,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 }
               ]
             },
@@ -2485,14 +2545,14 @@
               "name": "Airport",
               "mode": "Transit",
               "conditional": false,
-              "notes": "Leave around 16:15.",
+              "notes": "Departure luggage service booked (295 SEK). Handoff around 16:00 at O'Learys. Exact meeting point pending Patrik confirmation. Then leave for Arlanda.",
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "HOTEL",
-                  "name": "Stora Nygatan 17",
-                  "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stora+Nygatan+17%2C+111+27+Stockholm%2C+Sweden"
+                  "stopId": "OLEARYS",
+                  "name": "O'Learys Stockholm Central",
+                  "query": "O'Learys Stockholm Central Station, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden"
                 },
                 {
                   "order": 2,

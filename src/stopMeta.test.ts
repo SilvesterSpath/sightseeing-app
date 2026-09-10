@@ -21,4 +21,26 @@ describe("itinerary stop meta", () => {
       expect(words.length, `${stopId} type`).toBeLessThanOrEqual(3);
     }
   });
+
+  it("uses one shared O'Learys luggage-handoff stop on Day 1 and Day 5", () => {
+    const olearys = navigationData.stops.filter((stop) => stop.id === "OLEARYS");
+    expect(olearys).toHaveLength(1);
+    expect(olearys[0]?.type).toBe("Luggage handoff");
+    expect(olearys[0]?.query).toBe(
+      "O'Learys Stockholm Central Station, Stockholm, Sweden",
+    );
+
+    const daysUsingOlearys = new Set(
+      navigationData.days
+        .filter((day) =>
+          day.weatherPlans.some((plan) =>
+            plan.segments.some((segment) =>
+              segment.stops.some((stop) => stop.stopId === "OLEARYS"),
+            ),
+          ),
+        )
+        .map((day) => day.day),
+    );
+    expect(daysUsingOlearys).toEqual(new Set([1, 5]));
+  });
 });

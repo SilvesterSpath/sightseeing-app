@@ -125,7 +125,10 @@ describe("itinerary directions URLs", () => {
     const chunks = chunkStops(arrival!.stops, arrival!.mode);
     expect(chunks).toHaveLength(2);
     expect(chunks[0].map((stop) => stop.stopId)).toEqual(["ARLANDA", "MARSTA"]);
-    expect(chunks[1].map((stop) => stop.stopId)).toEqual(["MARSTA", "HOTEL"]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual([
+      "MARSTA",
+      "STOCKHOLM_C",
+    ]);
 
     const urls = chunks.map((chunk) =>
       buildDirectionsUrl(chunk, arrival!.mode),
@@ -152,6 +155,31 @@ describe("itinerary directions URLs", () => {
     expect(new URL(urls[1] as string).searchParams.get("destination")).toBe(
       arrival!.stops[2].query,
     );
+  });
+
+  it("splits Day 5 Airport into O'Learys → Märsta and Märsta → Arlanda", () => {
+    const plan = getPlan(5, "Good");
+    const airport = plan?.segments.find(
+      (segment) => segment.name === "Airport",
+    );
+    expect(airport).toBeDefined();
+    expect(airport?.mode).toBe("Transit");
+    expect(airport?.stops.map((stop) => stop.stopId)).toEqual([
+      "OLEARYS",
+      "MARSTA",
+      "ARLANDA",
+    ]);
+
+    const chunks = chunkStops(airport!.stops, airport!.mode);
+    expect(chunks).toHaveLength(2);
+    expect(chunks[0].map((stop) => stop.stopId)).toEqual([
+      "OLEARYS",
+      "MARSTA",
+    ]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual([
+      "MARSTA",
+      "ARLANDA",
+    ]);
   });
 
   it("maps Walking to walking and transit mixes to transit", () => {

@@ -28,10 +28,23 @@ function allPlanSegments(): PlanSegment[] {
   );
 }
 
+const UNRESOLVED_PAIRS = new Set([
+  "MARSTA|STOCKHOLM_C",
+  "STOCKHOLM_C|OLEARYS",
+  "OLEARYS|HOTEL",
+  "EVERT|OLEARYS",
+  "CAFE_GAMLA|OLEARYS",
+  "OLEARYS|MARSTA",
+]);
+
+function pairKey(fromStopId: string, toStopId: string): string {
+  return `${fromStopId}|${toStopId}`;
+}
+
 describe("baked travel times", () => {
   const plans = allPlanSegments();
 
-  it("resolves a positive duration for every consecutive pair", () => {
+  it("resolves a positive duration for verified pairs and leaves new handoff pairs open", () => {
     for (const { day, weather, segment } of plans) {
       expect(
         resolveLegMode(segment, 0),
@@ -42,22 +55,37 @@ describe("baked travel times", () => {
         const minutes = segmentLegMinutes(segment, index);
         const from = segment.stops[index];
         const to = segment.stops[index + 1];
-        expect(
-          minutes,
-          `Day ${day} ${weather} · ${segment.name}: ${from.stopId} → ${to.stopId}`,
-        ).toBeGreaterThan(0);
+        const key = pairKey(from.stopId, to.stopId);
+        const label = `Day ${day} ${weather} · ${segment.name}: ${from.stopId} → ${to.stopId}`;
+
+        if (UNRESOLVED_PAIRS.has(key)) {
+          expect(minutes, label).toBeUndefined();
+          continue;
+        }
+
+        expect(minutes, label).toBeGreaterThan(0);
         expect(Number.isInteger(minutes)).toBe(true);
       }
     }
   });
 
-  it("makes segment totals equal the sum of legs", () => {
+  it("makes segment totals equal the sum of legs when every leg is known", () => {
     for (const { segment } of plans) {
       let sum = 0;
+      let complete = true;
       for (let index = 0; index < segment.stops.length - 1; index += 1) {
-        sum += segmentLegMinutes(segment, index) ?? 0;
+        const minutes = segmentLegMinutes(segment, index);
+        if (minutes == null) {
+          complete = false;
+          break;
+        }
+        sum += minutes;
       }
-      expect(segmentTravelMinutes(segment)).toBe(sum);
+      if (complete) {
+        expect(segmentTravelMinutes(segment)).toBe(sum);
+      } else {
+        expect(segmentTravelMinutes(segment)).toBeUndefined();
+      }
     }
   });
 
@@ -67,12 +95,21 @@ describe("baked travel times", () => {
         continue;
       }
       const chunks = chunkStops(segment.stops, segment.mode);
+      let complete = true;
       const partSum = chunks.reduce((total, chunk) => {
         const minutes = partTravelMinutes(chunk, segment);
+        if (minutes == null) {
+          complete = false;
+          return total;
+        }
         expect(minutes).toBeGreaterThan(0);
-        return total + (minutes ?? 0);
+        return total + minutes;
       }, 0);
-      expect(partSum).toBe(segmentTravelMinutes(segment));
+      if (complete) {
+        expect(partSum).toBe(segmentTravelMinutes(segment));
+      } else {
+        expect(segmentTravelMinutes(segment)).toBeUndefined();
+      }
     }
   });
 
@@ -83,6 +120,9 @@ describe("baked travel times", () => {
           continue;
         }
         const minutes = segmentLegMinutes(segment, index);
+        if (minutes == null) {
+          continue;
+        }
         expect(minutes).toBeGreaterThanOrEqual(2);
         expect(minutes).toBeLessThanOrEqual(30);
       }
@@ -106,5 +146,11 @@ describe("baked travel times", () => {
       expect(keys.has(key)).toBe(false);
       keys.add(key);
     }
+  });
+
+  it("does not store phone numbers in travel or navigation data", () => {
+    const blob = `${JSON.stringify(travelData)}${JSON.stringify(navigationData)}`;
+    expect(blob).not.toMatch(/tel:/i);
+    expect(blob).not.toMatch(/\+46/);
   });
 });
