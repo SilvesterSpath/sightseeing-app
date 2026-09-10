@@ -484,6 +484,24 @@
       "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=O%27Learys+Stockholm+Central+Station%2C+Stockholm%2C+Sweden",
       "notes": "Meeting point: parking area outside O'Learys. Day 5 exact location pending Patrik confirmation.",
       "sourceUrl": ""
+    },
+    {
+      "id": "BUD_T2",
+      "name": "Budapest Airport Terminal 2",
+      "query": "Budapest Airport Terminal 2, Hungary",
+      "type": "Airport",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary",
+      "notes": "BUD Terminal 2 for the Stockholm flights.",
+      "sourceUrl": ""
+    },
+    {
+      "id": "BUD_CITY_BREAK_PARKING",
+      "name": "City Break Parking",
+      "query": "47.42969,19.26455",
+      "type": "Parking",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455",
+      "notes": "Budapest Airport City Break Parking. Car parked here for the Stockholm trip.",
+      "sourceUrl": ""
     }
   ],
   "days": [
@@ -497,6 +515,29 @@
           "segments": [
             {
               "segmentNumber": 1,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Parking reservation starts 04:30, Friday 11 September 2026.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
               "name": "Arrival",
               "mode": "Transit",
               "conditional": false,
@@ -504,20 +545,27 @@
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 3,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 4,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -526,7 +574,7 @@
               ]
             },
             {
-              "segmentNumber": 2,
+              "segmentNumber": 3,
               "name": "Gamla Stan medieval walk",
               "mode": "Walking",
               "conditional": false,
@@ -598,7 +646,7 @@
               ]
             },
             {
-              "segmentNumber": 3,
+              "segmentNumber": 4,
               "name": "Royal centre & Norrmalm",
               "mode": "Walking",
               "conditional": false,
@@ -663,7 +711,7 @@
               ]
             },
             {
-              "segmentNumber": 4,
+              "segmentNumber": 5,
               "name": "Riddarholmen & evening return",
               "mode": "Walking",
               "conditional": false,
@@ -706,6 +754,29 @@
           "segments": [
             {
               "segmentNumber": 1,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Parking reservation starts 04:30, Friday 11 September 2026.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
               "name": "Arrival",
               "mode": "Transit",
               "conditional": false,
@@ -713,20 +784,27 @@
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 3,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 4,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -735,7 +813,7 @@
               ]
             },
             {
-              "segmentNumber": 2,
+              "segmentNumber": 3,
               "name": "Gamla Stan & royal centre",
               "mode": "Walking",
               "conditional": false,
@@ -807,7 +885,7 @@
               ]
             },
             {
-              "segmentNumber": 3,
+              "segmentNumber": 4,
               "name": "Indoor/outdoor flexible centre",
               "mode": "Walking",
               "conditional": true,
@@ -871,6 +949,29 @@
           "segments": [
             {
               "segmentNumber": 1,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Parking reservation starts 04:30, Friday 11 September 2026.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
               "name": "Arrival",
               "mode": "Transit",
               "conditional": false,
@@ -878,20 +979,27 @@
               "stops": [
                 {
                   "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 2,
+                  "order": 3,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 4,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -900,7 +1008,7 @@
               ]
             },
             {
-              "segmentNumber": 2,
+              "segmentNumber": 3,
               "name": "Short historic core",
               "mode": "Walking",
               "conditional": false,
@@ -972,7 +1080,7 @@
               ]
             },
             {
-              "segmentNumber": 3,
+              "segmentNumber": 4,
               "name": "Indoor Norrmalm fallback",
               "mode": "Walking",
               "conditional": true,
@@ -2307,6 +2415,36 @@
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 5,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Return to City Break Parking after landing at Terminal 2.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
                 }
               ]
             }
@@ -2444,6 +2582,36 @@
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 4,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Return to City Break Parking after landing at Terminal 2.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
                 }
               ]
             }
@@ -2567,6 +2735,36 @@
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
+                },
+                {
+                  "order": 4,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 4,
+              "name": "Budapest parking",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "Return to City Break Parking after landing at Terminal 2.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "BUD_T2",
+                  "name": "Budapest Airport Terminal 2",
+                  "query": "Budapest Airport Terminal 2, Hungary",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                },
+                {
+                  "order": 2,
+                  "stopId": "BUD_CITY_BREAK_PARKING",
+                  "name": "City Break Parking",
+                  "query": "47.42969,19.26455",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.42969%2C19.26455"
                 }
               ]
             }

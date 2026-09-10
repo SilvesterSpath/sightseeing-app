@@ -61,10 +61,10 @@ function openedUrls(segment: Segment): string[] {
 describe("itinerary directions URLs", () => {
   const plans = allPlanSegments();
 
-  it("covers all 47 segments across 15 weather plans", () => {
+  it("covers all 53 segments across 15 weather plans", () => {
     expect(countWeatherPlans()).toBe(15);
-    expect(countSegments()).toBe(47);
-    expect(plans).toHaveLength(47);
+    expect(countSegments()).toBe(53);
+    expect(plans).toHaveLength(53);
   });
 
   it("builds a parseable dir URL for every segment", () => {
@@ -120,12 +120,18 @@ describe("itinerary directions URLs", () => {
     );
     expect(arrival).toBeDefined();
     expect(arrival?.mode).toBe("Transit");
-    expect(arrival?.stops).toHaveLength(3);
+    expect(arrival?.stops.map((stop) => stop.stopId)).toEqual([
+      "BUD_T2",
+      "ARLANDA",
+      "MARSTA",
+      "STOCKHOLM_C",
+    ]);
 
     const chunks = chunkStops(arrival!.stops, arrival!.mode);
-    expect(chunks).toHaveLength(2);
-    expect(chunks[0].map((stop) => stop.stopId)).toEqual(["ARLANDA", "MARSTA"]);
-    expect(chunks[1].map((stop) => stop.stopId)).toEqual([
+    expect(chunks).toHaveLength(3);
+    expect(chunks[0].map((stop) => stop.stopId)).toEqual(["BUD_T2", "ARLANDA"]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual(["ARLANDA", "MARSTA"]);
+    expect(chunks[2].map((stop) => stop.stopId)).toEqual([
       "MARSTA",
       "STOCKHOLM_C",
     ]);
@@ -135,6 +141,7 @@ describe("itinerary directions URLs", () => {
     );
     expect(urls[0]).toBeTruthy();
     expect(urls[1]).toBeTruthy();
+    expect(urls[2]).toBeTruthy();
 
     for (const href of urls) {
       const url = new URL(href as string);
@@ -157,7 +164,7 @@ describe("itinerary directions URLs", () => {
     );
   });
 
-  it("splits Day 5 Airport into O'Learys → Märsta and Märsta → Arlanda", () => {
+  it("splits Day 5 Airport into O'Learys → Märsta, Märsta → Arlanda, and Arlanda → Budapest T2", () => {
     const plan = getPlan(5, "Good");
     const airport = plan?.segments.find(
       (segment) => segment.name === "Airport",
@@ -168,10 +175,11 @@ describe("itinerary directions URLs", () => {
       "OLEARYS",
       "MARSTA",
       "ARLANDA",
+      "BUD_T2",
     ]);
 
     const chunks = chunkStops(airport!.stops, airport!.mode);
-    expect(chunks).toHaveLength(2);
+    expect(chunks).toHaveLength(3);
     expect(chunks[0].map((stop) => stop.stopId)).toEqual([
       "OLEARYS",
       "MARSTA",
@@ -180,6 +188,7 @@ describe("itinerary directions URLs", () => {
       "MARSTA",
       "ARLANDA",
     ]);
+    expect(chunks[2].map((stop) => stop.stopId)).toEqual(["ARLANDA", "BUD_T2"]);
   });
 
   it("maps Walking to walking and transit mixes to transit", () => {

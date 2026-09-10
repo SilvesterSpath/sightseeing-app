@@ -35,6 +35,10 @@ const UNRESOLVED_PAIRS = new Set([
   "EVERT|OLEARYS",
   "CAFE_GAMLA|OLEARYS",
   "OLEARYS|MARSTA",
+  "BUD_CITY_BREAK_PARKING|BUD_T2",
+  "BUD_T2|ARLANDA",
+  "ARLANDA|BUD_T2",
+  "BUD_T2|BUD_CITY_BREAK_PARKING",
 ]);
 
 function pairKey(fromStopId: string, toStopId: string): string {
@@ -152,5 +156,7 @@ describe("baked travel times", () => {
     const blob = `${JSON.stringify(travelData)}${JSON.stringify(navigationData)}`;
     expect(blob).not.toMatch(/tel:/i);
     expect(blob).not.toMatch(/\+46/);
+    expect(blob).not.toMatch(/@/);
+    expect(blob).not.toMatch(/licence plate|license plate|booking reference/i);
   });
 });
