@@ -545,27 +545,20 @@
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "BUD_T2",
-                  "name": "Budapest Airport Terminal 2",
-                  "query": "47.43367,19.26183",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
-                },
-                {
-                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 2,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 3,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -784,27 +777,20 @@
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "BUD_T2",
-                  "name": "Budapest Airport Terminal 2",
-                  "query": "47.43367,19.26183",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
-                },
-                {
-                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 2,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 3,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -979,27 +965,20 @@
               "stops": [
                 {
                   "order": 1,
-                  "stopId": "BUD_T2",
-                  "name": "Budapest Airport Terminal 2",
-                  "query": "47.43367,19.26183",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
-                },
-                {
-                  "order": 2,
                   "stopId": "ARLANDA",
                   "name": "Stockholm Arlanda Airport",
                   "query": "Stockholm Arlanda Airport, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Stockholm+Arlanda+Airport%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 2,
                   "stopId": "MARSTA",
                   "name": "Märsta station",
                   "query": "Märsta station, Märsta, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=M%C3%A4rsta+station%2C+M%C3%A4rsta%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 3,
                   "stopId": "STOCKHOLM_C",
                   "name": "Stockholm Central",
                   "query": "Stockholm Central Station, Stockholm, Sweden",
@@ -2086,10 +2065,10 @@
             },
             {
               "segmentNumber": 3,
-              "name": "Viewpoints if clear",
-              "mode": "Transit/Walking",
-              "conditional": true,
-              "notes": "Fjällgatan/Monteliusvägen conditional on visibility/weather.",
+              "name": "Return from Skansen",
+              "mode": "Transit",
+              "conditional": false,
+              "notes": "",
               "stops": [
                 {
                   "order": 1,
@@ -2111,23 +2090,39 @@
                   "name": "Slussen",
                   "query": "Slussen, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 4,
+              "name": "Viewpoints if clear",
+              "mode": "Walking",
+              "conditional": true,
+              "notes": "Fjällgatan/Monteliusvägen conditional on visibility/weather.",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "SLUSSEN",
+                  "name": "Slussen",
+                  "query": "Slussen, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Slussen%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 2,
                   "stopId": "FJALL",
                   "name": "Fjällgatan viewpoint",
                   "query": "Fjällgatan, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Fj%C3%A4llgatan%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 5,
+                  "order": 3,
                   "stopId": "MONTELIUS",
                   "name": "Monteliusvägen",
                   "query": "Monteliusvägen, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Monteliusv%C3%A4gen%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 6,
+                  "order": 4,
                   "stopId": "HOTEL",
                   "name": "Stora Nygatan 17",
                   "query": "Stora Nygatan 17, 111 27 Stockholm, Sweden",
@@ -2456,7 +2451,7 @@
             {
               "segmentNumber": 1,
               "name": "Design district",
-              "mode": "Walking/Transit",
+              "mode": "Walking",
               "conditional": false,
               "notes": "",
               "stops": [
@@ -2622,8 +2617,8 @@
           "segments": [
             {
               "segmentNumber": 1,
-              "name": "Indoor design route",
-              "mode": "Transit/Walking",
+              "name": "To Nordiska Galleriet",
+              "mode": "Transit",
               "conditional": false,
               "notes": "",
               "stops": [
@@ -2640,37 +2635,53 @@
                   "name": "Nordiska Galleriet 1912",
                   "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
+                }
+              ]
+            },
+            {
+              "segmentNumber": 2,
+              "name": "Indoor design route",
+              "mode": "Walking",
+              "conditional": false,
+              "notes": "",
+              "stops": [
+                {
+                  "order": 1,
+                  "stopId": "NORD_GALL",
+                  "name": "Nordiska Galleriet 1912",
+                  "query": "Nordiska Galleriet, Nybrogatan 11, Stockholm, Sweden",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Nordiska+Galleriet%2C+Nybrogatan+11%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 3,
+                  "order": 2,
                   "stopId": "NORRGAVEL",
                   "name": "Norrgavel Stockholm",
                   "query": "Norrgavel, Birger Jarlsgatan 27, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Norrgavel%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 4,
+                  "order": 3,
                   "stopId": "OSCAR",
                   "name": "Oscar & Clothilde",
                   "query": "Oscar & Clothilde, Birger Jarlsgatan 27, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Oscar+%26+Clothilde%2C+Birger+Jarlsgatan+27%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 5,
+                  "order": 4,
                   "stopId": "NK",
                   "name": "NK Stockholm",
                   "query": "NK Stockholm, Hamngatan 18-20, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=NK+Stockholm%2C+Hamngatan+18-20%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 6,
+                  "order": 5,
                   "stopId": "GALLERIAN",
                   "name": "Gallerian",
                   "query": "Gallerian, Hamngatan 37, Stockholm, Sweden",
                   "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Gallerian%2C+Hamngatan+37%2C+Stockholm%2C+Sweden"
                 },
                 {
-                  "order": 7,
+                  "order": 6,
                   "stopId": "IKEA",
                   "name": "IKEA City Stockholm – Gallerian",
                   "query": "IKEA Gallerian, Hamngatan 37, Stockholm, Sweden",
@@ -2679,7 +2690,7 @@
               ]
             },
             {
-              "segmentNumber": 2,
+              "segmentNumber": 3,
               "name": "Café & luggage",
               "mode": "Walking/Transit",
               "conditional": false,
@@ -2709,7 +2720,7 @@
               ]
             },
             {
-              "segmentNumber": 3,
+              "segmentNumber": 4,
               "name": "Airport",
               "mode": "Transit",
               "conditional": false,
@@ -2746,7 +2757,7 @@
               ]
             },
             {
-              "segmentNumber": 4,
+              "segmentNumber": 5,
               "name": "Budapest parking",
               "mode": "Walking",
               "conditional": false,

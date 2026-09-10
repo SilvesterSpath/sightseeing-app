@@ -29,7 +29,6 @@ function allPlanSegments(): PlanSegment[] {
 }
 
 const UNRESOLVED_PAIRS = new Set([
-  "MARSTA|STOCKHOLM_C",
   "STOCKHOLM_C|OLEARYS",
   "OLEARYS|HOTEL",
   "EVERT|OLEARYS",

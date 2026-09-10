@@ -498,6 +498,14 @@
       "notes": "Pendeltåg to Stockholm C plus walk to Gamla Stan"
     },
     {
+      "fromStopId": "MARSTA",
+      "toStopId": "STOCKHOLM_C",
+      "mode": "transit",
+      "durationMinutes": 50,
+      "source": "manual",
+      "notes": "Pendeltåg, typical wait included"
+    },
+    {
       "fromStopId": "MARTEN",
       "toStopId": "JARNTORGET",
       "mode": "walking",

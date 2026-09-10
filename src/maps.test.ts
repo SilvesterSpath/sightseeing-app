@@ -61,10 +61,10 @@ function openedUrls(segment: Segment): string[] {
 describe("itinerary directions URLs", () => {
   const plans = allPlanSegments();
 
-  it("covers all 53 segments across 15 weather plans", () => {
+  it("covers all 55 segments across 15 weather plans", () => {
     expect(countWeatherPlans()).toBe(15);
-    expect(countSegments()).toBe(53);
-    expect(plans).toHaveLength(53);
+    expect(countSegments()).toBe(55);
+    expect(plans).toHaveLength(55);
   });
 
   it("builds a parseable dir URL for every segment", () => {
@@ -98,14 +98,17 @@ describe("itinerary directions URLs", () => {
     for (const { segment } of plans.filter(({ segment }) =>
       isTransitFamily(segment.mode),
     )) {
-      expect(buildDirectionsUrl(segment.stops, segment.mode)).toBeNull();
-      const chunks = chunkStops(segment.stops, segment.mode);
-      expect(chunks.length).toBe(segment.stops.length - 1);
-      for (const chunk of chunks) {
-        expect(chunk).toHaveLength(MAX_STOPS_PER_TRANSIT);
-        const href = buildDirectionsUrl(chunk, segment.mode);
-        expect(href).toBeTruthy();
-        const url = new URL(href as string);
+      if (needsOpenInParts(segment.stops, segment.mode)) {
+        expect(buildDirectionsUrl(segment.stops, segment.mode)).toBeNull();
+        const chunks = chunkStops(segment.stops, segment.mode);
+        expect(chunks.length).toBe(segment.stops.length - 1);
+        for (const chunk of chunks) {
+          expect(chunk).toHaveLength(MAX_STOPS_PER_TRANSIT);
+        }
+      }
+
+      for (const href of openedUrls(segment)) {
+        const url = new URL(href);
         expect(url.searchParams.get("travelmode")).toBe("transit");
         expect(url.searchParams.has("waypoints")).toBe(false);
         expect(url.searchParams.has("dir_action")).toBe(false);
@@ -121,17 +124,15 @@ describe("itinerary directions URLs", () => {
     expect(arrival).toBeDefined();
     expect(arrival?.mode).toBe("Transit");
     expect(arrival?.stops.map((stop) => stop.stopId)).toEqual([
-      "BUD_T2",
       "ARLANDA",
       "MARSTA",
       "STOCKHOLM_C",
     ]);
 
     const chunks = chunkStops(arrival!.stops, arrival!.mode);
-    expect(chunks).toHaveLength(3);
-    expect(chunks[0].map((stop) => stop.stopId)).toEqual(["BUD_T2", "ARLANDA"]);
-    expect(chunks[1].map((stop) => stop.stopId)).toEqual(["ARLANDA", "MARSTA"]);
-    expect(chunks[2].map((stop) => stop.stopId)).toEqual([
+    expect(chunks).toHaveLength(2);
+    expect(chunks[0].map((stop) => stop.stopId)).toEqual(["ARLANDA", "MARSTA"]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual([
       "MARSTA",
       "STOCKHOLM_C",
     ]);
@@ -141,7 +142,6 @@ describe("itinerary directions URLs", () => {
     );
     expect(urls[0]).toBeTruthy();
     expect(urls[1]).toBeTruthy();
-    expect(urls[2]).toBeTruthy();
 
     for (const href of urls) {
       const url = new URL(href as string);
@@ -189,6 +189,157 @@ describe("itinerary directions URLs", () => {
       "ARLANDA",
     ]);
     expect(chunks[2].map((stop) => stop.stopId)).toEqual(["ARLANDA", "BUD_T2"]);
+  });
+
+  it("splits Day 4 Mixed return from Skansen into pairwise transit, then one walking viewpoint route", () => {
+    const plan = getPlan(4, "Mixed");
+    expect(plan?.segments.map((segment) => segment.name)).toEqual([
+      "Royal cluster",
+      "Skansen",
+      "Return from Skansen",
+      "Viewpoints if clear",
+    ]);
+
+    const ferryHome = plan?.segments.find(
+      (segment) => segment.name === "Return from Skansen",
+    );
+    expect(ferryHome?.mode).toBe("Transit");
+    expect(ferryHome?.conditional).toBe(false);
+    expect(ferryHome?.stops.map((stop) => stop.stopId)).toEqual([
+      "SKANSEN",
+      "ALLMANNA",
+      "SLUSSEN",
+    ]);
+    expect(buildDirectionsUrl(ferryHome!.stops, ferryHome!.mode)).toBeNull();
+    const ferryChunks = chunkStops(ferryHome!.stops, ferryHome!.mode);
+    expect(ferryChunks).toHaveLength(2);
+    expect(ferryChunks[0].map((stop) => stop.stopId)).toEqual([
+      "SKANSEN",
+      "ALLMANNA",
+    ]);
+    expect(ferryChunks[1].map((stop) => stop.stopId)).toEqual([
+      "ALLMANNA",
+      "SLUSSEN",
+    ]);
+
+    const viewpoints = plan?.segments.find(
+      (segment) => segment.name === "Viewpoints if clear",
+    );
+    expect(viewpoints?.mode).toBe("Walking");
+    expect(viewpoints?.conditional).toBe(true);
+    expect(viewpoints?.stops.map((stop) => stop.stopId)).toEqual([
+      "SLUSSEN",
+      "FJALL",
+      "MONTELIUS",
+      "HOTEL",
+    ]);
+    expect(needsOpenInParts(viewpoints!.stops, viewpoints!.mode)).toBe(false);
+    const walkingHref = buildDirectionsUrl(
+      viewpoints!.stops,
+      viewpoints!.mode,
+    );
+    expect(walkingHref).toBeTruthy();
+    const walkingUrl = new URL(walkingHref as string);
+    expect(walkingUrl.searchParams.get("travelmode")).toBe("walking");
+    expect(walkingUrl.searchParams.get("waypoints")).toBe(
+      [viewpoints!.stops[1].query, viewpoints!.stops[2].query].join("|"),
+    );
+    expect(walkingUrl.searchParams.has("dir_action")).toBe(false);
+  });
+
+  it("uses one walking Maps route for Day 5 Mixed design district", () => {
+    const plan = getPlan(5, "Mixed");
+    const design = plan?.segments.find(
+      (segment) => segment.name === "Design district",
+    );
+    expect(design?.mode).toBe("Walking");
+    expect(design?.stops.map((stop) => stop.stopId)).toEqual([
+      "HOTEL",
+      "NORD_GALL",
+      "NORRGAVEL",
+      "OSCAR",
+      "STUREPLAN",
+      "BIBLIO",
+    ]);
+    expect(needsOpenInParts(design!.stops, design!.mode)).toBe(true);
+    const href = buildDirectionsUrl(design!.stops, design!.mode);
+    expect(href).toBeTruthy();
+    const url = new URL(href as string);
+    expect(url.searchParams.get("travelmode")).toBe("walking");
+    expect(url.searchParams.get("waypoints")).toBe(
+      design!.stops.slice(1, -1).map((stop) => stop.query).join("|"),
+    );
+    const chunks = chunkStops(design!.stops, design!.mode);
+    expect(chunks).toHaveLength(2);
+    expect(chunks[0].map((stop) => stop.stopId)).toEqual([
+      "HOTEL",
+      "NORD_GALL",
+      "NORRGAVEL",
+      "OSCAR",
+      "STUREPLAN",
+    ]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual([
+      "STUREPLAN",
+      "BIBLIO",
+    ]);
+  });
+
+  it("splits Day 5 Heavy rain into transit to Nordiska, then one indoor walking route", () => {
+    const plan = getPlan(5, "Heavy rain");
+    expect(plan?.segments.map((segment) => segment.name)).toEqual([
+      "To Nordiska Galleriet",
+      "Indoor design route",
+      "Café & luggage",
+      "Airport",
+      "Budapest parking",
+    ]);
+
+    const transit = plan?.segments.find(
+      (segment) => segment.name === "To Nordiska Galleriet",
+    );
+    expect(transit?.mode).toBe("Transit");
+    expect(transit?.conditional).toBe(false);
+    expect(transit?.stops.map((stop) => stop.stopId)).toEqual([
+      "HOTEL",
+      "NORD_GALL",
+    ]);
+    expect(needsOpenInParts(transit!.stops, transit!.mode)).toBe(false);
+    const transitHref = buildDirectionsUrl(transit!.stops, transit!.mode);
+    expect(transitHref).toBeTruthy();
+    const transitUrl = new URL(transitHref as string);
+    expect(transitUrl.searchParams.get("travelmode")).toBe("transit");
+
+    const indoor = plan?.segments.find(
+      (segment) => segment.name === "Indoor design route",
+    );
+    expect(indoor?.mode).toBe("Walking");
+    expect(indoor?.conditional).toBe(false);
+    expect(indoor?.stops.map((stop) => stop.stopId)).toEqual([
+      "NORD_GALL",
+      "NORRGAVEL",
+      "OSCAR",
+      "NK",
+      "GALLERIAN",
+      "IKEA",
+    ]);
+    expect(needsOpenInParts(indoor!.stops, indoor!.mode)).toBe(true);
+    const walkingHref = buildDirectionsUrl(indoor!.stops, indoor!.mode);
+    expect(walkingHref).toBeTruthy();
+    const walkingUrl = new URL(walkingHref as string);
+    expect(walkingUrl.searchParams.get("travelmode")).toBe("walking");
+    expect(walkingUrl.searchParams.get("waypoints")).toBe(
+      indoor!.stops.slice(1, -1).map((stop) => stop.query).join("|"),
+    );
+    const chunks = chunkStops(indoor!.stops, indoor!.mode);
+    expect(chunks).toHaveLength(2);
+    expect(chunks[0].map((stop) => stop.stopId)).toEqual([
+      "NORD_GALL",
+      "NORRGAVEL",
+      "OSCAR",
+      "NK",
+      "GALLERIAN",
+    ]);
+    expect(chunks[1].map((stop) => stop.stopId)).toEqual(["GALLERIAN", "IKEA"]);
   });
 
   it("maps Walking to walking and transit mixes to transit", () => {
