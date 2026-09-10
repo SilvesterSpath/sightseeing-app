@@ -488,10 +488,10 @@
     {
       "id": "BUD_T2",
       "name": "Budapest Airport Terminal 2",
-      "query": "Budapest Airport Terminal 2, Hungary",
+      "query": "47.43367,19.26183",
       "type": "Airport",
-      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary",
-      "notes": "BUD Terminal 2 for the Stockholm flights.",
+      "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183",
+      "notes": "BUD Terminal 2 for the Stockholm flights. GPS pin avoids Maps snapping to the 100E city bus stop.",
       "sourceUrl": ""
     },
     {
@@ -531,8 +531,8 @@
                   "order": 2,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -547,8 +547,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,
@@ -770,8 +770,8 @@
                   "order": 2,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -786,8 +786,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,
@@ -965,8 +965,8 @@
                   "order": 2,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -981,8 +981,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,
@@ -2420,8 +2420,8 @@
                   "order": 4,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -2436,8 +2436,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,
@@ -2587,8 +2587,8 @@
                   "order": 4,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -2603,8 +2603,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,
@@ -2740,8 +2740,8 @@
                   "order": 4,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 }
               ]
             },
@@ -2756,8 +2756,8 @@
                   "order": 1,
                   "stopId": "BUD_T2",
                   "name": "Budapest Airport Terminal 2",
-                  "query": "Budapest Airport Terminal 2, Hungary",
-                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=Budapest+Airport+Terminal+2%2C+Hungary"
+                  "query": "47.43367,19.26183",
+                  "googleMapsSearchUrl": "https://www.google.com/maps/search/?api=1&query=47.43367%2C19.26183"
                 },
                 {
                   "order": 2,

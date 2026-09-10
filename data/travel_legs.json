@@ -247,6 +247,22 @@
       "source": "manual"
     },
     {
+      "fromStopId": "BUD_CITY_BREAK_PARKING",
+      "toStopId": "BUD_T2",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual",
+      "notes": "Covered walkway; official BUD range 2–5 min"
+    },
+    {
+      "fromStopId": "BUD_T2",
+      "toStopId": "BUD_CITY_BREAK_PARKING",
+      "mode": "walking",
+      "durationMinutes": 5,
+      "source": "manual",
+      "notes": "Covered walkway; official BUD range 2–5 min"
+    },
+    {
       "fromStopId": "CAFE_GAMLA",
       "toStopId": "HOTEL",
       "mode": "walking",

@@ -35,10 +35,8 @@ const UNRESOLVED_PAIRS = new Set([
   "EVERT|OLEARYS",
   "CAFE_GAMLA|OLEARYS",
   "OLEARYS|MARSTA",
-  "BUD_CITY_BREAK_PARKING|BUD_T2",
   "BUD_T2|ARLANDA",
   "ARLANDA|BUD_T2",
-  "BUD_T2|BUD_CITY_BREAK_PARKING",
 ]);
 
 function pairKey(fromStopId: string, toStopId: string): string {

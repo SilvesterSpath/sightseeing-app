@@ -54,6 +54,9 @@ describe("itinerary stop meta", () => {
     expect(parking[0]?.query).toBe("47.42969,19.26455");
     expect(parking[0]?.sourceUrl).toBe("");
 
+    const terminal = getMasterStop("BUD_T2");
+    expect(terminal?.query).toBe("47.43367,19.26183");
+
     const firstStop = navigationData.days[0]?.weatherPlans[0]?.segments[0]
       ?.stops[0]?.stopId;
     const lastPlan = navigationData.days[4]?.weatherPlans[0];
