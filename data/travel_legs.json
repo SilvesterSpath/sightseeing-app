@@ -250,17 +250,17 @@
       "fromStopId": "BUD_CITY_BREAK_PARKING",
       "toStopId": "BUD_T2",
       "mode": "walking",
-      "durationMinutes": 5,
-      "source": "manual",
-      "notes": "Covered walkway; official BUD range 2–5 min"
+      "durationMinutes": 10,
+      "source": "google",
+      "notes": "Google Maps walking from parking GPS to Terminal 2 GPS"
     },
     {
       "fromStopId": "BUD_T2",
       "toStopId": "BUD_CITY_BREAK_PARKING",
       "mode": "walking",
-      "durationMinutes": 5,
-      "source": "manual",
-      "notes": "Covered walkway; official BUD range 2–5 min"
+      "durationMinutes": 10,
+      "source": "google",
+      "notes": "Google Maps walking from Terminal 2 GPS to parking GPS"
     },
     {
       "fromStopId": "CAFE_GAMLA",
